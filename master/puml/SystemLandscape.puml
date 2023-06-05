@@ -1,0 +1,33 @@
+@startuml
+set separator none
+title System Landscape
+
+top to bottom direction
+
+!include <C4/C4>
+!include <C4/C4_Context>
+
+Enterprise_Boundary(enterprise, "Int2 Data Fabric") {
+  System(DataExplorer, "Data Explorer", "Data Portal to provide GUI to end users.", $tags="")
+  System(FabricBroker, "Fabric Broker", "Broker to manage data pipeline.", $tags="")
+  System(FabricCore, "Fabric Core", "Weaving together structured and contextualized knowledge from diverse sources.", $tags="")
+}
+
+Person_Ext(DataConsumer, "Data Consumer", "A consumer who are needed a data in various context.", $tags="")
+Person_Ext(DataOwner, "Data Owner", "A provider who owned data set.", $tags="")
+System_Ext(ERP, "ERP", "A type of data source, ERP.", $tags="")
+System_Ext(DataLake, "Data Lake", "A type of data source, Data Lake.", $tags="")
+System_Ext(DataWarehouse, "Data Warehouse", "A type of data source, Data Warehouse.", $tags="")
+System_Ext(CloudDataStorage, "Cloud Data Storage", "A type of data source, Cloud Data Storage.", $tags="")
+
+Rel_D(DataConsumer, DataExplorer, "", $tags="")
+Rel_D(FabricBroker, DataOwner, "data pipeline", $tags="")
+Rel_D(FabricBroker, ERP, "data pipeline", $tags="")
+Rel_D(FabricBroker, DataLake, "data pipeline", $tags="")
+Rel_D(FabricBroker, DataWarehouse, "data pipeline", $tags="")
+Rel_D(FabricBroker, CloudDataStorage, "data pipeline", $tags="")
+Rel_D(DataExplorer, FabricCore, "uses", $tags="")
+Rel_D(FabricBroker, FabricCore, "uses", $tags="")
+
+SHOW_LEGEND(true)
+@enduml

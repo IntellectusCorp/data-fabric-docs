@@ -1,0 +1,34 @@
+@startuml
+set separator none
+title Fabric Core - Containers
+
+top to bottom direction
+
+!include <C4/C4>
+!include <C4/C4_Context>
+!include <C4/C4_Container>
+
+System_Boundary("FabricCore_boundary", "Fabric Core", $tags="") {
+  Container(FabricCore.KnowledgeFabric, "Knowledge Fabric", "Knowledge Fabric", "Weaving together structured and contextualized knowledge from diverse sources.", $tags="")
+  Container(FabricCore.DataGovernance, "Data Governance", "Data Fabric", "Data Governance", $tags="")
+  Container(FabricCore.ActiveMetadata, "Active Metadata", "Data Fabric", "Active metadata.", $tags="")
+  Container(FabricCore.DataCatalog, "Data Catalog", "Data Fabric", "Data Catalog.", $tags="")
+  Container(FabricCore.InformationRetrievalEngine, "Information Retrieval Engine", "Data Fabric", "Information Retrieval.", $tags="")
+  Container(FabricCore.KnowledgeGraphDatabase, "Knowledge Graph Database", "Database", "Database to store graph structure of data", $tags="")
+  Container(FabricCore.DataTailoringEngine, "Data Tailoring Engine", "Provides a mechanism to orchestrate the data with the governances.", $tags="")
+  Container(FabricCore.KnowledgeWeaver, "Knowledge Weaver", "Python and AWS Lambda", "Provides a sustainable mechanism to gather a knowledge from diverse source and than processed it to enable automation.", $tags="")
+}
+
+Rel_D(FabricCore.ActiveMetadata, FabricCore.KnowledgeFabric, "Integrates", $tags="")
+Rel_D(FabricCore.ActiveMetadata, FabricCore.DataGovernance, "Integrates", $tags="")
+Rel_D(FabricCore.DataTailoringEngine, FabricCore.DataGovernance, "Integrates", $tags="")
+Rel_D(FabricCore.InformationRetrievalEngine, FabricCore.DataGovernance, "Integrates", $tags="")
+Rel_D(FabricCore.InformationRetrievalEngine, FabricCore.ActiveMetadata, "Integrates", $tags="")
+Rel_D(FabricCore.InformationRetrievalEngine, FabricCore.KnowledgeFabric, "Integrates", $tags="")
+Rel_D(FabricCore.KnowledgeWeaver, FabricCore.KnowledgeFabric, "organizes", $tags="")
+Rel_D(FabricCore.KnowledgeWeaver, FabricCore.KnowledgeGraphDatabase, "builds", $tags="")
+Rel_D(FabricCore.KnowledgeFabric, FabricCore.KnowledgeGraphDatabase, "explorers", $tags="")
+Rel_D(FabricCore.DataCatalog, FabricCore.ActiveMetadata, "associates", $tags="")
+
+SHOW_LEGEND(true)
+@enduml

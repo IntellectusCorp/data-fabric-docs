@@ -1,0 +1,23 @@
+@startuml
+set separator none
+title Fabric Core - System Context
+
+top to bottom direction
+
+!include <C4/C4>
+!include <C4/C4_Context>
+
+skinparam svgDimensionStyle false
+skinparam preserveAspectRatio meet
+Enterprise_Boundary(enterprise, "Int2 Data Fabric") {
+  System(DataExplorer, "Data Explorer", "Data Portal to provide GUI to end users.", $tags="")[[../../data-explorer/context/]]
+  System(FabricBroker, "Fabric Broker", "Broker to manage data pipeline.", $tags="")[[../../fabric-broker/context/]]
+  System(FabricCore, "Fabric Core", "Weaving together structured and contextualized knowledge from diverse sources.", $tags="")[[../container/]]
+}
+
+
+Rel_D(DataExplorer, FabricCore, "uses", $tags="")
+Rel_D(FabricBroker, FabricCore, "uses", $tags="")
+
+SHOW_LEGEND(true)
+@enduml
