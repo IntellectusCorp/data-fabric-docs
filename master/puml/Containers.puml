@@ -1,6 +1,6 @@
 @startuml
 set separator none
-title Fabric Core - Containers
+title Data Fabric - Containers
 
 top to bottom direction
 
@@ -8,27 +8,33 @@ top to bottom direction
 !include <C4/C4_Context>
 !include <C4/C4_Container>
 
-System_Boundary("FabricCore_boundary", "Fabric Core", $tags="") {
-  Container(FabricCore.KnowledgeFabric, "Knowledge Fabric", "Knowledge Fabric", "Weaving together structured and contextualized knowledge from diverse sources.", $tags="")
-  Container(FabricCore.DataGovernance, "Data Governance", "Data Fabric", "Data Governance", $tags="")
-  Container(FabricCore.ActiveMetadata, "Active Metadata", "Data Fabric", "Active metadata.", $tags="")
-  Container(FabricCore.DataCatalog, "Data Catalog", "Data Fabric", "Data Catalog.", $tags="")
-  Container(FabricCore.InformationRetrievalEngine, "Information Retrieval Engine", "Data Fabric", "Information Retrieval.", $tags="")
-  Container(FabricCore.KnowledgeGraphDatabase, "Knowledge Graph Database", "Database", "Database to store graph structure of data", $tags="")
-  Container(FabricCore.DataTailoringEngine, "Data Tailoring Engine", "Provides a mechanism to orchestrate the data with the governances.", $tags="")
-  Container(FabricCore.KnowledgeWeaver, "Knowledge Weaver", "Python and AWS Lambda", "Provides a sustainable mechanism to gather a knowledge from diverse source and than processed it to enable automation.", $tags="")
+Person_Ext(DataOwner, "Data Owner", "A provider who owned data set.", $tags="")
+System_Ext(ERP, "ERP", "A type of data source, ERP.", $tags="")
+System_Ext(DataLake, "Data Lake", "A type of data source, Data Lake.", $tags="")
+System_Ext(DataWarehouse, "Data Warehouse", "A type of data source, Data Warehouse.", $tags="")
+System_Ext(CloudDataStorage, "Cloud Data Storage", "A type of data source, Cloud Data Storage.", $tags="")
+System_Ext(DataSource, "Data Source", "A type of data source in general.", $tags="")
+System_Ext(KnowledgeBase, "Knowledge Base", "Resolve the Knowledge from the metadata", $tags="")
+System_Ext(LLM, "LLM", "Resolve the Knowledge from the metadata", $tags="")
+
+System_Boundary("DataFabric_boundary", "Data Fabric", $tags="") {
+  Container(DataFabric.Jotter, "Jotter", "Data Fabric", "Web Application", $tags="")
+  Container(DataFabric.KnowledgeSlipbox, "Knowledge Slipbox", "Knowledge Graph", "Knowledge Graph", $tags="")
+  Container(DataFabric.ActiveMetadata, "Active Metadata", "Active Metadata", "Active Metadata", $tags="")
+  Container(DataFabric.FabricBroker, "Fabric Broker", "Int2 Data Fabric", "Broker to manage data pipeline.", $tags="")
 }
 
-Rel_D(FabricCore.ActiveMetadata, FabricCore.KnowledgeFabric, "Integrates", $tags="")
-Rel_D(FabricCore.ActiveMetadata, FabricCore.DataGovernance, "Integrates", $tags="")
-Rel_D(FabricCore.DataTailoringEngine, FabricCore.DataGovernance, "Integrates", $tags="")
-Rel_D(FabricCore.InformationRetrievalEngine, FabricCore.DataGovernance, "Integrates", $tags="")
-Rel_D(FabricCore.InformationRetrievalEngine, FabricCore.ActiveMetadata, "Integrates", $tags="")
-Rel_D(FabricCore.InformationRetrievalEngine, FabricCore.KnowledgeFabric, "Integrates", $tags="")
-Rel_D(FabricCore.KnowledgeWeaver, FabricCore.KnowledgeFabric, "organizes", $tags="")
-Rel_D(FabricCore.KnowledgeWeaver, FabricCore.KnowledgeGraphDatabase, "builds", $tags="")
-Rel_D(FabricCore.KnowledgeFabric, FabricCore.KnowledgeGraphDatabase, "explorers", $tags="")
-Rel_D(FabricCore.DataCatalog, FabricCore.ActiveMetadata, "associates", $tags="")
+Rel_D(DataFabric.Jotter, DataFabric.KnowledgeSlipbox, "request", $tags="")
+Rel_D(DataFabric.KnowledgeSlipbox, DataFabric.ActiveMetadata, "weave Knowledge from Metadata", $tags="")
+Rel_D(DataFabric.KnowledgeSlipbox, KnowledgeBase, "resolve the knowledge", $tags="")
+Rel_D(DataFabric.KnowledgeSlipbox, LLM, "resolve the knowledge", $tags="")
+Rel_D(DataFabric.FabricBroker, DataOwner, "data pipeline", $tags="")
+Rel_D(DataFabric.FabricBroker, ERP, "data pipeline", $tags="")
+Rel_D(DataFabric.FabricBroker, DataLake, "data pipeline", $tags="")
+Rel_D(DataFabric.FabricBroker, DataWarehouse, "data pipeline", $tags="")
+Rel_D(DataFabric.FabricBroker, CloudDataStorage, "data pipeline", $tags="")
+Rel_D(DataFabric.FabricBroker, DataSource, "data pipeline", $tags="")
+Rel_D(DataFabric.ActiveMetadata, DataFabric.FabricBroker, "access data source through Broker", $tags="")
 
 SHOW_LEGEND(true)
 @enduml

@@ -1,6 +1,6 @@
 @startuml
 set separator none
-title Fabric Core - System Context
+title Data Fabric - System Context
 
 top to bottom direction
 
@@ -8,14 +8,28 @@ top to bottom direction
 !include <C4/C4_Context>
 
 Enterprise_Boundary(enterprise, "Int2 Data Fabric") {
-  System(DataExplorer, "Data Explorer", "Data Portal to provide GUI to end users.", $tags="")
-  System(FabricBroker, "Fabric Broker", "Broker to manage data pipeline.", $tags="")
-  System(FabricCore, "Fabric Core", "Weaving together structured and contextualized knowledge from diverse sources.", $tags="")
+  System(DataFabric, "Data Fabric", "Weaving together structured and contextualized knowledge from diverse sources.", $tags="")
 }
 
+Person_Ext(DataConsumer, "Data Consumer", "A consumer who are needed a data in various context.", $tags="")
+Person_Ext(DataOwner, "Data Owner", "A provider who owned data set.", $tags="")
+System_Ext(ERP, "ERP", "A type of data source, ERP.", $tags="")
+System_Ext(DataLake, "Data Lake", "A type of data source, Data Lake.", $tags="")
+System_Ext(DataWarehouse, "Data Warehouse", "A type of data source, Data Warehouse.", $tags="")
+System_Ext(CloudDataStorage, "Cloud Data Storage", "A type of data source, Cloud Data Storage.", $tags="")
+System_Ext(DataSource, "Data Source", "A type of data source in general.", $tags="")
+System_Ext(KnowledgeBase, "Knowledge Base", "Resolve the Knowledge from the metadata", $tags="")
+System_Ext(LLM, "LLM", "Resolve the Knowledge from the metadata", $tags="")
 
-Rel_D(DataExplorer, FabricCore, "uses", $tags="")
-Rel_D(FabricBroker, FabricCore, "uses", $tags="")
+Rel_D(DataConsumer, DataFabric, "fetch data", $tags="")
+Rel_D(DataFabric, KnowledgeBase, "resolve the knowledge", $tags="")
+Rel_D(DataFabric, LLM, "resolve the knowledge", $tags="")
+Rel_D(DataFabric, DataOwner, "data pipeline", $tags="")
+Rel_D(DataFabric, ERP, "data pipeline", $tags="")
+Rel_D(DataFabric, DataLake, "data pipeline", $tags="")
+Rel_D(DataFabric, DataWarehouse, "data pipeline", $tags="")
+Rel_D(DataFabric, CloudDataStorage, "data pipeline", $tags="")
+Rel_D(DataFabric, DataSource, "data pipeline", $tags="")
 
 SHOW_LEGEND(true)
 @enduml

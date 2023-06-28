@@ -1,0 +1,40 @@
+@startuml
+set separator none
+title Knowledge Slipbox - Dynamic
+
+top to bottom direction
+
+!include <C4/C4>
+!include <C4/C4_Context>
+!include <C4/C4_Container>
+!include <C4/C4_Component>
+
+skinparam svgDimensionStyle false
+skinparam preserveAspectRatio meet
+Container_Boundary("DataFabric.KnowledgeSlipbox_boundary", "Knowledge Slipbox", $tags="") {
+  Component(DataFabric.KnowledgeSlipbox.KnowledgeWeaver, "Knowledge Weaver", "Knowledge Weaver", $tags="")
+  Component(DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase, "Knowledge Graph Database", "Graph Database", $tags="")
+  Component(DataFabric.KnowledgeSlipbox.KnowledgeSlipboxApiProvider, "Knowledge Slipbox Api Provider", "Knowledge Graph", $tags="")
+}
+
+Container_Boundary("DataFabric.ActiveMetadata_boundary", "Active Metadata", $tags="") {
+  Component(DataFabric.ActiveMetadata.MetaGin, "Meta Gin", "Active Metadata", "Metadata Analyzer", $tags="")
+}
+
+Container(DataFabric.Jotter, "Jotter", "Data Fabric", "Web Application", $tags="")
+Container(DataFabric.FabricBroker, "Fabric Broker", "Int2 Data Fabric", "Broker to manage data pipeline.", $tags="")
+System_Ext(DataSource, "Data Source", "A type of data source in general.", $tags="")
+System_Ext(KnowledgeBase, "Knowledge Base", "Resolve the Knowledge from the metadata", $tags="")
+System_Ext(LLM, "LLM", "Resolve the Knowledge from the metadata", $tags="")
+
+Rel_D(DataFabric.ActiveMetadata.MetaGin, DataFabric.FabricBroker, "1. access data source via Broker", $tags="")
+Rel_D(DataFabric.KnowledgeSlipbox.KnowledgeWeaver, DataFabric.ActiveMetadata.MetaGin, "2. weave Knowledge from Metadata", $tags="")
+Rel_D(DataFabric.KnowledgeSlipbox.KnowledgeWeaver, KnowledgeBase, "3. resolve the knowledge", $tags="")
+Rel_D(DataFabric.KnowledgeSlipbox.KnowledgeWeaver, LLM, "4. resolve the knowledge", $tags="")
+Rel_D(DataFabric.KnowledgeSlipbox.KnowledgeWeaver, DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase, "5. build Local Knowledge Graph", $tags="")
+Rel_D(DataFabric.FabricBroker, DataSource, "6. data pipeline", $tags="")
+Rel_D(DataFabric.Jotter, DataFabric.KnowledgeSlipbox.KnowledgeSlipboxApiProvider, "7. request", $tags="")
+Rel_D(DataFabric.KnowledgeSlipbox.KnowledgeSlipboxApiProvider, DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase, "8. fetch", $tags="")
+
+SHOW_LEGEND(true)
+@enduml
