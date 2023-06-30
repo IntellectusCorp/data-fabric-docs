@@ -649,10 +649,81 @@
    </figcaption>
   </figure>
  </div></p>
-<h3>데이터 패브릭 메타데이터 스키마</h3>
+<h3>로컬 지슥그래프 데이터 스키마</h3>
+<h4>자율주행 학습 데이터를 지식 그래프로 추출하는 과정(nuScene 예제 데이터를 이용)</h4>
+<ol>
+ <li>nuScene 데이터 세트 고유 형식</li>
+</ol>
 <pre><code class="language-json">{
+    {
+    "scene": {
+        "token": "73030fb67d3c46cfb5e590168088ae39",
+        "log_token": "6b6513e6c8384cec88775cae30b78c0e",
+        "nbr_samples": 40,
+        "first_sample_token": "e93e98b63d3b40209056d129dc53ceee",
+        "last_sample_token": "40e413c922184255a94f08d3c10037e0",
+        "name": "scene-0001",
+        "description": "Construction, maneuver between several trucks"
+    },
+    "sample": {
+        "token": "e93e98b63d3b40209056d129dc53ceee",
+        "timestamp": 1531883530449377,
+        "prev": "",
+        "next": "14d5adfe50bb4445bc3aa5fe607691a8",
+        "scene_token": "73030fb67d3c46cfb5e590168088ae39"
+    },
+    "sample_data": {
+        "token": "bddd80ae33ec4e32b27fdb3c1160a30e",
+        "sample_token": "e93e98b63d3b40209056d129dc53ceee",
+        "ego_pose_token": "bddd80ae33ec4e32b27fdb3c1160a30e",
+        "calibrated_sensor_token": "7781065816974801afc4dcdaf6acf92c",
+        "timestamp": 1531883530440378,
+        "fileformat": "pcd",
+        "is_key_frame": true,
+        "height": 0,
+        "width": 0,
+        "filename": "samples/RADAR_FRONT/n015-2018-07-18-11-07-57+0800__RADAR_FRONT__1531883530440378.pcd",
+        "prev": "",
+        "next": "90df03ad4710427aabb5f88fe049df2e"
+    },
+    "sample_annotation": {
+        "token": "2cd832644d09479389ed0785e5de85c9",
+        "sample_token": "e93e98b63d3b40209056d129dc53ceee",
+        "instance_token": "5e2b6fd1fab74d04a79eefebbec357bb",
+        "visibility_token": "3",
+        "attribute_tokens": [],
+        "translation": [
+            993.884,
+            612.441,
+            0.675
+        ],
+        "size": [
+            0.3,
+            0.291,
+            0.734
+        ],
+        "rotation": [
+            -0.04208490861058176,
+            0.0,
+            0.0,
+            0.9991140377690821
+        ],
+        "prev": "5cd018cb2448415ab8aff4dc7256999a",
+        "next": "",
+        "num_lidar_pts": 2,
+        "num_radar_pts": 0
+    },
+    "instance": {
+        "token": "5e2b6fd1fab74d04a79eefebbec357bb",
+        "category_token": "85abebdccd4d46c7be428af5a6173947",
+        "nbr_annotations": 13,
+        "first_annotation_token": "173a50411564442ab195e132472fde71",
+        "last_annotation_token": "2cd832644d09479389ed0785e5de85c9"
+    }
 }
-</code></pre></div>
+}
+</code></pre>
+<h4>ex. 자율주행 학습 데이터(nuScene)</h4></div>
         </div>
       </div>
     </div>
