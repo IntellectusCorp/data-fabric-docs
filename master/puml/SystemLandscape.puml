@@ -30,6 +30,9 @@ Rel_D(DataFabric, DataLake, "data pipeline", $tags="")
 Rel_D(DataFabric, DataWarehouse, "data pipeline", $tags="")
 Rel_D(DataFabric, CloudDataStorage, "data pipeline", $tags="")
 Rel_D(DataFabric, DataSource, "data pipeline", $tags="")
+Rel_D(DataLake, DataFabric, "convert", $tags="")
+Rel_D(DataWarehouse, DataFabric, "convert", $tags="")
+Rel_D(DataSource, DataFabric, "convert", $tags="")
 
 SHOW_LEGEND(true)
 @enduml

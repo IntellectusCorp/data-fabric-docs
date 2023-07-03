@@ -38,16 +38,544 @@
       <div class="container is-fluid has-background-white">
         <div class="content p-3">
           <div><h1>로컬 지식 그래프 아키텍처</h1>
-<p>로컬 지식 그래프는 데이터 세트에 포함된 메타데이터와 자동화된 데이터 분석을 통해 생성된 메타데이터에서 엔티티를 식별하고 관계를 정의한다.</p>
+<p>Local Knowledge Graph 는 Data Set 에 포함된 metadata 와 자동화된 데이터 분석을 통해 generated metadata 에서 엔티티를 식별하고 관계를 정의한다.</p>
 <h3>다이어그램</h3>
 <p>
  <div>
-  <figure style="width: min(100%, 1209px);">
+  <figure style="width: min(100%, 989px);">
    <div>
     <!--?xml version="1.0" encoding="us-ascii" standalone="no"?-->
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" preserveaspectratio="meet" version="1.1" viewbox="0 0 1209 1010" zoomandpan="magnify">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" preserveaspectratio="meet" version="1.1" viewbox="0 0 989 668" zoomandpan="magnify">
      <defs /><g>
-      <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthadjust="spacing" textlength="233" x="481" y="22.9951">
+      <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthadjust="spacing" textlength="208" x="383.5" y="22.9951">
+       Active Metadata - Dynamic
+      </text><!--cluster DataFabric.KnowledgeSlipbox_boundary-->
+      <g id="cluster_DataFabric.KnowledgeSlipbox_boundary">
+       <rect fill="none" height="341.5" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="222" x="746" y="44.2969" />
+       <text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="164" x="775" y="61.1484">
+        Knowledge Slipbox
+       </text>
+       <text fill="#444444" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="80" x="817" y="76.0605">
+        [Container]
+       </text>
+      </g><!--cluster DataFabric.ActiveMetadata_boundary-->
+      <g id="cluster_DataFabric.ActiveMetadata_boundary">
+       <rect fill="none" height="312" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="391" x="288" y="240.7969" />
+       <text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="145" x="411" y="257.6484">
+        Active Metadata
+       </text>
+       <text fill="#444444" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="80" x="443.5" y="272.5605">
+        [Container]
+       </text>
+      </g><!--entity DataFabric.KnowledgeSlipbox.KnowledgeWeaver-->
+      <g id="elem_DataFabric.KnowledgeSlipbox.KnowledgeWeaver">
+       <rect fill="#85BBF0" height="52.5938" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="190" x="762" y="95.2969" />
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="96" x="772" y="120.1484">
+        Knowledge
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="868" y="120.1484">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="68" x="874" y="120.1484">
+        Weaver
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="72" x="793.5" y="135.0605">
+        [Knowledge
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="4" x="865.5" y="135.0605">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="51" x="869.5" y="135.0605">
+        Weaver]
+       </text>
+      </g><!--entity DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase-->
+      <g id="elem_DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase">
+       <rect fill="#85BBF0" height="71.2188" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="175" x="762.5" y="298.7969" />
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="96" x="772.5" y="323.6484">
+        Knowledge
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="868.5" y="323.6484">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="53" x="874.5" y="323.6484">
+        Graph
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="83" x="808.5" y="342.2734">
+        Database
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="43" x="793.5" y="357.1855">
+        [Graph
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="4" x="836.5" y="357.1855">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="66" x="840.5" y="357.1855">
+        Database]
+       </text>
+      </g><!--entity DataFabric.ActiveMetadata.MetaGin-->
+      <g id="elem_DataFabric.ActiveMetadata.MetaGin">
+       <rect fill="#85BBF0" height="85.1875" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="146" x="517" y="291.7969" />
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="45" x="550.5" y="316.6484">
+        Meta
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="595.5" y="316.6484">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="28" x="601.5" y="316.6484">
+        Gin
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="42" x="534.5" y="331.5605">
+        [Active
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="4" x="576.5" y="331.5605">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="65" x="580.5" y="331.5605">
+        Metadata]
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="588" y="347.3857">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="64" x="527" y="363.6826">
+        Metadata
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="591" y="363.6826">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="58" x="595" y="363.6826">
+        Analyzer
+       </text>
+      </g><!--entity DataFabric.ActiveMetadata.ODDSpecification-->
+      <g id="elem_DataFabric.ActiveMetadata.ODDSpecification">
+       <rect fill="#85BBF0" height="85.1875" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="178" x="304" y="291.7969" />
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="40" x="314" y="316.6484">
+        ODD
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="354" y="316.6484">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="112" x="360" y="316.6484">
+        Specification
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="42" x="337.5" y="331.5605">
+        [Active
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="4" x="379.5" y="331.5605">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="65" x="383.5" y="331.5605">
+        Metadata]
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="391" y="347.3857">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="32" x="319" y="363.6826">
+        Data
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="351" y="363.6826">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="52" x="355" y="363.6826">
+        Catalog
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="407" y="363.6826">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="56" x="411" y="363.6826">
+        Schema
+       </text>
+      </g><!--entity DataFabric.ActiveMetadata.FabricDataCatalog-->
+      <g id="elem_DataFabric.ActiveMetadata.FabricDataCatalog">
+       <rect fill="#85BBF0" height="85.1875" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="192" x="377" y="451.7969" />
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="53" x="387" y="476.6484">
+        Fabric
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="440" y="476.6484">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="41" x="446" y="476.6484">
+        Data
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="487" y="476.6484">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="66" x="493" y="476.6484">
+        Catalog
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="42" x="417.5" y="491.5605">
+        [Active
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="4" x="459.5" y="491.5605">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="65" x="463.5" y="491.5605">
+        Metadata]
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="471" y="507.3857">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="71" x="391.5" y="523.6826">
+        Integrated
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="462.5" y="523.6826">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="32" x="466.5" y="523.6826">
+        Data
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="498.5" y="523.6826">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="52" x="502.5" y="523.6826">
+        Catalog
+       </text>
+      </g><!--entity DataLake-->
+      <g id="elem_DataLake">
+       <rect fill="#999999" height="87.5156" rx="2.5" ry="2.5" style="stroke:#8A8A8A;stroke-width:0.5;" width="206" x="7" y="77.7969" />
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="41" x="65.5" y="102.6484">
+        Data
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="106.5" y="102.6484">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="42" x="112.5" y="102.6484">
+        Lake
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="108" y="119.417">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="9" x="17" y="135.7139">
+        A
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="26" y="135.7139">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="30" y="135.7139">
+        type
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="60" y="135.7139">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="13" x="64" y="135.7139">
+        of
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="77" y="135.7139">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="81" y="135.7139">
+        data
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="111" y="135.7139">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="52" x="115" y="135.7139">
+        source,
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="167" y="135.7139">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="32" x="171" y="135.7139">
+        Data
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="36" x="92" y="152.0107">
+        Lake.
+       </text>
+      </g><!--entity DataWarehouse-->
+      <g id="elem_DataWarehouse">
+       <rect fill="#999999" height="87.5156" rx="2.5" ry="2.5" style="stroke:#8A8A8A;stroke-width:0.5;" width="206" x="248" y="77.7969" />
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="41" x="277" y="102.6484">
+        Data
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="318" y="102.6484">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="101" x="324" y="102.6484">
+        Warehouse
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="349" y="119.417">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="9" x="258" y="135.7139">
+        A
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="267" y="135.7139">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="271" y="135.7139">
+        type
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="301" y="135.7139">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="13" x="305" y="135.7139">
+        of
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="318" y="135.7139">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="322" y="135.7139">
+        data
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="352" y="135.7139">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="52" x="356" y="135.7139">
+        source,
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="408" y="135.7139">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="32" x="412" y="135.7139">
+        Data
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="83" x="309.5" y="152.0107">
+        Warehouse.
+       </text>
+      </g><!--entity DataSource-->
+      <g id="elem_DataSource">
+       <rect fill="#999999" height="87.5156" rx="2.5" ry="2.5" style="stroke:#8A8A8A;stroke-width:0.5;" width="182" x="489" y="77.7969" />
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="41" x="525.5" y="102.6484">
+        Data
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="566.5" y="102.6484">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="62" x="572.5" y="102.6484">
+        Source
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="578" y="119.417">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="9" x="499" y="135.7139">
+        A
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="508" y="135.7139">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="512" y="135.7139">
+        type
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="542" y="135.7139">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="13" x="546" y="135.7139">
+        of
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="559" y="135.7139">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="563" y="135.7139">
+        data
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="593" y="135.7139">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="48" x="597" y="135.7139">
+        source
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="645" y="135.7139">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="12" x="649" y="135.7139">
+        in
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="56" x="552" y="152.0107">
+        general.
+       </text>
+      </g><!--link DataLake to DataFabric.ActiveMetadata.ODDSpecification-->
+      <g id="link_DataLake_DataFabric.ActiveMetadata.ODDSpecification">
+       <path d="M167.95,165.9069 C215.31,201.1269 282.12,250.8169 330.63,286.9069 " fill="none" id="DataLake-to-DataFabric.ActiveMetadata.ODDSpecification" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="337.05,291.6869,332.432,284.4984,328.844,289.3074,337.05,291.6869" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="13" x="244" y="214.9355">
+        1.
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="257" y="214.9355">
+        &nbsp;
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="53" x="261" y="214.9355">
+        convert
+       </text>
+      </g><!--link DataWarehouse to DataFabric.ActiveMetadata.ODDSpecification-->
+      <g id="link_DataWarehouse_DataFabric.ActiveMetadata.ODDSpecification">
+       <path d="M359.6,165.9069 C366.43,200.1169 375.98,247.9969 383.12,283.7769 " fill="none" id="DataWarehouse-to-DataFabric.ActiveMetadata.ODDSpecification" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="384.7,291.6869,386.0699,283.2534,380.1868,284.4322,384.7,291.6869" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="13" x="371" y="214.9355">
+        2.
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="384" y="214.9355">
+        &nbsp;
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="53" x="388" y="214.9355">
+        convert
+       </text>
+      </g><!--link DataSource to DataFabric.ActiveMetadata.ODDSpecification-->
+      <g id="link_DataSource_DataFabric.ActiveMetadata.ODDSpecification">
+       <path d="M541.71,165.9069 C510.8,200.6969 467.35,249.6069 435.39,285.5769 " fill="none" id="DataSource-to-DataFabric.ActiveMetadata.ODDSpecification" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="429.97,291.6869,437.5295,287.7052,433.0474,283.7163,429.97,291.6869" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="13" x="515" y="214.9355">
+        3.
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="528" y="214.9355">
+        &nbsp;
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="53" x="532" y="214.9355">
+        convert
+       </text>
+      </g><!--link DataFabric.ActiveMetadata.ODDSpecification to DataFabric.ActiveMetadata.FabricDataCatalog-->
+      <g id="link_DataFabric.ActiveMetadata.ODDSpecification_DataFabric.ActiveMetadata.FabricDataCatalog">
+       <path d="M414.02,376.8069 C424.54,397.5969 437.35,422.8769 448.33,444.5769 " fill="none" id="DataFabric.ActiveMetadata.ODDSpecification-to-DataFabric.ActiveMetadata.FabricDataCatalog" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="451.98,451.7869,451.0449,443.2942,445.6912,446.0031,451.98,451.7869" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="13" x="436" y="418.9355">
+        4.
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="449" y="418.9355">
+        &nbsp;
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="53" x="453" y="418.9355">
+        convert
+       </text>
+      </g><!--link DataFabric.ActiveMetadata.MetaGin to DataFabric.ActiveMetadata.FabricDataCatalog-->
+      <g id="link_DataFabric.ActiveMetadata.MetaGin_DataFabric.ActiveMetadata.FabricDataCatalog">
+       <path d="M559.26,376.8069 C543.74,397.7769 524.82,423.3169 508.66,445.1469 " fill="none" id="DataFabric.ActiveMetadata.MetaGin-to-DataFabric.ActiveMetadata.FabricDataCatalog" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="503.74,451.7869,510.9103,447.1407,506.0872,443.5716,503.74,451.7869" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="13" x="536" y="418.9355">
+        5.
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="549" y="418.9355">
+        &nbsp;
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="56" x="553" y="418.9355">
+        analyze
+       </text>
+      </g><!--link DataFabric.KnowledgeSlipbox.KnowledgeWeaver to DataFabric.ActiveMetadata.MetaGin-->
+      <g id="link_DataFabric.KnowledgeSlipbox.KnowledgeWeaver_DataFabric.ActiveMetadata.MetaGin">
+       <path d="M781.52,148.4469 C753.29,160.2169 722.03,176.0169 697,195.7969 C665.8,220.4469 638.43,256.0469 619.18,284.8369 " fill="none" id="DataFabric.KnowledgeSlipbox.KnowledgeWeaver-to-DataFabric.ActiveMetadata.MetaGin" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="614.71,291.6269,621.614,286.5935,616.602,283.295,614.71,291.6269" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="13" x="698" y="207.9355">
+        6.
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="711" y="207.9355">
+        &nbsp;
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="46" x="715" y="207.9355">
+        weave
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="761" y="207.9355">
+        &nbsp;
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="79" x="765" y="207.9355">
+        Knowledge
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="32" x="718.5" y="221.9043">
+        from
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="750.5" y="221.9043">
+        &nbsp;
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="69" x="754.5" y="221.9043">
+        Metadata
+       </text>
+      </g><!--link DataFabric.KnowledgeSlipbox.KnowledgeWeaver to DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase-->
+      <g id="link_DataFabric.KnowledgeSlipbox.KnowledgeWeaver_DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase">
+       <path d="M856.14,148.6069 C854.97,183.9069 852.85,247.7169 851.43,290.3069 " fill="none" id="DataFabric.KnowledgeSlipbox.KnowledgeWeaver-to-DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="851.16,298.5269,854.4155,290.6274,848.4186,290.4346,851.16,298.5269" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="13" x="871.5" y="207.9355">
+        7.
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="884.5" y="207.9355">
+        &nbsp;
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="35" x="888.5" y="207.9355">
+        build
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="923.5" y="207.9355">
+        &nbsp;
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="37" x="927.5" y="207.9355">
+        Local
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="79" x="855" y="221.9043">
+        Knowledge
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="934" y="221.9043">
+        &nbsp;
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="43" x="938" y="221.9043">
+        Graph
+       </text>
+      </g>
+      <rect fill="none" height="16.2969" style="stroke:none;stroke-width:1.0;" width="205" x="753" y="576.7969" />
+      <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthadjust="spacing" textlength="59" x="753" y="589.792">
+       Legend
+      </text>
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="812" y="589.792">
+       &nbsp;
+      </text>
+      <rect fill="#85BBF0" height="16.2969" style="stroke:none;stroke-width:1.0;" width="205" x="753" y="593.0938" />
+      <text fill="#78A8D8" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="757" y="606.0889">
+       ▯
+      </text>
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="765" y="606.0889">
+       &nbsp;
+      </text>
+      <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="80" x="773" y="606.0889">
+       component
+      </text>
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="857" y="606.0889">
+       &nbsp;
+      </text>
+      <rect fill="#999999" height="16.2969" style="stroke:none;stroke-width:1.0;" width="205" x="753" y="609.3906" />
+      <text fill="#8A8A8A" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="757" y="622.3857">
+       ▯
+      </text>
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="765" y="622.3857">
+       &nbsp;
+      </text>
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="112" x="773" y="622.3857">
+       external_system
+      </text>
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="889" y="622.3857">
+       &nbsp;
+      </text>
+      <rect fill="none" height="16.2969" style="stroke:none;stroke-width:1.0;" width="205" x="753" y="625.6875" />
+      <text fill="#444444" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="757" y="638.6826">
+       ▯
+      </text>
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="765" y="638.6826">
+       &nbsp;
+      </text>
+      <text fill="#444444" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="134" x="773" y="638.6826">
+       container boundary
+      </text>
+      <text fill="#444444" font-family="sans-serif" font-size="10" lengthadjust="spacing" textlength="43" x="911" y="639.626">
+       (dashed)
+      </text>
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="954" y="638.6826">
+       &nbsp;
+      </text>
+      <line style="stroke:none;stroke-width:1.0;" x1="753" x2="958" y1="576.7969" y2="576.7969" />
+      <line style="stroke:none;stroke-width:1.0;" x1="753" x2="958" y1="593.0938" y2="593.0938" />
+      <line style="stroke:none;stroke-width:1.0;" x1="753" x2="958" y1="609.3906" y2="609.3906" />
+      <line style="stroke:none;stroke-width:1.0;" x1="753" x2="958" y1="625.6875" y2="625.6875" />
+      <line style="stroke:none;stroke-width:1.0;" x1="753" x2="958" y1="641.9844" y2="641.9844" />
+      <line style="stroke:none;stroke-width:1.0;" x1="753" x2="753" y1="576.7969" y2="641.9844" />
+      <line style="stroke:none;stroke-width:1.0;" x1="958" x2="958" y1="576.7969" y2="641.9844" />
+     </g>
+    </svg>
+   </div>
+   <figcaption>
+    Building Local Knowledge Graph [<a href="../svg/WorkflowToBuildLocalKnowledgeGraph.svg">svg</a>|<a href="../png/WorkflowToBuildLocalKnowledgeGraph.png">png</a>|<a href="../puml/WorkflowToBuildLocalKnowledgeGraph.puml">puml</a>]
+   </figcaption>
+  </figure>
+ </div></p>
+<p>
+ <div>
+  <figure style="width: min(100%, 727px);">
+   <div>
+    <!--?xml version="1.0" encoding="us-ascii" standalone="no"?-->
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" preserveaspectratio="meet" version="1.1" viewbox="0 0 727 1010" zoomandpan="magnify">
+     <defs /><g>
+      <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthadjust="spacing" textlength="233" x="240" y="22.9951">
        Knowledge Slipbox - Dynamic
       </text><!--cluster DataFabric.KnowledgeSlipbox_boundary-->
       <g id="cluster_DataFabric.KnowledgeSlipbox_boundary">
@@ -60,11 +588,11 @@
        </text>
       </g><!--cluster DataFabric.ActiveMetadata_boundary-->
       <g id="cluster_DataFabric.ActiveMetadata_boundary">
-       <rect fill="none" height="152" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="178" x="988" y="387.2969" />
-       <text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="145" x="1004.5" y="404.1484">
+       <rect fill="none" height="152" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="178" x="506" y="387.2969" />
+       <text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="145" x="522.5" y="404.1484">
         Active Metadata
        </text>
-       <text fill="#444444" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="80" x="1037" y="419.0605">
+       <text fill="#444444" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="80" x="555" y="419.0605">
         [Container]
        </text>
       </g><!--entity DataFabric.KnowledgeSlipbox.KnowledgeWeaver-->
@@ -144,35 +672,35 @@
        </text>
       </g><!--entity DataFabric.ActiveMetadata.MetaGin-->
       <g id="elem_DataFabric.ActiveMetadata.MetaGin">
-       <rect fill="#85BBF0" height="85.1875" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="146" x="1004" y="438.2969" />
-       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="45" x="1037.5" y="463.1484">
+       <rect fill="#85BBF0" height="85.1875" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="146" x="522" y="438.2969" />
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="45" x="555.5" y="463.1484">
         Meta
        </text>
-       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="1082.5" y="463.1484">
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="600.5" y="463.1484">
         &nbsp;
        </text>
-       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="28" x="1088.5" y="463.1484">
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="28" x="606.5" y="463.1484">
         Gin
        </text>
-       <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="42" x="1021.5" y="478.0605">
+       <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="42" x="539.5" y="478.0605">
         [Active
        </text>
-       <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="4" x="1063.5" y="478.0605">
+       <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="4" x="581.5" y="478.0605">
         &nbsp;
        </text>
-       <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="65" x="1067.5" y="478.0605">
+       <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="65" x="585.5" y="478.0605">
         Metadata]
        </text>
-       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1075" y="493.8857">
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="593" y="493.8857">
         &nbsp;
        </text>
-       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="64" x="1014" y="510.1826">
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="64" x="532" y="510.1826">
         Metadata
        </text>
-       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1078" y="510.1826">
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="596" y="510.1826">
         &nbsp;
        </text>
-       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="58" x="1082" y="510.1826">
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="58" x="600" y="510.1826">
         Analyzer
        </text>
       </g><!--entity DataFabric.Jotter-->
@@ -202,346 +730,218 @@
        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="75" x="112" y="116.1826">
         Application
        </text>
-      </g><!--entity DataFabric.FabricBroker-->
-      <g id="elem_DataFabric.FabricBroker">
-       <rect fill="#438DD5" height="101.4844" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="178" x="988" y="614.2969" />
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="53" x="1017" y="639.1484">
-        Fabric
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="1070" y="639.1484">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="61" x="1076" y="639.1484">
-        Broker
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="29" x="1022" y="654.0605">
-        [Int2
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="4" x="1051" y="654.0605">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="30" x="1055" y="654.0605">
-        Data
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="4" x="1085" y="654.0605">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="43" x="1089" y="654.0605">
-        Fabric]
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1075" y="669.8857">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="46" x="998" y="686.1826">
-        Broker
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1044" y="686.1826">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="14" x="1048" y="686.1826">
-        to
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1062" y="686.1826">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="56" x="1066" y="686.1826">
-        manage
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1122" y="686.1826">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="1126" y="686.1826">
-        data
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="58" x="1048" y="702.4795">
-        pipeline.
-       </text>
       </g><!--entity DataSource-->
       <g id="elem_DataSource">
-       <rect fill="#999999" height="87.5156" rx="2.5" ry="2.5" style="stroke:#8A8A8A;stroke-width:0.5;" width="182" x="986" y="790.2969" />
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="41" x="1022.5" y="815.1484">
+       <rect fill="#999999" height="87.5156" rx="2.5" ry="2.5" style="stroke:#8A8A8A;stroke-width:0.5;" width="182" x="504" y="790.2969" />
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="41" x="540.5" y="815.1484">
         Data
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="1063.5" y="815.1484">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="581.5" y="815.1484">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="62" x="1069.5" y="815.1484">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="62" x="587.5" y="815.1484">
         Source
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1075" y="831.917">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="593" y="831.917">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="9" x="996" y="848.2139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="9" x="514" y="848.2139">
         A
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1005" y="848.2139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="523" y="848.2139">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="1009" y="848.2139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="527" y="848.2139">
         type
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1039" y="848.2139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="557" y="848.2139">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="13" x="1043" y="848.2139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="13" x="561" y="848.2139">
         of
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1056" y="848.2139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="574" y="848.2139">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="1060" y="848.2139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="578" y="848.2139">
         data
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1090" y="848.2139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="608" y="848.2139">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="48" x="1094" y="848.2139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="48" x="612" y="848.2139">
         source
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1142" y="848.2139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="660" y="848.2139">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="12" x="1146" y="848.2139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="12" x="664" y="848.2139">
         in
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="56" x="1049" y="864.5107">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="56" x="567" y="864.5107">
         general.
        </text>
-      </g><!--entity KnowledgeBase-->
-      <g id="elem_KnowledgeBase">
-       <rect fill="#999999" height="87.5156" rx="2.5" ry="2.5" style="stroke:#8A8A8A;stroke-width:0.5;" width="218" x="498" y="436.7969" />
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="96" x="534.5" y="461.6484">
-        Knowledge
+      </g><!--entity DataFabric.FabricBroker-->
+      <g id="elem_DataFabric.FabricBroker">
+       <rect fill="#438DD5" height="101.4844" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="178" x="506" y="614.2969" />
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="53" x="535" y="639.1484">
+        Fabric
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="630.5" y="461.6484">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="588" y="639.1484">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="43" x="636.5" y="461.6484">
-        Base
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="61" x="594" y="639.1484">
+        Broker
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="605" y="478.417">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="29" x="540" y="654.0605">
+        [Int2
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="4" x="569" y="654.0605">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="55" x="508" y="494.7139">
-        Resolve
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="30" x="573" y="654.0605">
+        Data
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="563" y="494.7139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="4" x="603" y="654.0605">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="23" x="567" y="494.7139">
-        the
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="43" x="607" y="654.0605">
+        Fabric]
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="590" y="494.7139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="593" y="669.8857">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="77" x="594" y="494.7139">
-        Knowledge
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="46" x="516" y="686.1826">
+        Broker
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="671" y="494.7139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="562" y="686.1826">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="31" x="675" y="494.7139">
-        from
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="14" x="566" y="686.1826">
+        to
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="23" x="561" y="511.0107">
-        the
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="584" y="511.0107">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="580" y="686.1826">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="65" x="588" y="511.0107">
-        metadata
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="56" x="584" y="686.1826">
+        manage
        </text>
-      </g><!--entity LLM-->
-      <g id="elem_LLM">
-       <rect fill="#999999" height="87.5156" rx="2.5" ry="2.5" style="stroke:#8A8A8A;stroke-width:0.5;" width="218" x="751" y="436.7969" />
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="36" x="842" y="461.6484">
-        LLM
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="858" y="478.417">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="640" y="686.1826">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="55" x="761" y="494.7139">
-        Resolve
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="644" y="686.1826">
+        data
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="816" y="494.7139">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="23" x="820" y="494.7139">
-        the
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="843" y="494.7139">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="77" x="847" y="494.7139">
-        Knowledge
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="924" y="494.7139">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="31" x="928" y="494.7139">
-        from
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="23" x="814" y="511.0107">
-        the
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="837" y="511.0107">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="65" x="841" y="511.0107">
-        metadata
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="58" x="566" y="702.4795">
+        pipeline.
        </text>
       </g><!--link DataFabric.ActiveMetadata.MetaGin to DataFabric.FabricBroker-->
       <g id="link_DataFabric.ActiveMetadata.MetaGin_DataFabric.FabricBroker">
-       <path d="M1077,523.5469 C1077,547.9969 1077,579.2169 1077,605.9969 " fill="none" id="DataFabric.ActiveMetadata.MetaGin-to-DataFabric.FabricBroker" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="1077,614.1569,1080,606.1569,1074,606.1569,1077,614.1569" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="13" x="1088.5" y="567.4355">
+       <path d="M595,523.5469 C595,547.9969 595,579.2169 595,605.9969 " fill="none" id="DataFabric.ActiveMetadata.MetaGin-to-DataFabric.FabricBroker" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="595,614.1569,598,606.1569,592,606.1569,595,614.1569" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="13" x="606.5" y="567.4355">
         1.
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="1101.5" y="567.4355">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="619.5" y="567.4355">
         &nbsp;
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="48" x="1105.5" y="567.4355">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="48" x="623.5" y="567.4355">
         access
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="1153.5" y="567.4355">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="671.5" y="567.4355">
         &nbsp;
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="33" x="1157.5" y="567.4355">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="33" x="675.5" y="567.4355">
         data
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="48" x="1078" y="581.4043">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="48" x="596" y="581.4043">
         source
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="1126" y="581.4043">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="644" y="581.4043">
         &nbsp;
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="20" x="1130" y="581.4043">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="20" x="648" y="581.4043">
         via
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="1150" y="581.4043">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="668" y="581.4043">
         &nbsp;
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="47" x="1154" y="581.4043">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="47" x="672" y="581.4043">
         Broker
        </text>
       </g><!--link DataFabric.KnowledgeSlipbox.KnowledgeWeaver to DataFabric.ActiveMetadata.MetaGin-->
       <g id="link_DataFabric.KnowledgeSlipbox.KnowledgeWeaver_DataFabric.ActiveMetadata.MetaGin">
-       <path d="M466.12,285.1869 C616.11,298.2169 899.44,328.7569 986,379.2969 C1008.37,392.3569 1028.33,412.7669 1043.81,431.7869 " fill="none" id="DataFabric.KnowledgeSlipbox.KnowledgeWeaver-to-DataFabric.ActiveMetadata.MetaGin" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="1048.88,438.1669,1046.2613,430.0341,1041.5594,433.7613,1048.88,438.1669" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="13" x="971" y="354.4355">
+       <path d="M411.2,303.4869 C427.78,314.7169 446.86,328.4569 463,342.2969 C495.23,369.9269 528.31,404.3969 553.29,431.9169 " fill="none" id="DataFabric.KnowledgeSlipbox.KnowledgeWeaver-to-DataFabric.ActiveMetadata.MetaGin" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="558.82,438.0269,555.6823,430.0799,551.2306,434.1025,558.82,438.0269" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="13" x="494" y="354.4355">
         2.
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="984" y="354.4355">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="507" y="354.4355">
         &nbsp;
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="46" x="988" y="354.4355">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="46" x="511" y="354.4355">
         weave
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="1034" y="354.4355">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="557" y="354.4355">
         &nbsp;
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="79" x="1038" y="354.4355">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="79" x="561" y="354.4355">
         Knowledge
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="32" x="991.5" y="368.4043">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="32" x="514.5" y="368.4043">
         from
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="1023.5" y="368.4043">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="546.5" y="368.4043">
         &nbsp;
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="69" x="1027.5" y="368.4043">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="69" x="550.5" y="368.4043">
         Metadata
-       </text>
-      </g><!--link DataFabric.KnowledgeSlipbox.KnowledgeWeaver to KnowledgeBase-->
-      <g id="link_DataFabric.KnowledgeSlipbox.KnowledgeWeaver_KnowledgeBase">
-       <path d="M410.93,303.4469 C427.75,314.7669 447.28,328.6069 464,342.2969 C497.71,369.8969 533.02,403.7969 560.12,431.0269 " fill="none" id="DataFabric.KnowledgeSlipbox.KnowledgeWeaver-to-KnowledgeBase" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="565.78,436.7369,562.2641,428.9498,558.0108,433.1817,565.78,436.7369" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="13" x="498" y="354.4355">
-        3.
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="511" y="354.4355">
-        &nbsp;
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="52" x="515" y="354.4355">
-        resolve
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="567" y="354.4355">
-        &nbsp;
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="24" x="571" y="354.4355">
-        the
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="78" x="507.5" y="368.4043">
-        knowledge
-       </text>
-      </g><!--link DataFabric.KnowledgeSlipbox.KnowledgeWeaver to LLM-->
-      <g id="link_DataFabric.KnowledgeSlipbox.KnowledgeWeaver_LLM">
-       <path d="M466.34,293.6469 C541.68,308.6869 647.94,335.6169 733,379.2969 C759.75,393.0369 786.31,412.8269 808.18,431.2269 " fill="none" id="DataFabric.KnowledgeSlipbox.KnowledgeWeaver-to-LLM" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="814.51,436.6269,810.3666,429.1548,806.4751,433.7217,814.51,436.6269" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="13" x="716" y="354.4355">
-        4.
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="729" y="354.4355">
-        &nbsp;
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="52" x="733" y="354.4355">
-        resolve
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="785" y="354.4355">
-        &nbsp;
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="24" x="789" y="354.4355">
-        the
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="78" x="725.5" y="368.4043">
-        knowledge
        </text>
       </g><!--link DataFabric.KnowledgeSlipbox.KnowledgeWeaver to DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase-->
       <g id="link_DataFabric.KnowledgeSlipbox.KnowledgeWeaver_DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase">
        <path d="M353.78,303.3769 C330.94,337.2969 290.35,397.5869 263.06,438.1269 " fill="none" id="DataFabric.KnowledgeSlipbox.KnowledgeWeaver-to-DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase" style="stroke:#666666;stroke-width:1.0;" />
        <polygon fill="#666666" points="258.46,444.9569,265.4086,439.9852,260.4262,436.6422,258.46,444.9569" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="13" x="345.5" y="354.4355">
-        5.
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="13" x="344.5" y="354.4355">
+        3.
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="358.5" y="354.4355">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="357.5" y="354.4355">
         &nbsp;
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="35" x="362.5" y="354.4355">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="35" x="361.5" y="354.4355">
         build
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="397.5" y="354.4355">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="396.5" y="354.4355">
         &nbsp;
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="37" x="401.5" y="354.4355">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="37" x="400.5" y="354.4355">
         Local
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="79" x="329" y="368.4043">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="79" x="328" y="368.4043">
         Knowledge
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="408" y="368.4043">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="407" y="368.4043">
         &nbsp;
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="43" x="412" y="368.4043">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="43" x="411" y="368.4043">
         Graph
        </text>
       </g><!--link DataFabric.FabricBroker to DataSource-->
       <g id="link_DataFabric.FabricBroker_DataSource">
-       <path d="M1077,715.5969 C1077,736.5369 1077,760.8969 1077,781.9969 " fill="none" id="DataFabric.FabricBroker-to-DataSource" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="1077,790.2069,1080,782.2069,1074,782.2069,1077,790.2069" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="13" x="1078" y="757.4355">
-        6.
+       <path d="M595,715.5969 C595,736.5369 595,760.8969 595,781.9969 " fill="none" id="DataFabric.FabricBroker-to-DataSource" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="595,790.2069,598,782.2069,592,782.2069,595,790.2069" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="13" x="596" y="757.4355">
+        4.
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="1091" y="757.4355">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="609" y="757.4355">
         &nbsp;
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="33" x="1095" y="757.4355">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="33" x="613" y="757.4355">
         data
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="1128" y="757.4355">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="646" y="757.4355">
         &nbsp;
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="57" x="1132" y="757.4355">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="57" x="650" y="757.4355">
         pipeline
        </text>
       </g><!--link DataFabric.Jotter to DataFabric.KnowledgeSlipbox.KnowledgeSlipboxApiProvider-->
@@ -549,7 +949,7 @@
        <path d="M132,129.5169 C132,160.3069 132,202.0569 132,233.0769 " fill="none" id="DataFabric.Jotter-to-DataFabric.KnowledgeSlipbox.KnowledgeSlipboxApiProvider" style="stroke:#666666;stroke-width:1.0;" />
        <polygon fill="#666666" points="132,241.1169,135,233.1169,129,233.1169,132,241.1169" style="stroke:#666666;stroke-width:1.0;" />
        <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="13" x="133" y="171.4355">
-        7.
+        5.
        </text>
        <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="146" y="171.4355">
         &nbsp;
@@ -561,86 +961,86 @@
       <g id="link_DataFabric.KnowledgeSlipbox.KnowledgeSlipboxApiProvider_DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase">
        <path d="M149.71,312.5269 C167.45,347.3169 194.77,400.8969 213.69,437.9969 " fill="none" id="DataFabric.KnowledgeSlipbox.KnowledgeSlipboxApiProvider-to-DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase" style="stroke:#666666;stroke-width:1.0;" />
        <polygon fill="#666666" points="217.35,445.1869,216.381,436.698,211.0382,439.4283,217.35,445.1869" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="13" x="179" y="361.4355">
-        8.
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="13" x="178" y="361.4355">
+        6.
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="192" y="361.4355">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="191" y="361.4355">
         &nbsp;
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="36" x="196" y="361.4355">
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="36" x="195" y="361.4355">
         fetch
        </text>
       </g>
-      <rect fill="none" height="16.2969" style="stroke:none;stroke-width:1.0;" width="205" x="973" y="901.8125" />
-      <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthadjust="spacing" textlength="59" x="973" y="914.8076">
+      <rect fill="none" height="16.2969" style="stroke:none;stroke-width:1.0;" width="205" x="491" y="901.8125" />
+      <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthadjust="spacing" textlength="59" x="491" y="914.8076">
        Legend
       </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1032" y="914.8076">
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="550" y="914.8076">
        &nbsp;
       </text>
-      <rect fill="#438DD5" height="16.2969" style="stroke:none;stroke-width:1.0;" width="205" x="973" y="918.1094" />
-      <text fill="#3C7FC0" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="977" y="931.1045">
+      <rect fill="#438DD5" height="16.2969" style="stroke:none;stroke-width:1.0;" width="205" x="491" y="918.1094" />
+      <text fill="#3C7FC0" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="495" y="931.1045">
        ▯
       </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="985" y="931.1045">
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="503" y="931.1045">
        &nbsp;
       </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="65" x="993" y="931.1045">
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="65" x="511" y="931.1045">
        container
       </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1062" y="931.1045">
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="580" y="931.1045">
        &nbsp;
       </text>
-      <rect fill="#85BBF0" height="16.2969" style="stroke:none;stroke-width:1.0;" width="205" x="973" y="934.4063" />
-      <text fill="#78A8D8" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="977" y="947.4014">
+      <rect fill="#85BBF0" height="16.2969" style="stroke:none;stroke-width:1.0;" width="205" x="491" y="934.4063" />
+      <text fill="#78A8D8" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="495" y="947.4014">
        ▯
       </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="985" y="947.4014">
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="503" y="947.4014">
        &nbsp;
       </text>
-      <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="80" x="993" y="947.4014">
+      <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="80" x="511" y="947.4014">
        component
       </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1077" y="947.4014">
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="595" y="947.4014">
        &nbsp;
       </text>
-      <rect fill="#999999" height="16.2969" style="stroke:none;stroke-width:1.0;" width="205" x="973" y="950.7031" />
-      <text fill="#8A8A8A" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="977" y="963.6982">
+      <rect fill="#999999" height="16.2969" style="stroke:none;stroke-width:1.0;" width="205" x="491" y="950.7031" />
+      <text fill="#8A8A8A" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="495" y="963.6982">
        ▯
       </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="985" y="963.6982">
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="503" y="963.6982">
        &nbsp;
       </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="112" x="993" y="963.6982">
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="112" x="511" y="963.6982">
        external_system
       </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1109" y="963.6982">
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="627" y="963.6982">
        &nbsp;
       </text>
-      <rect fill="none" height="16.2969" style="stroke:none;stroke-width:1.0;" width="205" x="973" y="967" />
-      <text fill="#444444" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="977" y="979.9951">
+      <rect fill="none" height="16.2969" style="stroke:none;stroke-width:1.0;" width="205" x="491" y="967" />
+      <text fill="#444444" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="495" y="979.9951">
        ▯
       </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="985" y="979.9951">
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="503" y="979.9951">
        &nbsp;
       </text>
-      <text fill="#444444" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="134" x="993" y="979.9951">
+      <text fill="#444444" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="134" x="511" y="979.9951">
        container boundary
       </text>
-      <text fill="#444444" font-family="sans-serif" font-size="10" lengthadjust="spacing" textlength="43" x="1131" y="980.9385">
+      <text fill="#444444" font-family="sans-serif" font-size="10" lengthadjust="spacing" textlength="43" x="649" y="980.9385">
        (dashed)
       </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1174" y="979.9951">
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="692" y="979.9951">
        &nbsp;
       </text>
-      <line style="stroke:none;stroke-width:1.0;" x1="973" x2="1178" y1="901.8125" y2="901.8125" />
-      <line style="stroke:none;stroke-width:1.0;" x1="973" x2="1178" y1="918.1094" y2="918.1094" />
-      <line style="stroke:none;stroke-width:1.0;" x1="973" x2="1178" y1="934.4063" y2="934.4063" />
-      <line style="stroke:none;stroke-width:1.0;" x1="973" x2="1178" y1="950.7031" y2="950.7031" />
-      <line style="stroke:none;stroke-width:1.0;" x1="973" x2="1178" y1="967" y2="967" />
-      <line style="stroke:none;stroke-width:1.0;" x1="973" x2="1178" y1="983.2969" y2="983.2969" />
-      <line style="stroke:none;stroke-width:1.0;" x1="973" x2="973" y1="901.8125" y2="983.2969" />
-      <line style="stroke:none;stroke-width:1.0;" x1="1178" x2="1178" y1="901.8125" y2="983.2969" />
+      <line style="stroke:none;stroke-width:1.0;" x1="491" x2="696" y1="901.8125" y2="901.8125" />
+      <line style="stroke:none;stroke-width:1.0;" x1="491" x2="696" y1="918.1094" y2="918.1094" />
+      <line style="stroke:none;stroke-width:1.0;" x1="491" x2="696" y1="934.4063" y2="934.4063" />
+      <line style="stroke:none;stroke-width:1.0;" x1="491" x2="696" y1="950.7031" y2="950.7031" />
+      <line style="stroke:none;stroke-width:1.0;" x1="491" x2="696" y1="967" y2="967" />
+      <line style="stroke:none;stroke-width:1.0;" x1="491" x2="696" y1="983.2969" y2="983.2969" />
+      <line style="stroke:none;stroke-width:1.0;" x1="491" x2="491" y1="901.8125" y2="983.2969" />
+      <line style="stroke:none;stroke-width:1.0;" x1="696" x2="696" y1="901.8125" y2="983.2969" />
      </g>
     </svg>
    </div>
@@ -649,8 +1049,8 @@
    </figcaption>
   </figure>
  </div></p>
-<h3>로컬 지슥그래프 데이터 스키마</h3>
-<h4>자율주행 학습 데이터를 지식 그래프로 추출하는 과정(nuScene 예제 데이터를 이용)</h4>
+<h3>Data Schema For Local Knowlege Graph</h3>
+<h4>자율주행 학습 데이터를 지식 그래프로 추출하는 과정(nuScene 데이터를 이용)</h4>
 <ol>
  <li>nuScene 데이터 세트 고유 형식</li>
 </ol>
@@ -723,7 +1123,9 @@
 }
 }
 </code></pre>
-<h4>ex. 자율주행 학습 데이터(nuScene)</h4></div>
+<ol start="2">
+ <li></li>
+</ol></div>
         </div>
       </div>
     </div>

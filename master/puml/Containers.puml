@@ -35,6 +35,9 @@ Rel_D(DataFabric.FabricBroker, DataWarehouse, "data pipeline", $tags="")
 Rel_D(DataFabric.FabricBroker, CloudDataStorage, "data pipeline", $tags="")
 Rel_D(DataFabric.FabricBroker, DataSource, "data pipeline", $tags="")
 Rel_D(DataFabric.ActiveMetadata, DataFabric.FabricBroker, "access data source through Broker", $tags="")
+Rel_D(DataLake, DataFabric.ActiveMetadata, "convert", $tags="")
+Rel_D(DataWarehouse, DataFabric.ActiveMetadata, "convert", $tags="")
+Rel_D(DataSource, DataFabric.ActiveMetadata, "convert", $tags="")
 
 SHOW_LEGEND(true)
 @enduml
