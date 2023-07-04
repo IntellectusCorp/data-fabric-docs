@@ -1,0 +1,32 @@
+@startuml
+set separator none
+title Knowledge Slipbox - Dynamic
+
+left to right direction
+
+!include <C4/C4>
+!include <C4/C4_Context>
+!include <C4/C4_Container>
+!include <C4/C4_Component>
+
+Container_Boundary("DataFabric.KnowledgeSlipbox_boundary", "Knowledge Slipbox", $tags="") {
+  Component(DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase, "Knowledge Graph Database", "Graph Database", $tags="")
+  Component(DataFabric.KnowledgeSlipbox.KnowledgeSlipboxApiProvider, "Knowledge Slipbox Api Provider", "Knowledge Graph", $tags="")
+}
+
+Container_Boundary("DataFabric.ActiveMetadata_boundary", "Active Metadata", $tags="") {
+  Component(DataFabric.ActiveMetadata.MetaGin, "Meta Gin", "Active Metadata", "Metadata Analyzer", $tags="")
+  Component(DataFabric.ActiveMetadata.FabricDataCatalog, "Fabric Data Catalog", "Active Metadata", "Integrated Data Catalog", $tags="")
+}
+
+Container(DataFabric.Jotter, "Jotter", "Data Fabric", "Web Application", $tags="")
+Container(DataFabric.FabricAPIProvider, "Fabric API Provider", "Int2 Data Fabric", "API", $tags="")
+
+Rel_D(DataFabric.ActiveMetadata.MetaGin, DataFabric.ActiveMetadata.FabricDataCatalog, "1. fetch", $tags="")
+Rel_D(DataFabric.KnowledgeSlipbox.KnowledgeSlipboxApiProvider, DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase, "2. fetch", $tags="")
+Rel_D(DataFabric.FabricAPIProvider, DataFabric.KnowledgeSlipbox.KnowledgeSlipboxApiProvider, "3. ", $tags="")
+Rel_D(DataFabric.FabricAPIProvider, DataFabric.ActiveMetadata.MetaGin, "4. ", $tags="")
+Rel_D(DataFabric.Jotter, DataFabric.FabricAPIProvider, "5. use as Knowledge Catalog", $tags="")
+
+SHOW_LEGEND(true)
+@enduml

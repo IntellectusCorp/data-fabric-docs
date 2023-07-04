@@ -10,36 +10,23 @@ top to bottom direction
 
 skinparam svgDimensionStyle false
 skinparam preserveAspectRatio meet
-Person_Ext(DataOwner, "Data Owner", "A provider who owned data set.", $tags="")
-System_Ext(ERP, "ERP", "A type of data source, ERP.", $tags="")
-System_Ext(DataLake, "Data Lake", "A type of data source, Data Lake.", $tags="")
-System_Ext(DataWarehouse, "Data Warehouse", "A type of data source, Data Warehouse.", $tags="")
-System_Ext(CloudDataStorage, "Cloud Data Storage", "A type of data source, Cloud Data Storage.", $tags="")
-System_Ext(DataSource, "Data Source", "A type of data source in general.", $tags="")
-System_Ext(KnowledgeBase, "Knowledge Base", "Resolve the Knowledge from the metadata", $tags="")
-System_Ext(LLM, "LLM", "Resolve the Knowledge from the metadata", $tags="")
+Person(DataOwner, "Data Owner", "A provider who owned data set.", $tags="")
 
 System_Boundary("DataFabric_boundary", "Data Fabric", $tags="") {
   Container(DataFabric.Jotter, "Jotter", "Data Fabric", "Web Application", $tags="")
   Container(DataFabric.KnowledgeSlipbox, "Knowledge Slipbox", "Knowledge Graph", "Knowledge Graph", $tags="")[[../component/]]
   Container(DataFabric.ActiveMetadata, "Active Metadata", "Active Metadata", "Active Metadata", $tags="")[[../component/]]
   Container(DataFabric.FabricBroker, "Fabric Broker", "Int2 Data Fabric", "Broker to manage data pipeline.", $tags="")
+  Container(DataFabric.FabricAPIProvider, "Fabric API Provider", "Int2 Data Fabric", "API", $tags="")
 }
 
-Rel_D(DataFabric.Jotter, DataFabric.KnowledgeSlipbox, "request", $tags="")
 Rel_D(DataFabric.KnowledgeSlipbox, DataFabric.ActiveMetadata, "weave Knowledge from Metadata", $tags="")
-Rel_D(DataFabric.KnowledgeSlipbox, KnowledgeBase, "resolve the knowledge", $tags="")
-Rel_D(DataFabric.KnowledgeSlipbox, LLM, "resolve the knowledge", $tags="")
 Rel_D(DataFabric.FabricBroker, DataOwner, "data pipeline", $tags="")
-Rel_D(DataFabric.FabricBroker, ERP, "data pipeline", $tags="")
-Rel_D(DataFabric.FabricBroker, DataLake, "data pipeline", $tags="")
-Rel_D(DataFabric.FabricBroker, DataWarehouse, "data pipeline", $tags="")
-Rel_D(DataFabric.FabricBroker, CloudDataStorage, "data pipeline", $tags="")
-Rel_D(DataFabric.FabricBroker, DataSource, "data pipeline", $tags="")
 Rel_D(DataFabric.ActiveMetadata, DataFabric.FabricBroker, "access data source through Broker", $tags="")
-Rel_D(DataLake, DataFabric.ActiveMetadata, "convert", $tags="")
-Rel_D(DataWarehouse, DataFabric.ActiveMetadata, "convert", $tags="")
-Rel_D(DataSource, DataFabric.ActiveMetadata, "convert", $tags="")
+Rel_D(DataFabric.FabricAPIProvider, DataFabric.KnowledgeSlipbox, "", $tags="")
+Rel_D(DataFabric.FabricAPIProvider, DataFabric.ActiveMetadata, "", $tags="")
+Rel_D(DataFabric.Jotter, DataFabric.KnowledgeSlipbox, "request", $tags="")
+Rel_D(DataFabric.Jotter, DataFabric.FabricAPIProvider, "", $tags="")
 
 SHOW_LEGEND(true)
 @enduml

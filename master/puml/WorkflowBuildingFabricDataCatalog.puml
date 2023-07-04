@@ -1,0 +1,25 @@
+@startuml
+set separator none
+title Active Metadata - Dynamic
+
+left to right direction
+
+!include <C4/C4>
+!include <C4/C4_Context>
+!include <C4/C4_Container>
+!include <C4/C4_Component>
+
+Container_Boundary("DataFabric.ActiveMetadata_boundary", "Active Metadata", $tags="") {
+  Component(DataFabric.ActiveMetadata.MetaGin, "Meta Gin", "Active Metadata", "Metadata Analyzer", $tags="")
+  Component(DataFabric.ActiveMetadata.ODDSpecification, "ODD Specification", "Active Metadata", "Data Catalog Schema", $tags="")
+  Component(DataFabric.ActiveMetadata.FabricDataCatalog, "Fabric Data Catalog", "Active Metadata", "Integrated Data Catalog", $tags="")
+}
+
+Container(DataFabric.FabricBroker, "Fabric Broker", "Int2 Data Fabric", "Broker to manage data pipeline.", $tags="")
+
+Rel_D(DataFabric.FabricBroker, DataFabric.ActiveMetadata.MetaGin, "2. access data source through Broker", $tags="")
+Rel_D(DataFabric.ActiveMetadata.MetaGin, DataFabric.ActiveMetadata.ODDSpecification, "3. analyze", $tags="")
+Rel_D(DataFabric.ActiveMetadata.ODDSpecification, DataFabric.ActiveMetadata.FabricDataCatalog, "4. convert", $tags="")
+
+SHOW_LEGEND(true)
+@enduml

@@ -20,13 +20,11 @@ Container_Boundary("DataFabric.ActiveMetadata_boundary", "Active Metadata", $tag
 }
 
 Container(DataFabric.Jotter, "Jotter", "Data Fabric", "Web Application", $tags="")
-System_Ext(DataSource, "Data Source", "A type of data source in general.", $tags="")
 Container(DataFabric.FabricBroker, "Fabric Broker", "Int2 Data Fabric", "Broker to manage data pipeline.", $tags="")
 
 Rel_D(DataFabric.ActiveMetadata.MetaGin, DataFabric.FabricBroker, "1. access data source via Broker", $tags="")
 Rel_D(DataFabric.KnowledgeSlipbox.KnowledgeWeaver, DataFabric.ActiveMetadata.MetaGin, "2. weave Knowledge from Metadata", $tags="")
 Rel_D(DataFabric.KnowledgeSlipbox.KnowledgeWeaver, DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase, "3. build Local Knowledge Graph", $tags="")
-Rel_D(DataFabric.FabricBroker, DataSource, "4. data pipeline", $tags="")
 Rel_D(DataFabric.Jotter, DataFabric.KnowledgeSlipbox.KnowledgeSlipboxApiProvider, "5. request", $tags="")
 Rel_D(DataFabric.KnowledgeSlipbox.KnowledgeSlipboxApiProvider, DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase, "6. fetch", $tags="")
 
