@@ -39,7 +39,7 @@
         <div class="content p-3">
           <div><h1>로컬 지식 그래프 아키텍처</h1>
 <p>Local Knowledge Graph 는 Data Set 에 포함된 metadata 와 자동화된 데이터 분석을 통해 generated metadata 에서 Entity를 식별하고 관계를 정의한다.</p>
-<h2>1. 메타데이터 추출 과 Fabric Data Catalog</h2>
+<h3>1. 메타데이터 추출 과 Fabric Data Catalog</h3>
 <p>아래 다이어그램은 Fabric 에 연결된 Data Set 에서 메타데이터를 추출하는 흐름을 나타낸다. 데이터 소스에서 메타데이터에 포함돼 있거나 추출된 데이터 스키마는 ODD Specification 을 통해서 Fabric Data Catalog 로 변환되어 관리된다. Meta Gin 은 메테데이터 프로세싱 엔진이다.</p>
 <p>
  <div>
@@ -353,7 +353,7 @@
   </figure>
  </div></p>
 <p>작성된 Fabric Catalog 의 Entities 는 Knowledge Weaver 의 Semantic Processing 을 통해서 식별된 관계 정의와 함께 Local Knowlege Graph 로 구축된다.</p>
-<h2>2. Local Knowledge Graph 구축과 Knowledge Catalog 로 통합</h2>
+<h3>2. Local Knowledge Graph 구축과 Knowledge Catalog 로 통합</h3>
 <p>
  <div>
   <figure style="width: min(100%, 1283px);">
@@ -624,7 +624,7 @@
    </figcaption>
   </figure>
  </div></p>
-<p>이렇게 구축된 Fabric Data Catalog 와 Local Knowledge Graph 는 API 레벨에서의 통합을 통해서 Knowledge Catalog 로 사용할 수 있다. 아래 다이어그램은 Knowlege Catalog 의 개념도를 나타낸다.</p>
+<p>구축된 Fabric Data Catalog 와 Local Knowledge Graph 는 API 레벨에서 Knowledge Catalog 로 통합한다. 아래 다이어그램은 Knowlege Catalog 의 개념도를 나타낸다.</p>
 <p>
  <div>
   <figure style="width: min(100%, 1159px);">
@@ -983,10 +983,9 @@
    </figcaption>
   </figure>
  </div></p>
-<h3>Data Schema For Local Knowlege Graph</h3>
-<h4>자율주행 학습 데이터를 지식 그래프로 추출하는 과정(nuScene 데이터를 이용)</h4>
+<h2>지식 그래프로 생성 과정 (예. nuScene 데이터)</h2>
 <ol>
- <li>nuScene 데이터 세트 고유 형식</li>
+ <li>nuScene Data Set 데이터 예시</li>
 </ol>
 <pre><code class="language-json">{
     {
@@ -1046,20 +1045,48 @@
         "next": "",
         "num_lidar_pts": 2,
         "num_radar_pts": 0
-    },
-    "instance": {
-        "token": "5e2b6fd1fab74d04a79eefebbec357bb",
-        "category_token": "85abebdccd4d46c7be428af5a6173947",
-        "nbr_annotations": 13,
-        "first_annotation_token": "173a50411564442ab195e132472fde71",
-        "last_annotation_token": "2cd832644d09479389ed0785e5de85c9"
     }
 }
 }
 </code></pre>
 <ol start="2">
  <li></li>
-</ol></div>
+</ol>
+<pre><code class="language-json">{
+    "oddrn": "//aws/s3/data/nuScene/catalog-sample.csv",
+    "name": "1.csv",
+    "owner": "aws:iam:88898998/username",
+    "metadata": {
+        "location": "internet",        
+    },
+    "parentOddrn": null,    
+    "description": "nuScene Sample Data",
+    "updatedAt": "2021-02-11T00:01:00Z",
+    "subtype": "DATASET_TABLE",
+    "fieldList": [
+        {
+           "oddrn": "//aws/s3/sample.data/path/to/folder/file.csv/token",
+           "name": "token",
+           "owner": "aws:iam:88898998/username",
+           "metadata": {},
+           "parentFieldOddrn": null,
+           "type": "TYPE_STRING",
+           "isKey": false,
+           "isValue": false,
+           "defaultValue": null,
+           "description": "Goods name",
+           "stats": {
+               "string_stats": {
+                   "maxLength": 120,
+                   "avgLength": 52,
+                   "nullsCount": 0,
+                   "uniqueCount": 10000
+               }
+           }
+        }      
+    ]
+}
+</code></pre></div>
         </div>
       </div>
     </div>
