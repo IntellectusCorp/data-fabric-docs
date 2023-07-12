@@ -13,18 +13,18 @@ Boundary(group_1, "Data Source", $tags="Data Source") {
 
 AddBoundaryTag("Int2 Data Fabric", $borderColor="#cccccc", $fontColor="#cccccc")
 Boundary(group_2, "Int2 Data Fabric", $tags="Int2 Data Fabric") {
-  System(DataFabric, "Data Fabric", "Weaving together structured and contextualized knowledge from diverse sources.", $tags="")
+  System(DataFabric, "Data Fabric", $descr="Weaving together structured and contextualized knowledge from diverse sources.", $tags="", $link="")
 }
 
 AddBoundaryTag("Stakeholders", $borderColor="#cccccc", $fontColor="#cccccc")
 Boundary(group_3, "Stakeholders", $tags="Stakeholders") {
-  Person(DataConsumer, "Data Consumer", "A consumer who are needed a data in various context.", $tags="")
-  Person(DataOwner, "Data Owner", "A provider who owned data set.", $tags="")
+  Person(DataConsumer, "Data Consumer", $descr="A consumer who are needed a data in various context.", $tags="", $link="")
+  Person(DataOwner, "Data Owner", $descr="A provider who owned data set.", $tags="", $link="")
 }
 
 
-Rel_D(DataConsumer, DataFabric, "fetch data", $tags="")
-Rel_D(DataFabric, DataOwner, "data pipeline", $tags="")
+Rel_D(DataConsumer, DataFabric, "fetch data", $techn="", $tags="", $link="")
+Rel_D(DataFabric, DataOwner, "data pipeline", $techn="", $tags="", $link="")
 
 SHOW_LEGEND(true)
 @enduml

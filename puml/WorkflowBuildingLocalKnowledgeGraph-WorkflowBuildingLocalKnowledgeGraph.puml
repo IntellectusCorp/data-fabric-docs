@@ -11,18 +11,18 @@ left to right direction
 skinparam svgDimensionStyle false
 skinparam preserveAspectRatio meet
 Container_Boundary("DataFabric.KnowledgeSlipbox_boundary", "Knowledge Slipbox", $tags="") {
-  Component(DataFabric.KnowledgeSlipbox.KnowledgeWeaver, "Knowledge Weaver", "Knowledge Weaver", $tags="")
-  Component(DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase, "Knowledge Graph Database", "Graph Database", $tags="")
+  Component(DataFabric.KnowledgeSlipbox.KnowledgeWeaver, "Knowledge Weaver", $techn="", $descr="Knowledge Weaver", $tags="", $link="")
+  Component(DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase, "Knowledge Graph Database", $techn="", $descr="Graph Database", $tags="", $link="")
 }
 
 Container_Boundary("DataFabric.ActiveMetadata_boundary", "Active Metadata", $tags="") {
-  Component(DataFabric.ActiveMetadata.MetaGin, "Meta Gin", "Active Metadata", "Metadata Analyzer", $tags="")
-  Component(DataFabric.ActiveMetadata.FabricDataCatalog, "Fabric Data Catalog", "Active Metadata", "Integrated Data Catalog", $tags="")
+  Component(DataFabric.ActiveMetadata.MetaGin, "Meta Gin", $techn="Active Metadata", $descr="Metadata Analyzer", $tags="", $link="")
+  Component(DataFabric.ActiveMetadata.FabricDataCatalog, "Fabric Data Catalog", $techn="Active Metadata", $descr="Integrated Data Catalog", $tags="", $link="")
 }
 
-Rel_D(DataFabric.ActiveMetadata.FabricDataCatalog, DataFabric.ActiveMetadata.MetaGin, "1. analyze", $tags="")
-Rel_D(DataFabric.ActiveMetadata.MetaGin, DataFabric.KnowledgeSlipbox.KnowledgeWeaver, "2. weave Knowledge from Metadata", $tags="")
-Rel_D(DataFabric.KnowledgeSlipbox.KnowledgeWeaver, DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase, "3. build Local Knowledge Graph", $tags="")
+Rel_D(DataFabric.ActiveMetadata.FabricDataCatalog, DataFabric.ActiveMetadata.MetaGin, "1. analyze", $techn="", $tags="", $link="")
+Rel_D(DataFabric.ActiveMetadata.MetaGin, DataFabric.KnowledgeSlipbox.KnowledgeWeaver, "2. weave Knowledge from Metadata", $techn="", $tags="", $link="")
+Rel_D(DataFabric.KnowledgeSlipbox.KnowledgeWeaver, DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase, "3. build Local Knowledge Graph", $techn="", $tags="", $link="")
 
 SHOW_LEGEND(true)
 @enduml

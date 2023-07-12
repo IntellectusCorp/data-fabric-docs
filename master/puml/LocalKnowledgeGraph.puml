@@ -10,23 +10,23 @@ top to bottom direction
 !include <C4/C4_Component>
 
 Container_Boundary("DataFabric.KnowledgeSlipbox_boundary", "Knowledge Slipbox", $tags="") {
-  Component(DataFabric.KnowledgeSlipbox.KnowledgeWeaver, "Knowledge Weaver", "Knowledge Weaver", $tags="")
-  Component(DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase, "Knowledge Graph Database", "Graph Database", $tags="")
-  Component(DataFabric.KnowledgeSlipbox.KnowledgeSlipboxApiProvider, "Knowledge Slipbox Api Provider", "Knowledge Graph", $tags="")
+  Component(DataFabric.KnowledgeSlipbox.KnowledgeWeaver, "Knowledge Weaver", $techn="", $descr="Knowledge Weaver", $tags="", $link="")
+  Component(DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase, "Knowledge Graph Database", $techn="", $descr="Graph Database", $tags="", $link="")
+  Component(DataFabric.KnowledgeSlipbox.KnowledgeSlipboxApiProvider, "Knowledge Slipbox Api Provider", $techn="", $descr="Knowledge Graph", $tags="", $link="")
 }
 
 Container_Boundary("DataFabric.ActiveMetadata_boundary", "Active Metadata", $tags="") {
-  Component(DataFabric.ActiveMetadata.MetaGin, "Meta Gin", "Active Metadata", "Metadata Analyzer", $tags="")
+  Component(DataFabric.ActiveMetadata.MetaGin, "Meta Gin", $techn="Active Metadata", $descr="Metadata Analyzer", $tags="", $link="")
 }
 
-Container(DataFabric.Jotter, "Jotter", "Data Fabric", "Web Application", $tags="")
-Container(DataFabric.FabricBroker, "Fabric Broker", "Int2 Data Fabric", "Broker to manage data pipeline.", $tags="")
+Container(DataFabric.Jotter, "Jotter", $techn="Data Fabric", $descr="Web Application", $tags="", $link="")
+Container(DataFabric.FabricBroker, "Fabric Broker", $techn="Int2 Data Fabric", $descr="Broker to manage data pipeline.", $tags="", $link="")
 
-Rel_D(DataFabric.ActiveMetadata.MetaGin, DataFabric.FabricBroker, "1. access data source via Broker", $tags="")
-Rel_D(DataFabric.KnowledgeSlipbox.KnowledgeWeaver, DataFabric.ActiveMetadata.MetaGin, "2. weave Knowledge from Metadata", $tags="")
-Rel_D(DataFabric.KnowledgeSlipbox.KnowledgeWeaver, DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase, "3. build Local Knowledge Graph", $tags="")
-Rel_D(DataFabric.Jotter, DataFabric.KnowledgeSlipbox.KnowledgeSlipboxApiProvider, "5. request", $tags="")
-Rel_D(DataFabric.KnowledgeSlipbox.KnowledgeSlipboxApiProvider, DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase, "6. fetch", $tags="")
+Rel_D(DataFabric.ActiveMetadata.MetaGin, DataFabric.FabricBroker, "1. access data source via Broker", $techn="", $tags="", $link="")
+Rel_D(DataFabric.KnowledgeSlipbox.KnowledgeWeaver, DataFabric.ActiveMetadata.MetaGin, "2. weave Knowledge from Metadata", $techn="", $tags="", $link="")
+Rel_D(DataFabric.KnowledgeSlipbox.KnowledgeWeaver, DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase, "3. build Local Knowledge Graph", $techn="", $tags="", $link="")
+Rel_D(DataFabric.Jotter, DataFabric.KnowledgeSlipbox.KnowledgeSlipboxApiProvider, "5. request", $techn="", $tags="", $link="")
+Rel_D(DataFabric.KnowledgeSlipbox.KnowledgeSlipboxApiProvider, DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase, "6. fetch", $techn="", $tags="", $link="")
 
 SHOW_LEGEND(true)
 @enduml

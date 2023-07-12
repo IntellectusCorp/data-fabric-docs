@@ -8,23 +8,23 @@ top to bottom direction
 !include <C4/C4_Context>
 !include <C4/C4_Container>
 
-Person(DataOwner, "Data Owner", "A provider who owned data set.", $tags="")
+Person(DataOwner, "Data Owner", $descr="A provider who owned data set.", $tags="", $link="")
 
 System_Boundary("DataFabric_boundary", "Data Fabric", $tags="") {
-  Container(DataFabric.Jotter, "Jotter", "Data Fabric", "Web Application", $tags="")
-  Container(DataFabric.KnowledgeSlipbox, "Knowledge Slipbox", "Knowledge Graph", "Knowledge Graph", $tags="")
-  Container(DataFabric.ActiveMetadata, "Active Metadata", "Active Metadata", "Active Metadata", $tags="")
-  Container(DataFabric.FabricBroker, "Fabric Broker", "Int2 Data Fabric", "Broker to manage data pipeline.", $tags="")
-  Container(DataFabric.FabricAPIProvider, "Fabric API Provider", "Int2 Data Fabric", "API", $tags="")
+  Container(DataFabric.Jotter, "Jotter", $techn="Data Fabric", $descr="Web Application", $tags="", $link="")
+  Container(DataFabric.KnowledgeSlipbox, "Knowledge Slipbox", $techn="Knowledge Graph", $descr="Knowledge Graph", $tags="", $link="")
+  Container(DataFabric.ActiveMetadata, "Active Metadata", $techn="Active Metadata", $descr="Active Metadata", $tags="", $link="")
+  Container(DataFabric.FabricBroker, "Fabric Broker", $techn="Int2 Data Fabric", $descr="Broker to manage data pipeline.", $tags="", $link="")
+  Container(DataFabric.FabricAPIProvider, "Fabric API Provider", $techn="Int2 Data Fabric", $descr="API", $tags="", $link="")
 }
 
-Rel_D(DataFabric.KnowledgeSlipbox, DataFabric.ActiveMetadata, "weave Knowledge from Metadata", $tags="")
-Rel_D(DataFabric.FabricBroker, DataOwner, "data pipeline", $tags="")
-Rel_D(DataFabric.ActiveMetadata, DataFabric.FabricBroker, "access data source through Broker", $tags="")
-Rel_D(DataFabric.FabricAPIProvider, DataFabric.KnowledgeSlipbox, "", $tags="")
-Rel_D(DataFabric.FabricAPIProvider, DataFabric.ActiveMetadata, "", $tags="")
-Rel_D(DataFabric.Jotter, DataFabric.KnowledgeSlipbox, "request", $tags="")
-Rel_D(DataFabric.Jotter, DataFabric.FabricAPIProvider, "", $tags="")
+Rel_D(DataFabric.KnowledgeSlipbox, DataFabric.ActiveMetadata, "weave Knowledge from Metadata", $techn="", $tags="", $link="")
+Rel_D(DataFabric.FabricBroker, DataOwner, "data pipeline", $techn="", $tags="", $link="")
+Rel_D(DataFabric.ActiveMetadata, DataFabric.FabricBroker, "access data source through Broker", $techn="", $tags="", $link="")
+Rel_D(DataFabric.FabricAPIProvider, DataFabric.KnowledgeSlipbox, "", $techn="", $tags="", $link="")
+Rel_D(DataFabric.FabricAPIProvider, DataFabric.ActiveMetadata, "", $techn="", $tags="", $link="")
+Rel_D(DataFabric.Jotter, DataFabric.KnowledgeSlipbox, "request", $techn="", $tags="", $link="")
+Rel_D(DataFabric.Jotter, DataFabric.FabricAPIProvider, "", $techn="", $tags="", $link="")
 
 SHOW_LEGEND(true)
 @enduml
