@@ -1,6 +1,6 @@
 @startuml
 set separator none
-title Knowledge Slipbox - Dynamic
+title Knowledge Graph App - Dynamic
 
 left to right direction
 
@@ -11,24 +11,24 @@ left to right direction
 
 skinparam svgDimensionStyle false
 skinparam preserveAspectRatio meet
-Container_Boundary("DataFabric.KnowledgeSlipbox_boundary", "Knowledge Slipbox", $tags="") {
-  Component(DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase, "Knowledge Graph Database", $techn="", $descr="Graph Database", $tags="", $link="")
-  Component(DataFabric.KnowledgeSlipbox.KnowledgeSlipboxApiProvider, "Knowledge Slipbox Api Provider", $techn="", $descr="Knowledge Graph", $tags="", $link="")
+Container_Boundary("DataFabric.MetadataApp_boundary", "Metadata App", $tags="") {
+  Component(DataFabric.MetadataApp.MetaGin, "Meta Gin", $techn="Component: Spring bean", $descr="Metadata Analyzer", $tags="", $link="")
+  Component(DataFabric.MetadataApp.FabricDataCatalog, "Fabric Data Catalog", $techn="", $descr="Component: Spring bean", $tags="", $link="")
 }
 
-Container_Boundary("DataFabric.ActiveMetadata_boundary", "Active Metadata", $tags="") {
-  Component(DataFabric.ActiveMetadata.MetaGin, "Meta Gin", $techn="Active Metadata", $descr="Metadata Analyzer", $tags="", $link="")
-  Component(DataFabric.ActiveMetadata.FabricDataCatalog, "Fabric Data Catalog", $techn="Active Metadata", $descr="Integrated Data Catalog", $tags="", $link="")
+Container_Boundary("DataFabric.KnowledgeGraphApp_boundary", "Knowledge Graph App", $tags="") {
+  Component(DataFabric.KnowledgeGraphApp.KnowledgeSlipboxApiProvider, "Knowledge Slipbox Api Provider", $techn="", $descr="Knowledge Graph", $tags="", $link="")
 }
 
-Container(DataFabric.Jotter, "Jotter", $techn="Data Fabric", $descr="Web Application", $tags="", $link="")
-Container(DataFabric.FabricAPIProvider, "Fabric API Provider", $techn="Int2 Data Fabric", $descr="API", $tags="", $link="")
+ContainerDb(DataFabric.KnowledgeGraphDatabase, "Knowledge Graph Database", $techn="", $descr="DB: Neo4j or AWS Neptune", $tags="", $link="")
+Container(DataFabric.WebApplication, "Web Application", $techn="", $descr="Serverless nextjs", $tags="", $link="")
+Container(DataFabric.APIService, "API Service", $techn="", $descr="API Gateway Managed Service", $tags="", $link="")
 
-Rel_D(DataFabric.ActiveMetadata.MetaGin, DataFabric.ActiveMetadata.FabricDataCatalog, "1. fetch", $techn="", $tags="", $link="")
-Rel_D(DataFabric.KnowledgeSlipbox.KnowledgeSlipboxApiProvider, DataFabric.KnowledgeSlipbox.KnowledgeGraphDatabase, "2. fetch", $techn="", $tags="", $link="")
-Rel_D(DataFabric.FabricAPIProvider, DataFabric.KnowledgeSlipbox.KnowledgeSlipboxApiProvider, "3. ", $techn="", $tags="", $link="")
-Rel_D(DataFabric.FabricAPIProvider, DataFabric.ActiveMetadata.MetaGin, "4. ", $techn="", $tags="", $link="")
-Rel_D(DataFabric.Jotter, DataFabric.FabricAPIProvider, "5. use as Knowledge Catalog", $techn="", $tags="", $link="")
+Rel_D(DataFabric.MetadataApp.MetaGin, DataFabric.MetadataApp.FabricDataCatalog, "1. fetch", $techn="", $tags="", $link="")
+Rel_D(DataFabric.KnowledgeGraphApp.KnowledgeSlipboxApiProvider, DataFabric.KnowledgeGraphDatabase, "2. fetch", $techn="", $tags="", $link="")
+Rel_D(DataFabric.APIService, DataFabric.KnowledgeGraphApp.KnowledgeSlipboxApiProvider, "3. ", $techn="", $tags="", $link="")
+Rel_D(DataFabric.APIService, DataFabric.MetadataApp.MetaGin, "4. ", $techn="", $tags="", $link="")
+Rel_D(DataFabric.WebApplication, DataFabric.APIService, "5. use as Knowledge Catalog", $techn="", $tags="", $link="")
 
 SHOW_LEGEND(true)
 @enduml

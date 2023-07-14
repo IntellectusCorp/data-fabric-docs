@@ -9,8 +9,12 @@ top to bottom direction
 
 skinparam svgDimensionStyle false
 skinparam preserveAspectRatio meet
-AddBoundaryTag("Data Source", $borderColor="#cccccc", $fontColor="#cccccc")
-Boundary(group_1, "Data Source", $tags="Data Source") {
+AddBoundaryTag("Data Owner", $borderColor="#cccccc", $fontColor="#cccccc")
+Boundary(group_1, "Data Owner", $tags="Data Owner") {
+  Person(ERP, "ERP", $descr="A type of data source, ERP.", $tags="", $link="")
+  Person(DataLake, "Data Lake", $descr="A type of data source, Data Lake.", $tags="", $link="")
+  Person(DataWarehouse, "Data Warehouse", $descr="A type of data source, Data Warehouse.", $tags="", $link="")
+  Person(CloudDataStorage, "Cloud Data Storage", $descr="A type of data source, Cloud Data Storage.", $tags="", $link="")
 }
 
 AddBoundaryTag("Int2 Data Fabric", $borderColor="#cccccc", $fontColor="#cccccc")
@@ -21,12 +25,14 @@ Boundary(group_2, "Int2 Data Fabric", $tags="Int2 Data Fabric") {
 AddBoundaryTag("Stakeholders", $borderColor="#cccccc", $fontColor="#cccccc")
 Boundary(group_3, "Stakeholders", $tags="Stakeholders") {
   Person(DataConsumer, "Data Consumer", $descr="A consumer who are needed a data in various context.", $tags="", $link="")
-  Person(DataOwner, "Data Owner", $descr="A provider who owned data set.", $tags="", $link="")
 }
 
 
-Rel_D(DataConsumer, DataFabric, "fetch data", $techn="", $tags="", $link="")
-Rel_D(DataFabric, DataOwner, "data pipeline", $techn="", $tags="", $link="")
+Rel_D(DataConsumer, DataFabric, "", $techn="", $tags="", $link="")
+Rel_D(DataFabric, ERP, "", $techn="", $tags="", $link="")
+Rel_D(DataFabric, DataLake, "", $techn="", $tags="", $link="")
+Rel_D(DataFabric, DataWarehouse, "", $techn="", $tags="", $link="")
+Rel_D(DataFabric, CloudDataStorage, "", $techn="", $tags="", $link="")
 
 SHOW_LEGEND(true)
 @enduml

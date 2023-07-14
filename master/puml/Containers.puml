@@ -8,23 +8,55 @@ top to bottom direction
 !include <C4/C4_Context>
 !include <C4/C4_Container>
 
-Person(DataOwner, "Data Owner", $descr="A provider who owned data set.", $tags="", $link="")
+Person(DataConsumer, "Data Consumer", $descr="A consumer who are needed a data in various context.", $tags="", $link="")
+Person(ERP, "ERP", $descr="A type of data source, ERP.", $tags="", $link="")
+Person(DataLake, "Data Lake", $descr="A type of data source, Data Lake.", $tags="", $link="")
+Person(DataWarehouse, "Data Warehouse", $descr="A type of data source, Data Warehouse.", $tags="", $link="")
+Person(CloudDataStorage, "Cloud Data Storage", $descr="A type of data source, Cloud Data Storage.", $tags="", $link="")
 
 System_Boundary("DataFabric_boundary", "Data Fabric", $tags="") {
-  Container(DataFabric.Jotter, "Jotter", $techn="Data Fabric", $descr="Web Application", $tags="", $link="")
-  Container(DataFabric.KnowledgeSlipbox, "Knowledge Slipbox", $techn="Knowledge Graph", $descr="Knowledge Graph", $tags="", $link="")
-  Container(DataFabric.ActiveMetadata, "Active Metadata", $techn="Active Metadata", $descr="Active Metadata", $tags="", $link="")
-  Container(DataFabric.FabricBroker, "Fabric Broker", $techn="Int2 Data Fabric", $descr="Broker to manage data pipeline.", $tags="", $link="")
-  Container(DataFabric.FabricAPIProvider, "Fabric API Provider", $techn="Int2 Data Fabric", $descr="API", $tags="", $link="")
+  AddBoundaryTag("Client-side", $borderColor="#cccccc", $fontColor="#cccccc")
+  Boundary(group_1, "Client-side", $tags="Client-side") {
+    Container(DataFabric.WebApplication, "Web Application", $techn="", $descr="Serverless nextjs", $tags="", $link="")
+  }
+
+  AddBoundaryTag("Server-side", $borderColor="#cccccc", $fontColor="#cccccc")
+  Boundary(group_2, "Server-side", $tags="Server-side") {
+      AddBoundaryTag("Server-side/API Gateway Service", $borderColor="#cccccc", $fontColor="#cccccc")
+      Boundary(group_3, "API Gateway Service", $tags="Server-side/API Gateway Service") {
+        Container(DataFabric.APIService, "API Service", $techn="", $descr="API Gateway Managed Service", $tags="", $link="")
+      }
+
+      AddBoundaryTag("Server-side/Knowledge Service", $borderColor="#cccccc", $fontColor="#cccccc")
+      Boundary(group_4, "Knowledge Service", $tags="Server-side/Knowledge Service") {
+        ContainerDb(DataFabric.KnowledgeGraphDatabase, "Knowledge Graph Database", $techn="", $descr="DB: Neo4j or AWS Neptune", $tags="", $link="")
+        Container(DataFabric.KnowledgeGraphApp, "Knowledge Graph App", $techn="Container: Serverless Java or Typescript Application", $descr="Provides", $tags="", $link="")
+      }
+
+      AddBoundaryTag("Server-side/Metadata Service", $borderColor="#cccccc", $fontColor="#cccccc")
+      Boundary(group_5, "Metadata Service", $tags="Server-side/Metadata Service") {
+        Container(DataFabric.MetadataApp, "Metadata App", $techn="", $descr="Active Metadata", $tags="", $link="")
+        ContainerDb(DataFabric.MetadataDatabase, "Metadata Database", $techn="", $descr="DB: AWS Aurora Postgrsql", $tags="", $link="")
+      }
+
+  }
+
+  Container(DataFabric.DataSourceGateway, "Data Source Gateway", $techn="Container: Java Application", $descr="Manage data pipeline between distburited data source and Data Fabric in secure method.", $tags="", $link="")
 }
 
-Rel_D(DataFabric.KnowledgeSlipbox, DataFabric.ActiveMetadata, "weave Knowledge from Metadata", $techn="", $tags="", $link="")
-Rel_D(DataFabric.FabricBroker, DataOwner, "data pipeline", $techn="", $tags="", $link="")
-Rel_D(DataFabric.ActiveMetadata, DataFabric.FabricBroker, "access data source through Broker", $techn="", $tags="", $link="")
-Rel_D(DataFabric.FabricAPIProvider, DataFabric.KnowledgeSlipbox, "", $techn="", $tags="", $link="")
-Rel_D(DataFabric.FabricAPIProvider, DataFabric.ActiveMetadata, "", $techn="", $tags="", $link="")
-Rel_D(DataFabric.Jotter, DataFabric.KnowledgeSlipbox, "request", $techn="", $tags="", $link="")
-Rel_D(DataFabric.Jotter, DataFabric.FabricAPIProvider, "", $techn="", $tags="", $link="")
+Rel_D(DataConsumer, DataFabric.APIService, "", $techn="", $tags="", $link="")
+Rel_D(DataConsumer, DataFabric.WebApplication, "", $techn="", $tags="", $link="")
+Rel_D(DataFabric.KnowledgeGraphApp, DataFabric.KnowledgeGraphDatabase, "build Local Knowledge Graph", $techn="", $tags="", $link="")
+Rel_D(DataFabric.KnowledgeGraphApp, DataFabric.MetadataApp, "", $techn="", $tags="", $link="")
+Rel_D(DataFabric.DataSourceGateway, ERP, "", $techn="", $tags="", $link="")
+Rel_D(DataFabric.DataSourceGateway, DataLake, "", $techn="", $tags="", $link="")
+Rel_D(DataFabric.DataSourceGateway, DataWarehouse, "", $techn="", $tags="", $link="")
+Rel_D(DataFabric.DataSourceGateway, CloudDataStorage, "", $techn="", $tags="", $link="")
+Rel_D(DataFabric.MetadataApp, DataFabric.DataSourceGateway, "", $techn="", $tags="", $link="")
+Rel_D(DataFabric.MetadataApp, DataFabric.MetadataDatabase, "", $techn="", $tags="", $link="")
+Rel_D(DataFabric.APIService, DataFabric.KnowledgeGraphApp, "", $techn="", $tags="", $link="")
+Rel_D(DataFabric.APIService, DataFabric.MetadataApp, "", $techn="", $tags="", $link="")
+Rel_D(DataFabric.WebApplication, DataFabric.APIService, "", $techn="", $tags="", $link="")
 
 SHOW_LEGEND(true)
 @enduml
