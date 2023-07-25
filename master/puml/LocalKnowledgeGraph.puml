@@ -9,17 +9,17 @@ top to bottom direction
 !include <C4/C4_Container>
 !include <C4/C4_Component>
 
-Container_Boundary("DataFabric.MetadataApp_boundary", "Metadata App", $tags="") {
-  Component(DataFabric.MetadataApp.MetaGin, "Meta Gin", $techn="Component: Spring bean", $descr="Metadata Analyzer", $tags="", $link="")
-}
-
 Container_Boundary("DataFabric.KnowledgeGraphApp_boundary", "Knowledge Graph App", $tags="") {
   Component(DataFabric.KnowledgeGraphApp.KnowledgeWeaver, "Knowledge Weaver", $techn="", $descr="Knowledge Weaver", $tags="", $link="")
   Component(DataFabric.KnowledgeGraphApp.KnowledgeSlipboxApiProvider, "Knowledge Slipbox Api Provider", $techn="", $descr="Knowledge Graph", $tags="", $link="")
 }
 
+Container_Boundary("DataFabric.MetadataApp_boundary", "Metadata App", $tags="") {
+  Component(DataFabric.MetadataApp.MetaGin, "Meta Gin", $techn="Component: Spring bean", $descr="Metadata Analyzer", $tags="", $link="")
+}
+
 ContainerDb(DataFabric.KnowledgeGraphDatabase, "Knowledge Graph Database", $techn="", $descr="DB: Neo4j or AWS Neptune", $tags="", $link="")
-Container(DataFabric.DataSourceGateway, "Data Source Gateway", $techn="Container: Java Application", $descr="Manage data pipeline between distburited data source and Data Fabric in secure method.", $tags="", $link="")
+Container(DataFabric.DataSourceGateway, "Data Source Gateway", $techn="Container: Java Application", $descr="Manage data pipeline between distburited data source and Data Fabric in secure.", $tags="", $link="")
 
 Rel_D(DataFabric.MetadataApp.MetaGin, DataFabric.DataSourceGateway, "1. access data source via Broker", $techn="", $tags="", $link="")
 Rel_D(DataFabric.KnowledgeGraphApp.KnowledgeWeaver, DataFabric.MetadataApp.MetaGin, "2. weave Knowledge from Metadata", $techn="", $tags="", $link="")

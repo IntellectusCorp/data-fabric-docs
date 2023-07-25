@@ -32,7 +32,7 @@
         </ul>
         <p class="menu-label">Software systems</p>
         <ul class="menu-list has-site-branding">
-          <li><a href="../data-fabric/" class="">Data Fabric</a></li>
+          <li><a href="../data-fabric/" class="">Data Fabric</a><a href="../data-pipeline/" class="">Data Pipeline</a></li>
         </ul>
       </aside>
       <div class="container is-fluid has-background-white">
@@ -263,14 +263,8 @@
        <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="12" x="188.5" y="175.7764">
         in
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="48" x="58" y="192.0732">
-        secure
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="106" y="192.0732">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="58" x="110" y="192.0732">
-        method.
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="52" x="87" y="192.0732">
+        secure.
        </text>
       </g><!--link DataFabric.DataSourceGateway to DataFabric.MetadataApp.MetaGin-->
       <g id="link_DataFabric.DataSourceGateway_DataFabric.MetadataApp.MetaGin">
@@ -381,7 +375,16 @@
      <defs /><g>
       <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthadjust="spacing" textlength="190" x="575" y="22.9951">
        Metadata App - Dynamic
-      </text><!--cluster DataFabric.MetadataApp_boundary-->
+      </text><!--cluster DataFabric.KnowledgeGraphApp_boundary-->
+      <g id="cluster_DataFabric.KnowledgeGraphApp_boundary">
+       <rect fill="none" height="139" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="222" x="734" y="51.2969" />
+       <text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="195" x="747.5" y="68.1484">
+        Knowledge Graph App
+       </text>
+       <text fill="#444444" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="80" x="805" y="83.0605">
+        [Container]
+       </text>
+      </g><!--cluster DataFabric.MetadataApp_boundary-->
       <g id="cluster_DataFabric.MetadataApp_boundary">
        <rect fill="none" height="153" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="547" x="7" y="44.2969" />
        <text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="124" x="218.5" y="61.1484">
@@ -390,14 +393,29 @@
        <text fill="#444444" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="80" x="240.5" y="76.0605">
         [Container]
        </text>
-      </g><!--cluster DataFabric.KnowledgeGraphApp_boundary-->
-      <g id="cluster_DataFabric.KnowledgeGraphApp_boundary">
-       <rect fill="none" height="139" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="222" x="734" y="51.2969" />
-       <text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="195" x="747.5" y="68.1484">
-        Knowledge Graph App
+      </g><!--entity DataFabric.KnowledgeGraphApp.KnowledgeWeaver-->
+      <g id="elem_DataFabric.KnowledgeGraphApp.KnowledgeWeaver">
+       <rect fill="#85BBF0" height="71.2188" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="190" x="750" y="102.7969" />
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="96" x="760" y="127.6484">
+        Knowledge
        </text>
-       <text fill="#444444" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="80" x="805" y="83.0605">
-        [Container]
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="856" y="127.6484">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="68" x="862" y="127.6484">
+        Weaver
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="843" y="144.417">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="77" x="779" y="160.7139">
+        Knowledge
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="856" y="160.7139">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="51" x="860" y="160.7139">
+        Weaver
        </text>
       </g><!--entity DataFabric.MetadataApp.MetaGin-->
       <g id="elem_DataFabric.MetadataApp.MetaGin">
@@ -473,30 +491,6 @@
        </text>
        <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="35" x="172" y="160.7139">
         bean
-       </text>
-      </g><!--entity DataFabric.KnowledgeGraphApp.KnowledgeWeaver-->
-      <g id="elem_DataFabric.KnowledgeGraphApp.KnowledgeWeaver">
-       <rect fill="#85BBF0" height="71.2188" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="190" x="750" y="102.7969" />
-       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="96" x="760" y="127.6484">
-        Knowledge
-       </text>
-       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="856" y="127.6484">
-        &nbsp;
-       </text>
-       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="68" x="862" y="127.6484">
-        Weaver
-       </text>
-       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="843" y="144.417">
-        &nbsp;
-       </text>
-       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="77" x="779" y="160.7139">
-        Knowledge
-       </text>
-       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="856" y="160.7139">
-        &nbsp;
-       </text>
-       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="51" x="860" y="160.7139">
-        Weaver
        </text>
       </g><!--entity DataFabric.KnowledgeGraphDatabase-->
       <g id="elem_DataFabric.KnowledgeGraphDatabase">
@@ -688,7 +682,16 @@
      <defs /><g>
       <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthadjust="spacing" textlength="260" x="455.5" y="22.9951">
        Knowledge Graph App - Dynamic
-      </text><!--cluster DataFabric.MetadataApp_boundary-->
+      </text><!--cluster DataFabric.KnowledgeGraphApp_boundary-->
+      <g id="cluster_DataFabric.KnowledgeGraphApp_boundary">
+       <rect fill="none" height="157" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="249" x="611" y="221.2969" />
+       <text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="195" x="638" y="238.1484">
+        Knowledge Graph App
+       </text>
+       <text fill="#444444" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="80" x="695.5" y="253.0605">
+        [Container]
+       </text>
+      </g><!--cluster DataFabric.MetadataApp_boundary-->
       <g id="cluster_DataFabric.MetadataApp_boundary">
        <rect fill="none" height="153" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="551" x="626.5" y="44.2969" />
        <text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="124" x="840" y="61.1484">
@@ -697,14 +700,38 @@
        <text fill="#444444" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="80" x="862" y="76.0605">
         [Container]
        </text>
-      </g><!--cluster DataFabric.KnowledgeGraphApp_boundary-->
-      <g id="cluster_DataFabric.KnowledgeGraphApp_boundary">
-       <rect fill="none" height="157" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="249" x="611" y="221.2969" />
-       <text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="195" x="638" y="238.1484">
-        Knowledge Graph App
+      </g><!--entity DataFabric.KnowledgeGraphApp.KnowledgeSlipboxApiProvider-->
+      <g id="elem_DataFabric.KnowledgeGraphApp.KnowledgeSlipboxApiProvider">
+       <rect fill="#85BBF0" height="89.8438" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="217" x="627" y="272.2969" />
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="96" x="637" y="297.1484">
+        Knowledge
        </text>
-       <text fill="#444444" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="80" x="695.5" y="253.0605">
-        [Container]
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="733" y="297.1484">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="62" x="739" y="297.1484">
+        Slipbox
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="801" y="297.1484">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="27" x="807" y="297.1484">
+        Api
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="75" x="698" y="315.7734">
+        Provider
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="733.5" y="332.542">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="77" x="674" y="348.8389">
+        Knowledge
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="751" y="348.8389">
+        &nbsp;
+       </text>
+       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="42" x="755" y="348.8389">
+        Graph
        </text>
       </g><!--entity DataFabric.MetadataApp.MetaGin-->
       <g id="elem_DataFabric.MetadataApp.MetaGin">
@@ -780,39 +807,6 @@
        </text>
        <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="35" x="1116.5" y="160.7139">
         bean
-       </text>
-      </g><!--entity DataFabric.KnowledgeGraphApp.KnowledgeSlipboxApiProvider-->
-      <g id="elem_DataFabric.KnowledgeGraphApp.KnowledgeSlipboxApiProvider">
-       <rect fill="#85BBF0" height="89.8438" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="217" x="627" y="272.2969" />
-       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="96" x="637" y="297.1484">
-        Knowledge
-       </text>
-       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="733" y="297.1484">
-        &nbsp;
-       </text>
-       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="62" x="739" y="297.1484">
-        Slipbox
-       </text>
-       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="801" y="297.1484">
-        &nbsp;
-       </text>
-       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="27" x="807" y="297.1484">
-        Api
-       </text>
-       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="75" x="698" y="315.7734">
-        Provider
-       </text>
-       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="733.5" y="332.542">
-        &nbsp;
-       </text>
-       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="77" x="674" y="348.8389">
-        Knowledge
-       </text>
-       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="751" y="348.8389">
-        &nbsp;
-       </text>
-       <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="42" x="755" y="348.8389">
-        Graph
        </text>
       </g><!--entity DataFabric.KnowledgeGraphDatabase-->
       <g id="elem_DataFabric.KnowledgeGraphDatabase">

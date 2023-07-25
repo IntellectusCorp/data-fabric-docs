@@ -32,7 +32,7 @@
         </ul>
         <p class="menu-label">Software systems</p>
         <ul class="menu-list has-site-branding">
-          <li><a href="../data-fabric/" class="">Data Fabric</a></li>
+          <li><a href="../data-fabric/" class="">Data Fabric</a><a href="../data-pipeline/" class="">Data Pipeline</a></li>
         </ul>
       </aside>
       <div class="container is-fluid has-background-white">
@@ -40,900 +40,602 @@
           <div><h1>High Level Design</h1>
 <p>
  <div>
-  <figure style="width: min(100%, 1183px);">
+  <figure style="width: min(100%, 982px);">
    <div>
     <!--?xml version="1.0" encoding="us-ascii" standalone="no"?-->
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" preserveaspectratio="meet" version="1.1" viewbox="0 0 1183 1680" zoomandpan="magnify">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentstyletype="text/css" preserveaspectratio="meet" version="1.1" viewbox="0 0 982 1436" zoomandpan="magnify">
      <defs /><g>
-      <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthadjust="spacing" textlength="190" x="489.5" y="22.9951">
-       Data Fabric - Containers
-      </text><!--cluster DataFabric_boundary-->
-      <g id="cluster_DataFabric_boundary">
-       <rect fill="none" height="1035" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="820" x="7" y="238.2969" />
-       <text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="100" x="367" y="255.1484">
-        Data Fabric
+      <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthadjust="spacing" textlength="196" x="386" y="22.9951">
+       Deployment - Integration
+      </text><!--cluster Integration.HyconDataPipeline-->
+      <g id="cluster_Integration.HyconDataPipeline">
+       <rect fill="#FFFFFF" height="660.5" rx="2.5" ry="2.5" style="stroke:#A2A2A2;stroke-width:1.0;" width="393" x="583" y="675.7969" />
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="175" x="692" y="692.6484">
+        Hycon Data Pipeline
        </text>
-       <text fill="#444444" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="62" x="386" y="270.0605">
-        [System]
+      </g><!--cluster Integration.IntellectusDataFabric-->
+      <g id="cluster_Integration.IntellectusDataFabric">
+       <rect fill="#FFFFFF" height="787" rx="2.5" ry="2.5" style="stroke:#A2A2A2;stroke-width:1.0;" width="552" x="7" y="44.2969" />
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="200" x="183" y="61.1484">
+        Intellectus Data Fabric
        </text>
-      </g><!--cluster group_1-->
-      <g id="cluster_group_1">
-       <rect fill="none" height="124" rx="2.5" ry="2.5" style="stroke:#CCCCCC;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="194" x="129" y="297.2969" />
-       <text fill="#CCCCCC" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="93" x="179.5" y="314.1484">
-        Client-side
-       </text>
-      </g><!--cluster group_2-->
-      <g id="cluster_group_2">
-       <rect fill="none" height="784" rx="2.5" ry="2.5" style="stroke:#CCCCCC;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="552" x="31" y="465.2969" />
-       <text fill="#CCCCCC" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="102" x="256" y="482.1484">
-        Server-side
-       </text>
-      </g><!--cluster group_3-->
-      <g id="cluster_group_3">
-       <rect fill="none" height="141" rx="2.5" ry="2.5" style="stroke:#CCCCCC;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="204" x="231" y="510.2969" />
-       <text fill="#CCCCCC" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="184" x="241" y="527.1484">
-        API Gateway Service
-       </text>
-      </g><!--cluster group_4-->
-      <g id="cluster_group_4">
-       <rect fill="none" height="349" rx="2.5" ry="2.5" style="stroke:#CCCCCC;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="248" x="55" y="695.2969" />
-       <text fill="#CCCCCC" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="167" x="95.5" y="712.1484">
-        Knowledge Service
-       </text>
-      </g><!--cluster group_5-->
-      <g id="cluster_group_5">
-       <rect fill="none" height="319" rx="2.5" ry="2.5" style="stroke:#CCCCCC;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="232" x="327" y="906.2969" />
-       <text fill="#CCCCCC" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="155" x="365.5" y="923.1484">
+      </g><!--cluster Integration.IntellectusDataFabric.MetadataService-->
+      <g id="cluster_Integration.IntellectusDataFabric.MetadataService">
+       <rect fill="#FFFFFF" height="319" rx="2.5" ry="2.5" style="stroke:#A2A2A2;stroke-width:1.0;" width="232" x="31" y="485.2969" />
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="155" x="69.5" y="502.1484">
         Metadata Service
        </text>
-      </g><!--entity DataFabric.DataSourceGateway-->
-      <g id="elem_DataFabric.DataSourceGateway">
-       <rect fill="#438DD5" height="134.0781" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="212" x="599" y="1102.2969" />
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="41" x="609" y="1127.1484">
+      </g><!--cluster Integration.IntellectusDataFabric.KnowledgeService-->
+      <g id="cluster_Integration.IntellectusDataFabric.KnowledgeService">
+       <rect fill="#FFFFFF" height="349" rx="2.5" ry="2.5" style="stroke:#A2A2A2;stroke-width:1.0;" width="248" x="287" y="274.2969" />
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="167" x="327.5" y="291.1484">
+        Knowledge Service
+       </text>
+      </g><!--cluster Integration.IntellectusDataFabric.APIGatewayService-->
+      <g id="cluster_Integration.IntellectusDataFabric.APIGatewayService">
+       <rect fill="#FFFFFF" height="141" rx="2.5" ry="2.5" style="stroke:#A2A2A2;stroke-width:1.0;" width="204" x="175" y="89.2969" />
+       <text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="184" x="185" y="106.1484">
+        API Gateway Service
+       </text>
+      </g><!--entity Integration.HyconDataPipeline.AutonomousDataStore_1-->
+      <g id="elem_Integration.HyconDataPipeline.AutonomousDataStore_1">
+       <path d="M599.5,916.2969 C599.5,906.2969 689,906.2969 689,906.2969 C689,906.2969 778.5,906.2969 778.5,916.2969 L778.5,995.1406 C778.5,1005.1406 689,1005.1406 689,1005.1406 C689,1005.1406 599.5,1005.1406 599.5,995.1406 L599.5,916.2969 " fill="#438DD5" style="stroke:#3C7FC0;stroke-width:0.5;" />
+       <path d="M599.5,916.2969 C599.5,926.2969 689,926.2969 689,926.2969 C689,926.2969 778.5,926.2969 778.5,916.2969 " fill="none" style="stroke:#3C7FC0;stroke-width:0.5;" />
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="112" x="609.5" y="945.1484">
+        Autonomous
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="721.5" y="945.1484">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="41" x="727.5" y="945.1484">
         Data
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="650" y="1127.1484">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="49" x="664.5" y="963.7734">
+        Store
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="687" y="980.542">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="62" x="656" y="1127.1484">
-        Source
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="718" y="1127.1484">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="77" x="724" y="1127.1484">
-        Gateway
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="70" x="616.5" y="1142.0605">
-        [Container:
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="4" x="686.5" y="1142.0605">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="25" x="690.5" y="1142.0605">
-        Java
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="4" x="715.5" y="1142.0605">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="74" x="719.5" y="1142.0605">
-        Application]
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="703" y="1157.8857">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="55" x="631.5" y="1174.1826">
-        Manage
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="686.5" y="1174.1826">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="690.5" y="1174.1826">
-        data
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="720.5" y="1174.1826">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="54" x="724.5" y="1174.1826">
-        pipeline
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="61" x="618.5" y="1190.4795">
-        between
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="679.5" y="1190.4795">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="74" x="683.5" y="1190.4795">
-        distburited
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="757.5" y="1190.4795">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="761.5" y="1190.4795">
-        data
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="48" x="617.5" y="1206.7764">
-        source
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="665.5" y="1206.7764">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="26" x="669.5" y="1206.7764">
-        and
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="695.5" y="1206.7764">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="32" x="699.5" y="1206.7764">
-        Data
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="731.5" y="1206.7764">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="41" x="735.5" y="1206.7764">
-        Fabric
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="776.5" y="1206.7764">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="12" x="780.5" y="1206.7764">
-        in
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="48" x="650" y="1223.0732">
-        secure
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="698" y="1223.0732">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="58" x="702" y="1223.0732">
-        method.
-       </text>
-      </g><!--entity DataFabric.WebApplication-->
-      <g id="elem_DataFabric.WebApplication">
-       <rect fill="#438DD5" height="71.2188" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="162" x="145" y="334.2969" />
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="40" x="155" y="359.1484">
-        Web
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="195" y="359.1484">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="96" x="201" y="359.1484">
-        Application
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="224" y="375.917">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="72" x="167.5" y="392.2139">
-        Serverless
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="239.5" y="392.2139">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="41" x="243.5" y="392.2139">
-        nextjs
-       </text>
-      </g><!--entity DataFabric.APIService-->
-      <g id="elem_DataFabric.APIService">
-       <rect fill="#438DD5" height="87.5156" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="172" x="247" y="547.2969" />
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="30" x="282.5" y="572.1484">
-        API
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="312.5" y="572.1484">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="65" x="318.5" y="572.1484">
-        Service
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="331" y="588.917">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="21" x="257" y="605.2139">
-        API
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="278" y="605.2139">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="59" x="282" y="605.2139">
-        Gateway
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="341" y="605.2139">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="64" x="345" y="605.2139">
-        Managed
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="50" x="308" y="621.5107">
-        Service
-       </text>
-      </g><!--entity DataFabric.KnowledgeGraphDatabase-->
-      <g id="elem_DataFabric.KnowledgeGraphDatabase">
-       <path d="M71.5,939.2969 C71.5,929.2969 175,929.2969 175,929.2969 C175,929.2969 278.5,929.2969 278.5,939.2969 L278.5,1018.1406 C278.5,1028.1406 175,1028.1406 175,1028.1406 C175,1028.1406 71.5,1028.1406 71.5,1018.1406 L71.5,939.2969 " fill="#438DD5" style="stroke:#3C7FC0;stroke-width:0.5;" />
-       <path d="M71.5,939.2969 C71.5,949.2969 175,949.2969 175,949.2969 C175,949.2969 278.5,949.2969 278.5,939.2969 " fill="none" style="stroke:#3C7FC0;stroke-width:0.5;" />
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="96" x="97.5" y="968.1484">
-        Knowledge
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="193.5" y="968.1484">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="53" x="199.5" y="968.1484">
-        Graph
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="83" x="133.5" y="986.7734">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="66" x="656" y="996.8389">
         Database
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="173" y="1003.542">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="26" x="81.5" y="1019.8389">
-        DB:
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="107.5" y="1019.8389">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="40" x="111.5" y="1019.8389">
-        Neo4j
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="151.5" y="1019.8389">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="14" x="155.5" y="1019.8389">
-        or
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="169.5" y="1019.8389">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="31" x="173.5" y="1019.8389">
-        AWS
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="204.5" y="1019.8389">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="60" x="208.5" y="1019.8389">
-        Neptune
-       </text>
-      </g><!--entity DataFabric.KnowledgeGraphApp-->
-      <g id="elem_DataFabric.KnowledgeGraphApp">
-       <a href="../data-fabric/component/" target="_top" title="../data-fabric/component/" xlink:actuate="onRequest" xlink:href="../data-fabric/component/" xlink:show="new" xlink:title="../data-fabric/component/" xlink:type="simple"><rect fill="#438DD5" height="99.1563" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="215" x="71.5" y="732.2969" /><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="96" x="81.5" y="757.1484">
-         Knowledge
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="177.5" y="757.1484">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="53" x="183.5" y="757.1484">
-         Graph
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="236.5" y="757.1484">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="34" x="242.5" y="757.1484">
-         App
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="70" x="86.5" y="772.0605">
-         [Container:
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="4" x="156.5" y="772.0605">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="65" x="160.5" y="772.0605">
-         Serverless
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="4" x="225.5" y="772.0605">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="25" x="229.5" y="772.0605">
-         Java
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="4" x="254.5" y="772.0605">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="13" x="258.5" y="772.0605">
-         or
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="64" x="108" y="786.0293">
-         Typescript
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="4" x="172" y="786.0293">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="74" x="176" y="786.0293">
-         Application]
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="177" y="801.8545">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="59" x="149.5" y="818.1514">
-         Provides
-        </text></a>
-      </g><!--entity DataFabric.MetadataApp-->
-      <g id="elem_DataFabric.MetadataApp">
-       <a href="../data-fabric/component/" target="_top" title="../data-fabric/component/" xlink:actuate="onRequest" xlink:href="../data-fabric/component/" xlink:show="new" xlink:title="../data-fabric/component/" xlink:type="simple"><rect fill="#438DD5" height="71.2188" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="144" x="357" y="943.2969" /><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="84" x="367" y="968.1484">
-         Metadata
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="451" y="968.1484">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="34" x="457" y="968.1484">
-         App
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="427" y="984.917">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="41" x="374.5" y="1001.2139">
-         Active
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="415.5" y="1001.2139">
-         &nbsp;
-        </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="64" x="419.5" y="1001.2139">
-         Metadata
-        </text></a>
-      </g><!--entity DataFabric.MetadataDatabase-->
-      <g id="elem_DataFabric.MetadataDatabase">
-       <path d="M343.5,1139.2969 C343.5,1129.2969 443,1129.2969 443,1129.2969 C443,1129.2969 542.5,1129.2969 542.5,1139.2969 L542.5,1199.5156 C542.5,1209.5156 443,1209.5156 443,1209.5156 C443,1209.5156 343.5,1209.5156 343.5,1199.5156 L343.5,1139.2969 " fill="#438DD5" style="stroke:#3C7FC0;stroke-width:0.5;" />
-       <path d="M343.5,1139.2969 C343.5,1149.2969 443,1149.2969 443,1149.2969 C443,1149.2969 542.5,1149.2969 542.5,1139.2969 " fill="none" style="stroke:#3C7FC0;stroke-width:0.5;" />
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="84" x="356.5" y="1168.1484">
+      </g><!--entity Integration.HyconDataPipeline.MetadataStore_1-->
+      <g id="elem_Integration.HyconDataPipeline.MetadataStore_1">
+       <path d="M642.5,1250.2969 C642.5,1240.2969 722,1240.2969 722,1240.2969 C722,1240.2969 801.5,1240.2969 801.5,1250.2969 L801.5,1310.5156 C801.5,1320.5156 722,1320.5156 722,1320.5156 C722,1320.5156 642.5,1320.5156 642.5,1310.5156 L642.5,1250.2969 " fill="#438DD5" style="stroke:#3C7FC0;stroke-width:0.5;" />
+       <path d="M642.5,1250.2969 C642.5,1260.2969 722,1260.2969 722,1260.2969 C722,1260.2969 801.5,1260.2969 801.5,1250.2969 " fill="none" style="stroke:#3C7FC0;stroke-width:0.5;" />
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="84" x="652.5" y="1279.1484">
         Metadata
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="440.5" y="1168.1484">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="736.5" y="1279.1484">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="83" x="446.5" y="1168.1484">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="49" x="742.5" y="1279.1484">
+        Store
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="720" y="1295.917">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="66" x="689" y="1312.2139">
         Database
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="441" y="1184.917">
+      </g><!--entity Integration.HyconDataPipeline.MetadataExtraction_1-->
+      <g id="elem_Integration.HyconDataPipeline.MetadataExtraction_1">
+       <rect fill="#438DD5" height="71.2188" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="200" x="676" y="712.7969" />
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="84" x="686" y="737.6484">
+        Metadata
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="770" y="737.6484">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="26" x="353.5" y="1201.2139">
-        DB:
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="90" x="776" y="737.6484">
+        Extraction
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="379.5" y="1201.2139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="774" y="754.417">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="31" x="383.5" y="1201.2139">
-        AWS
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="21" x="741.5" y="770.7139">
+        API
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="414.5" y="1201.2139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="762.5" y="770.7139">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="45" x="418.5" y="1201.2139">
-        Aurora
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="44" x="766.5" y="770.7139">
+        Server
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="463.5" y="1201.2139">
+      </g><!--entity Integration.HyconDataPipeline.Anontmization_1-->
+      <g id="elem_Integration.HyconDataPipeline.Anontmization_1">
+       <rect fill="#438DD5" height="71.2188" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="146" x="814" y="920.2969" />
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="126" x="824" y="945.1484">
+        Anontmization
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="885" y="961.917">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="65" x="467.5" y="1201.2139">
-        Postgrsql
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="21" x="852.5" y="978.2139">
+        API
        </text>
-      </g><!--entity DataConsumer-->
-      <g id="elem_DataConsumer">
-       <rect fill="#08427B" height="135.5156" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="220" x="191" y="44.2969" />
-       <image height="48" width="48" x="277" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACMElEQVR4Xu2YvUrFQBCFb+kj+Ai+gq3Y2PgA+gCCtZ2V2AhqaSNiqY1gYWMjaCvXykoEKy21sLCNfELgMscksz8mWfDAB3Kuye7sTmYnmcwtbU9KRozSECOVla3T6uTqvrqZPlcPT68/XNw+VtvH19XC+sGe/f9UxIhl8/Cy+vj8qrpEYIsbR1N7fSxihDK/urvMKoeKHbH3ikGMEJi8Z9WbtH92lxyEGCHErLwVqWfvG4IYXkiBXGIn7f29iOGBAe0kUkTVsmN4EcMD255bdgwvYnigFOYW54cdx4MYHlIqT5Niy6oYHuzgORRbUsXwYAfPoV4DeHl7t+MnK/Y8EMMDzVlu9foQ5y6jFAU7hhcxvOSsRLH5D2J4KbqVqMlxoK3tnEevPogRAiuXUpFiD69ZxIghZidSV75GjFiYkGc3KMEpOW8RIxXed0kNJsrOAO0ypTfnxGvEKA0xSkMMD3zfIedJFQ4hCPlUwrX1daQWbURseonRBhNue1D5rc53JkVQwN9c21Wt+D20JxLjN7hpztahSwTi3RExLDlbhhCxm55PkWLMkrvrDBW73rUTYtSQu/aGQ4h0snNzBdD1wPWptrZDDBjL6tfiebBzbA2AUjg2NT3QYkBbrR9KTS/9YoC9eAxqeu0UI/eH21yiu7VzLSqApnIqxn8Af6TiA3A/A9Bn5+lV0xcMMWDoJs6qrakTo4a6OwZxqLa97YkxC1HzMkMzNQRtE3cFUAJilMY3OGTNL0NDLqIAAAAASUVORK5CYII=" y="54.2969" />
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="41" x="232.5" y="117.1484">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="873.5" y="978.2139">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="44" x="877.5" y="978.2139">
+        Server
+       </text>
+      </g><!--entity Integration.HyconDataPipeline.Visualization_1-->
+      <g id="elem_Integration.HyconDataPipeline.Visualization_1">
+       <rect fill="#438DD5" height="71.2188" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="128" x="769" y="1094.2969" />
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="108" x="779" y="1119.1484">
+        Visualization
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="831" y="1135.917">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="21" x="798.5" y="1152.2139">
+        API
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="819.5" y="1152.2139">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="44" x="823.5" y="1152.2139">
+        Server
+       </text>
+      </g><!--entity Integration.IntellectusDataFabric.DataSourceGateway_1-->
+      <g id="elem_Integration.IntellectusDataFabric.DataSourceGateway_1">
+       <rect fill="#438DD5" height="134.0781" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="212" x="331" y="681.2969" />
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="41" x="341" y="706.1484">
         Data
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="273.5" y="117.1484">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="382" y="706.1484">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="90" x="279.5" y="117.1484">
-        Consumer
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="62" x="388" y="706.1484">
+        Source
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="299" y="133.917">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="450" y="706.1484">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="9" x="201" y="150.2139">
-        A
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="77" x="456" y="706.1484">
+        Gateway
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="210" y="150.2139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="70" x="348.5" y="721.0605">
+        [Container:
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="4" x="418.5" y="721.0605">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="70" x="214" y="150.2139">
-        consumer
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="25" x="422.5" y="721.0605">
+        Java
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="284" y="150.2139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="4" x="447.5" y="721.0605">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="29" x="288" y="150.2139">
-        who
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="74" x="451.5" y="721.0605">
+        Application]
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="317" y="150.2139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="435" y="736.8857">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="22" x="321" y="150.2139">
-        are
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="55" x="363.5" y="753.1826">
+        Manage
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="343" y="150.2139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="418.5" y="753.1826">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="54" x="347" y="150.2139">
-        needed
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="215.5" y="166.5107">
-        a
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="223.5" y="166.5107">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="227.5" y="166.5107">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="422.5" y="753.1826">
         data
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="257.5" y="166.5107">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="452.5" y="753.1826">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="12" x="261.5" y="166.5107">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="54" x="456.5" y="753.1826">
+        pipeline
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="61" x="350.5" y="769.4795">
+        between
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="411.5" y="769.4795">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="74" x="415.5" y="769.4795">
+        distburited
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="489.5" y="769.4795">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="493.5" y="769.4795">
+        data
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="48" x="349.5" y="785.7764">
+        source
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="397.5" y="785.7764">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="26" x="401.5" y="785.7764">
+        and
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="427.5" y="785.7764">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="32" x="431.5" y="785.7764">
+        Data
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="463.5" y="785.7764">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="41" x="467.5" y="785.7764">
+        Fabric
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="508.5" y="785.7764">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="12" x="512.5" y="785.7764">
         in
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="273.5" y="166.5107">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="52" x="411" y="802.0732">
+        secure.
+       </text>
+      </g><!--entity Integration.IntellectusDataFabric.MetadataService.MetadataApp_1-->
+      <g id="elem_Integration.IntellectusDataFabric.MetadataService.MetadataApp_1">
+       <rect fill="#438DD5" height="71.2188" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="144" x="103" y="522.2969" />
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="84" x="113" y="547.1484">
+        Metadata
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="197" y="547.1484">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="49" x="277.5" y="166.5107">
-        various
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="34" x="203" y="547.1484">
+        App
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="326.5" y="166.5107">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="173" y="563.917">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="56" x="330.5" y="166.5107">
-        context.
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="41" x="120.5" y="580.2139">
+        Active
        </text>
-      </g><!--entity ERP-->
-      <g id="elem_ERP">
-       <rect fill="#08427B" height="119.2188" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="206" x="240" y="1339.7969" />
-       <image height="48" width="48" x="319" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACMElEQVR4Xu2YvUrFQBCFb+kj+Ai+gq3Y2PgA+gCCtZ2V2AhqaSNiqY1gYWMjaCvXykoEKy21sLCNfELgMscksz8mWfDAB3Kuye7sTmYnmcwtbU9KRozSECOVla3T6uTqvrqZPlcPT68/XNw+VtvH19XC+sGe/f9UxIhl8/Cy+vj8qrpEYIsbR1N7fSxihDK/urvMKoeKHbH3ikGMEJi8Z9WbtH92lxyEGCHErLwVqWfvG4IYXkiBXGIn7f29iOGBAe0kUkTVsmN4EcMD255bdgwvYnigFOYW54cdx4MYHlIqT5Niy6oYHuzgORRbUsXwYAfPoV4DeHl7t+MnK/Y8EMMDzVlu9foQ5y6jFAU7hhcxvOSsRLH5D2J4KbqVqMlxoK3tnEevPogRAiuXUpFiD69ZxIghZidSV75GjFiYkGc3KMEpOW8RIxXed0kNJsrOAO0ypTfnxGvEKA0xSkMMD3zfIedJFQ4hCPlUwrX1daQWbURseonRBhNue1D5rc53JkVQwN9c21Wt+D20JxLjN7hpztahSwTi3RExLDlbhhCxm55PkWLMkrvrDBW73rUTYtSQu/aGQ4h0snNzBdD1wPWptrZDDBjL6tfiebBzbA2AUjg2NT3QYkBbrR9KTS/9YoC9eAxqeu0UI/eH21yiu7VzLSqApnIqxn8Af6TiA3A/A9Bn5+lV0xcMMWDoJs6qrakTo4a6OwZxqLa97YkxC1HzMkMzNQRtE3cFUAJilMY3OGTNL0NDLqIAAAAASUVORK5CYII=" y="1349.7969" />
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="34" x="326" y="1412.6484">
-        ERP
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="341" y="1429.417">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="161.5" y="580.2139">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="9" x="250" y="1445.7139">
-        A
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="64" x="165.5" y="580.2139">
+        Metadata
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="259" y="1445.7139">
+      </g><!--entity Integration.IntellectusDataFabric.MetadataService.MetadataDatabase_1-->
+      <g id="elem_Integration.IntellectusDataFabric.MetadataService.MetadataDatabase_1">
+       <path d="M47.5,718.2969 C47.5,708.2969 147,708.2969 147,708.2969 C147,708.2969 246.5,708.2969 246.5,718.2969 L246.5,778.5156 C246.5,788.5156 147,788.5156 147,788.5156 C147,788.5156 47.5,788.5156 47.5,778.5156 L47.5,718.2969 " fill="#438DD5" style="stroke:#3C7FC0;stroke-width:0.5;" />
+       <path d="M47.5,718.2969 C47.5,728.2969 147,728.2969 147,728.2969 C147,728.2969 246.5,728.2969 246.5,718.2969 " fill="none" style="stroke:#3C7FC0;stroke-width:0.5;" />
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="84" x="60.5" y="747.1484">
+        Metadata
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="144.5" y="747.1484">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="263" y="1445.7139">
-        type
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="83" x="150.5" y="747.1484">
+        Database
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="293" y="1445.7139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="145" y="763.917">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="13" x="297" y="1445.7139">
-        of
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="26" x="57.5" y="780.2139">
+        DB:
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="310" y="1445.7139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="83.5" y="780.2139">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="314" y="1445.7139">
-        data
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="31" x="87.5" y="780.2139">
+        AWS
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="344" y="1445.7139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="118.5" y="780.2139">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="52" x="348" y="1445.7139">
-        source,
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="45" x="122.5" y="780.2139">
+        Aurora
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="400" y="1445.7139">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="167.5" y="780.2139">
         &nbsp;
        </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="32" x="404" y="1445.7139">
-        ERP.
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="65" x="171.5" y="780.2139">
+        Postgrsql
        </text>
-      </g><!--entity DataLake-->
-      <g id="elem_DataLake">
-       <rect fill="#08427B" height="135.5156" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="206" x="481" y="1331.2969" />
-       <image height="48" width="48" x="560" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACMElEQVR4Xu2YvUrFQBCFb+kj+Ai+gq3Y2PgA+gCCtZ2V2AhqaSNiqY1gYWMjaCvXykoEKy21sLCNfELgMscksz8mWfDAB3Kuye7sTmYnmcwtbU9KRozSECOVla3T6uTqvrqZPlcPT68/XNw+VtvH19XC+sGe/f9UxIhl8/Cy+vj8qrpEYIsbR1N7fSxihDK/urvMKoeKHbH3ikGMEJi8Z9WbtH92lxyEGCHErLwVqWfvG4IYXkiBXGIn7f29iOGBAe0kUkTVsmN4EcMD255bdgwvYnigFOYW54cdx4MYHlIqT5Niy6oYHuzgORRbUsXwYAfPoV4DeHl7t+MnK/Y8EMMDzVlu9foQ5y6jFAU7hhcxvOSsRLH5D2J4KbqVqMlxoK3tnEevPogRAiuXUpFiD69ZxIghZidSV75GjFiYkGc3KMEpOW8RIxXed0kNJsrOAO0ypTfnxGvEKA0xSkMMD3zfIedJFQ4hCPlUwrX1daQWbURseonRBhNue1D5rc53JkVQwN9c21Wt+D20JxLjN7hpztahSwTi3RExLDlbhhCxm55PkWLMkrvrDBW73rUTYtSQu/aGQ4h0snNzBdD1wPWptrZDDBjL6tfiebBzbA2AUjg2NT3QYkBbrR9KTS/9YoC9eAxqeu0UI/eH21yiu7VzLSqApnIqxn8Af6TiA3A/A9Bn5+lV0xcMMWDoJs6qrakTo4a6OwZxqLa97YkxC1HzMkMzNQRtE3cFUAJilMY3OGTNL0NDLqIAAAAASUVORK5CYII=" y="1341.2969" />
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="41" x="539.5" y="1404.1484">
-        Data
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="580.5" y="1404.1484">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="42" x="586.5" y="1404.1484">
-        Lake
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="582" y="1420.917">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="9" x="491" y="1437.2139">
-        A
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="500" y="1437.2139">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="504" y="1437.2139">
-        type
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="534" y="1437.2139">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="13" x="538" y="1437.2139">
-        of
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="551" y="1437.2139">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="555" y="1437.2139">
-        data
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="585" y="1437.2139">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="52" x="589" y="1437.2139">
-        source,
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="641" y="1437.2139">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="32" x="645" y="1437.2139">
-        Data
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="36" x="566" y="1453.5107">
-        Lake.
-       </text>
-      </g><!--entity DataWarehouse-->
-      <g id="elem_DataWarehouse">
-       <rect fill="#08427B" height="135.5156" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="206" x="722" y="1331.2969" />
-       <image height="48" width="48" x="801" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACMElEQVR4Xu2YvUrFQBCFb+kj+Ai+gq3Y2PgA+gCCtZ2V2AhqaSNiqY1gYWMjaCvXykoEKy21sLCNfELgMscksz8mWfDAB3Kuye7sTmYnmcwtbU9KRozSECOVla3T6uTqvrqZPlcPT68/XNw+VtvH19XC+sGe/f9UxIhl8/Cy+vj8qrpEYIsbR1N7fSxihDK/urvMKoeKHbH3ikGMEJi8Z9WbtH92lxyEGCHErLwVqWfvG4IYXkiBXGIn7f29iOGBAe0kUkTVsmN4EcMD255bdgwvYnigFOYW54cdx4MYHlIqT5Niy6oYHuzgORRbUsXwYAfPoV4DeHl7t+MnK/Y8EMMDzVlu9foQ5y6jFAU7hhcxvOSsRLH5D2J4KbqVqMlxoK3tnEevPogRAiuXUpFiD69ZxIghZidSV75GjFiYkGc3KMEpOW8RIxXed0kNJsrOAO0ypTfnxGvEKA0xSkMMD3zfIedJFQ4hCPlUwrX1daQWbURseonRBhNue1D5rc53JkVQwN9c21Wt+D20JxLjN7hpztahSwTi3RExLDlbhhCxm55PkWLMkrvrDBW73rUTYtSQu/aGQ4h0snNzBdD1wPWptrZDDBjL6tfiebBzbA2AUjg2NT3QYkBbrR9KTS/9YoC9eAxqeu0UI/eH21yiu7VzLSqApnIqxn8Af6TiA3A/A9Bn5+lV0xcMMWDoJs6qrakTo4a6OwZxqLa97YkxC1HzMkMzNQRtE3cFUAJilMY3OGTNL0NDLqIAAAAASUVORK5CYII=" y="1341.2969" />
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="41" x="751" y="1404.1484">
-        Data
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="792" y="1404.1484">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="101" x="798" y="1404.1484">
-        Warehouse
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="823" y="1420.917">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="9" x="732" y="1437.2139">
-        A
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="741" y="1437.2139">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="745" y="1437.2139">
-        type
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="775" y="1437.2139">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="13" x="779" y="1437.2139">
-        of
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="792" y="1437.2139">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="796" y="1437.2139">
-        data
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="826" y="1437.2139">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="52" x="830" y="1437.2139">
-        source,
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="882" y="1437.2139">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="32" x="886" y="1437.2139">
-        Data
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="83" x="783.5" y="1453.5107">
-        Warehouse.
-       </text>
-      </g><!--entity CloudDataStorage-->
-      <g id="elem_CloudDataStorage">
-       <rect fill="#08427B" height="135.5156" rx="2.5" ry="2.5" style="stroke:#073B6F;stroke-width:0.5;" width="214" x="963" y="1331.2969" />
-       <image height="48" width="48" x="1046" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACMElEQVR4Xu2YvUrFQBCFb+kj+Ai+gq3Y2PgA+gCCtZ2V2AhqaSNiqY1gYWMjaCvXykoEKy21sLCNfELgMscksz8mWfDAB3Kuye7sTmYnmcwtbU9KRozSECOVla3T6uTqvrqZPlcPT68/XNw+VtvH19XC+sGe/f9UxIhl8/Cy+vj8qrpEYIsbR1N7fSxihDK/urvMKoeKHbH3ikGMEJi8Z9WbtH92lxyEGCHErLwVqWfvG4IYXkiBXGIn7f29iOGBAe0kUkTVsmN4EcMD255bdgwvYnigFOYW54cdx4MYHlIqT5Niy6oYHuzgORRbUsXwYAfPoV4DeHl7t+MnK/Y8EMMDzVlu9foQ5y6jFAU7hhcxvOSsRLH5D2J4KbqVqMlxoK3tnEevPogRAiuXUpFiD69ZxIghZidSV75GjFiYkGc3KMEpOW8RIxXed0kNJsrOAO0ypTfnxGvEKA0xSkMMD3zfIedJFQ4hCPlUwrX1daQWbURseonRBhNue1D5rc53JkVQwN9c21Wt+D20JxLjN7hpztahSwTi3RExLDlbhhCxm55PkWLMkrvrDBW73rUTYtSQu/aGQ4h0snNzBdD1wPWptrZDDBjL6tfiebBzbA2AUjg2NT3QYkBbrR9KTS/9YoC9eAxqeu0UI/eH21yiu7VzLSqApnIqxn8Af6TiA3A/A9Bn5+lV0xcMMWDoJs6qrakTo4a6OwZxqLa97YkxC1HzMkMzNQRtE3cFUAJilMY3OGTNL0NDLqIAAAAASUVORK5CYII=" y="1341.2969" />
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="49" x="984" y="1404.1484">
-        Cloud
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="1033" y="1404.1484">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="41" x="1039" y="1404.1484">
-        Data
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="1080" y="1404.1484">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="70" x="1086" y="1404.1484">
-        Storage
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1068" y="1420.917">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="9" x="973" y="1437.2139">
-        A
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="982" y="1437.2139">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="986" y="1437.2139">
-        type
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1016" y="1437.2139">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="13" x="1020" y="1437.2139">
-        of
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1033" y="1437.2139">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="30" x="1037" y="1437.2139">
-        data
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1067" y="1437.2139">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="52" x="1071" y="1437.2139">
-        source,
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1123" y="1437.2139">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="40" x="1127" y="1437.2139">
-        Cloud
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="32" x="1023" y="1453.5107">
-        Data
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1055" y="1453.5107">
-        &nbsp;
-       </text>
-       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="58" x="1059" y="1453.5107">
-        Storage.
-       </text>
-      </g><!--link DataConsumer to DataFabric.APIService-->
-      <g id="link_DataConsumer_DataFabric.APIService">
-       <path d="M315.51,180.4669 C318.5,196.7069 321.26,214.0569 323,230.2969 C334.74,339.7669 335.06,468.9769 334.12,538.9669 " fill="none" id="DataConsumer-to-DataFabric.APIService" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="334,547.2069,337.114,539.2505,331.1146,539.1648,334,547.2069" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="0" lengthadjust="spacing" textlength="0" x="335" y="364.7969">
-        .
-       </text>
-      </g><!--link DataConsumer to DataFabric.WebApplication-->
-      <g id="link_DataConsumer_DataFabric.WebApplication">
-       <path d="M281.29,180.4269 C267.76,226.5269 250.2,286.3469 238.54,326.0669 " fill="none" id="DataConsumer-to-DataFabric.WebApplication" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="236.15,334.2269,241.2827,327.3964,235.5258,325.7057,236.15,334.2269" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="0" lengthadjust="spacing" textlength="0" x="274" y="211.2969">
-        .
-       </text>
-      </g><!--link DataFabric.KnowledgeGraphApp to DataFabric.KnowledgeGraphDatabase-->
-      <g id="link_DataFabric.KnowledgeGraphApp_DataFabric.KnowledgeGraphDatabase">
-       <path d="M170.36,831.6569 C168.96,841.4469 167.73,851.6769 167,861.2969 C165.52,880.7569 166.29,902.0469 167.81,921.0469 " fill="none" id="DataFabric.KnowledgeGraphApp-to-DataFabric.KnowledgeGraphDatabase" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="168.51,929.0369,170.7987,920.8051,164.8217,921.33,168.51,929.0369" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="35" x="193" y="873.4355">
-        build
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="228" y="873.4355">
-        &nbsp;
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="37" x="232" y="873.4355">
-        Local
-       </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="79" x="168" y="887.4043">
+      </g><!--entity Integration.IntellectusDataFabric.KnowledgeService.KnowledgeGraphApp_1-->
+      <g id="elem_Integration.IntellectusDataFabric.KnowledgeService.KnowledgeGraphApp_1">
+       <rect fill="#438DD5" height="99.1563" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="215" x="303.5" y="311.2969" />
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="96" x="313.5" y="336.1484">
         Knowledge
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="247" y="887.4043">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="409.5" y="336.1484">
         &nbsp;
        </text>
-       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="43" x="251" y="887.4043">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="53" x="415.5" y="336.1484">
         Graph
        </text>
-      </g><!--link DataFabric.KnowledgeGraphApp to DataFabric.MetadataApp-->
-      <g id="link_DataFabric.KnowledgeGraphApp_DataFabric.MetadataApp">
-       <path d="M257.01,831.3669 C271.25,840.9169 285.77,851.1369 299,861.2969 C329.8,884.9569 362.34,914.1169 387.15,937.3469 " fill="none" id="DataFabric.KnowledgeGraphApp-to-DataFabric.MetadataApp" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="393.29,943.1169,389.5105,935.4543,385.404,939.8288,393.29,943.1169" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="0" lengthadjust="spacing" textlength="0" x="334" y="870.7969">
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="468.5" y="336.1484">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="34" x="474.5" y="336.1484">
+        App
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="70" x="318.5" y="351.0605">
+        [Container:
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="4" x="388.5" y="351.0605">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="65" x="392.5" y="351.0605">
+        Serverless
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="4" x="457.5" y="351.0605">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="25" x="461.5" y="351.0605">
+        Java
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="4" x="486.5" y="351.0605">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="13" x="490.5" y="351.0605">
+        or
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="64" x="340" y="365.0293">
+        Typescript
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="4" x="404" y="365.0293">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthadjust="spacing" textlength="74" x="408" y="365.0293">
+        Application]
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="409" y="380.8545">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="59" x="381.5" y="397.1514">
+        Provides
+       </text>
+      </g><!--entity Integration.IntellectusDataFabric.KnowledgeService.KnowledgeGraphDatabase_1-->
+      <g id="elem_Integration.IntellectusDataFabric.KnowledgeService.KnowledgeGraphDatabase_1">
+       <path d="M303.5,518.2969 C303.5,508.2969 407,508.2969 407,508.2969 C407,508.2969 510.5,508.2969 510.5,518.2969 L510.5,597.1406 C510.5,607.1406 407,607.1406 407,607.1406 C407,607.1406 303.5,607.1406 303.5,597.1406 L303.5,518.2969 " fill="#438DD5" style="stroke:#3C7FC0;stroke-width:0.5;" />
+       <path d="M303.5,518.2969 C303.5,528.2969 407,528.2969 407,528.2969 C407,528.2969 510.5,528.2969 510.5,518.2969 " fill="none" style="stroke:#3C7FC0;stroke-width:0.5;" />
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="96" x="329.5" y="547.1484">
+        Knowledge
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="425.5" y="547.1484">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="53" x="431.5" y="547.1484">
+        Graph
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="83" x="365.5" y="565.7734">
+        Database
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="405" y="582.542">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="26" x="313.5" y="598.8389">
+        DB:
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="339.5" y="598.8389">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="40" x="343.5" y="598.8389">
+        Neo4j
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="383.5" y="598.8389">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="14" x="387.5" y="598.8389">
+        or
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="401.5" y="598.8389">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="31" x="405.5" y="598.8389">
+        AWS
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="436.5" y="598.8389">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="60" x="440.5" y="598.8389">
+        Neptune
+       </text>
+      </g><!--entity Integration.IntellectusDataFabric.APIGatewayService.APIService_1-->
+      <g id="elem_Integration.IntellectusDataFabric.APIGatewayService.APIService_1">
+       <rect fill="#438DD5" height="87.5156" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="172" x="191" y="126.2969" />
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="30" x="226.5" y="151.1484">
+        API
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="6" x="256.5" y="151.1484">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthadjust="spacing" textlength="65" x="262.5" y="151.1484">
+        Service
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="275" y="167.917">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="21" x="201" y="184.2139">
+        API
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="222" y="184.2139">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="59" x="226" y="184.2139">
+        Gateway
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="285" y="184.2139">
+        &nbsp;
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="64" x="289" y="184.2139">
+        Managed
+       </text>
+       <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="50" x="252" y="200.5107">
+        Service
+       </text>
+      </g><!--link Integration.HyconDataPipeline.MetadataExtraction_1 to Integration.HyconDataPipeline.AutonomousDataStore_1-->
+      <g id="link_Integration.HyconDataPipeline.MetadataExtraction_1_Integration.HyconDataPipeline.AutonomousDataStore_1">
+       <path d="M718.84,783.9869 C697.47,800.2769 675.58,821.7669 664,847.2969 C656.82,863.1169 657.86,881.2169 662.2,897.9969 " fill="none" id="Integration.HyconDataPipeline.MetadataExtraction_1-to-Integration.HyconDataPipeline.AutonomousDataStore_1" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="664.58,906.1069,665.2188,897.5868,659.459,899.2676,664.58,906.1069" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="49" x="665" y="859.4355">
+        Extract
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="714" y="859.4355">
+        &nbsp;
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="91" x="718" y="859.4355">
+        metadata(by
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="27" x="723.5" y="873.4043">
+        file)
+       </text>
+      </g><!--link Integration.HyconDataPipeline.MetadataExtraction_1 to Integration.HyconDataPipeline.Anontmization_1-->
+      <g id="link_Integration.HyconDataPipeline.MetadataExtraction_1_Integration.HyconDataPipeline.Anontmization_1">
+       <path d="M794.83,784.1569 C814.02,819.6869 843.81,874.8369 864.3,912.7669 " fill="none" id="Integration.HyconDataPipeline.MetadataExtraction_1-to-Integration.HyconDataPipeline.Anontmization_1" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="868.26,920.1069,867.1015,911.6418,861.821,914.4909,868.26,920.1069" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="105" x="842" y="866.4355">
+        Anonymization
+       </text>
+      </g><!--link Integration.HyconDataPipeline.Anontmization_1 to Integration.HyconDataPipeline.Visualization_1-->
+      <g id="link_Integration.HyconDataPipeline.Anontmization_1_Integration.HyconDataPipeline.Visualization_1">
+       <path d="M876.07,991.6069 C867.51,1018.8769 855.55,1056.9569 846.41,1086.0869 " fill="none" id="Integration.HyconDataPipeline.Anontmization_1-to-Integration.HyconDataPipeline.Visualization_1" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="843.91,1094.0369,849.1726,1087.3059,843.4491,1085.5053,843.91,1094.0369" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="78" x="862" y="1047.4355">
+        Processing
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="940" y="1047.4355">
+        &nbsp;
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="20" x="944" y="1047.4355">
+        for
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="92" x="867" y="1061.4043">
+        Visualization
+       </text>
+      </g><!--link Integration.HyconDataPipeline.Visualization_1 to Integration.HyconDataPipeline.MetadataStore_1-->
+      <g id="link_Integration.HyconDataPipeline.Visualization_1_Integration.HyconDataPipeline.MetadataStore_1">
+       <path d="M806.98,1165.6169 C791.82,1185.8869 772.53,1211.6969 756.16,1233.5969 " fill="none" id="Integration.HyconDataPipeline.Visualization_1-to-Integration.HyconDataPipeline.MetadataStore_1" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="751.18,1240.2569,758.3685,1235.6389,753.5595,1232.0509,751.18,1240.2569" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="35" x="785" y="1207.4355">
+        Load
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="820" y="1207.4355">
+        &nbsp;
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="34" x="824" y="1207.4355">
+        Data
+       </text>
+      </g><!--link Integration.IntellectusDataFabric.DataSourceGateway_1 to Integration.HyconDataPipeline.MetadataStore_1-->
+      <g id="link_Integration.IntellectusDataFabric.DataSourceGateway_1_Integration.HyconDataPipeline.MetadataStore_1">
+       <path d="M472.52,815.3469 C531.05,924.2069 646.34,1138.6069 697.06,1232.9169 " fill="none" id="Integration.IntellectusDataFabric.DataSourceGateway_1-to-Integration.HyconDataPipeline.MetadataStore_1" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="700.89,1240.0369,699.7519,1231.569,694.4646,1234.4053,700.89,1240.0369" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="0" lengthadjust="spacing" textlength="0" x="606" y="1044.7969">
         .
        </text>
-      </g><!--link DataFabric.DataSourceGateway to ERP-->
-      <g id="link_DataFabric.DataSourceGateway_ERP">
-       <path d="M622.98,1236.4969 C602.56,1251.8969 580.38,1267.7369 559,1281.2969 C518.37,1307.0569 505.34,1308.4569 463,1331.2969 C459.84,1332.9969 456.64,1334.7369 453.42,1336.4869 " fill="none" id="DataFabric.DataSourceGateway-to-ERP" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="446.32,1340.3669,454.7794,1339.1673,451.9048,1333.9008,446.32,1340.3669" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="0" lengthadjust="spacing" textlength="0" x="547" y="1290.2969">
+      </g><!--link Integration.IntellectusDataFabric.DataSourceGateway_1 to Integration.HyconDataPipeline.AutonomousDataStore_1-->
+      <g id="link_Integration.IntellectusDataFabric.DataSourceGateway_1_Integration.HyconDataPipeline.AutonomousDataStore_1">
+       <path d="M518.12,815.4469 C551.98,843.0569 590.81,874.7269 622.89,900.8869 " fill="none" id="Integration.IntellectusDataFabric.DataSourceGateway_1-to-Integration.HyconDataPipeline.AutonomousDataStore_1" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="629.21,906.0369,624.9069,898.6556,621.1145,903.305,629.21,906.0369" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="0" lengthadjust="spacing" textlength="0" x="586" y="856.7969">
         .
        </text>
-      </g><!--link DataFabric.DataSourceGateway to DataLake-->
-      <g id="link_DataFabric.DataSourceGateway_DataLake">
-       <path d="M669.84,1236.5469 C655.3,1263.9469 638.38,1295.8269 623.43,1324.0069 " fill="none" id="DataFabric.DataSourceGateway-to-DataLake" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="619.67,1331.0869,626.0776,1325.4351,620.7814,1322.6155,619.67,1331.0869" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="0" lengthadjust="spacing" textlength="0" x="642" y="1290.2969">
+      </g><!--link Integration.IntellectusDataFabric.MetadataService.MetadataApp_1 to Integration.IntellectusDataFabric.DataSourceGateway_1-->
+      <g id="link_Integration.IntellectusDataFabric.MetadataService.MetadataApp_1_Integration.IntellectusDataFabric.DataSourceGateway_1">
+       <path d="M223.05,593.3669 C255.31,616.5769 298.97,647.9869 338.44,676.3869 " fill="none" id="Integration.IntellectusDataFabric.MetadataService.MetadataApp_1-to-Integration.IntellectusDataFabric.DataSourceGateway_1" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="345.24,681.2769,340.4945,674.172,336.9929,679.0442,345.24,681.2769" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="0" lengthadjust="spacing" textlength="0" x="300" y="640.2969">
         .
        </text>
-      </g><!--link DataFabric.DataSourceGateway to DataWarehouse-->
-      <g id="link_DataFabric.DataSourceGateway_DataWarehouse">
-       <path d="M739.87,1236.5469 C754.29,1263.9469 771.07,1295.8269 785.9,1324.0069 " fill="none" id="DataFabric.DataSourceGateway-to-DataWarehouse" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="789.63,1331.0869,788.5595,1322.6102,783.2497,1325.4042,789.63,1331.0869" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="0" lengthadjust="spacing" textlength="0" x="773" y="1290.2969">
+      </g><!--link Integration.IntellectusDataFabric.MetadataService.MetadataApp_1 to Integration.IntellectusDataFabric.MetadataService.MetadataDatabase_1-->
+      <g id="link_Integration.IntellectusDataFabric.MetadataService.MetadataApp_1_Integration.IntellectusDataFabric.MetadataService.MetadataDatabase_1">
+       <path d="M169.86,593.3669 C165.43,623.2569 158.97,666.7369 154.04,699.8669 " fill="none" id="Integration.IntellectusDataFabric.MetadataService.MetadataApp_1-to-Integration.IntellectusDataFabric.MetadataService.MetadataDatabase_1" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="152.83,708.0569,156.969,700.5824,151.0337,699.7038,152.83,708.0569" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="0" lengthadjust="spacing" textlength="0" x="164" y="640.2969">
         .
        </text>
-      </g><!--link DataFabric.DataSourceGateway to CloudDataStorage-->
-      <g id="link_DataFabric.DataSourceGateway_CloudDataStorage">
-       <path d="M811.06,1236.5469 C856.41,1264.8769 909.44,1298.0069 955.66,1326.8769 " fill="none" id="DataFabric.DataSourceGateway-to-CloudDataStorage" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="962.72,1331.2869,957.5273,1324.5019,954.3463,1329.5893,962.72,1331.2869" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="0" lengthadjust="spacing" textlength="0" x="910" y="1290.2969">
+      </g><!--link Integration.IntellectusDataFabric.KnowledgeService.KnowledgeGraphApp_1 to Integration.IntellectusDataFabric.MetadataService.MetadataApp_1-->
+      <g id="link_Integration.IntellectusDataFabric.KnowledgeService.KnowledgeGraphApp_1_Integration.IntellectusDataFabric.MetadataService.MetadataApp_1">
+       <path d="M352.06,410.4969 C312.31,443.3469 260.51,486.1469 223.22,516.9569 " fill="none" id="Integration.IntellectusDataFabric.KnowledgeService.KnowledgeGraphApp_1-to-Integration.IntellectusDataFabric.MetadataService.MetadataApp_1" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="216.9,522.1769,224.9747,519.3841,221.1473,514.7633,216.9,522.1769" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="0" lengthadjust="spacing" textlength="0" x="316" y="449.7969">
         .
        </text>
-      </g><!--link DataFabric.MetadataApp to DataFabric.DataSourceGateway-->
-      <g id="link_DataFabric.MetadataApp_DataFabric.DataSourceGateway">
-       <path d="M479.62,1014.3669 C513.75,1037.6769 559.98,1069.2469 601.69,1097.7369 " fill="none" id="DataFabric.MetadataApp-to-DataFabric.DataSourceGateway" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="608.34,1102.2769,603.4132,1095.2965,600.0381,1100.2572,608.34,1102.2769" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="0" lengthadjust="spacing" textlength="0" x="560" y="1061.2969">
+      </g><!--link Integration.IntellectusDataFabric.KnowledgeService.KnowledgeGraphApp_1 to Integration.IntellectusDataFabric.KnowledgeService.KnowledgeGraphDatabase_1-->
+      <g id="link_Integration.IntellectusDataFabric.KnowledgeService.KnowledgeGraphApp_1_Integration.IntellectusDataFabric.KnowledgeService.KnowledgeGraphDatabase_1">
+       <path d="M410,410.4969 C409.44,437.6069 408.75,471.4869 408.17,499.8269 " fill="none" id="Integration.IntellectusDataFabric.KnowledgeService.KnowledgeGraphApp_1-to-Integration.IntellectusDataFabric.KnowledgeService.KnowledgeGraphDatabase_1" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="408,508.0369,411.1565,500.0973,405.1577,499.9795,408,508.0369" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="35" x="435" y="452.4355">
+        build
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="470" y="452.4355">
+        &nbsp;
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="37" x="474" y="452.4355">
+        Local
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="79" x="410" y="466.4043">
+        Knowledge
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="4" x="489" y="466.4043">
+        &nbsp;
+       </text>
+       <text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthadjust="spacing" textlength="43" x="493" y="466.4043">
+        Graph
+       </text>
+      </g><!--link Integration.IntellectusDataFabric.APIGatewayService.APIService_1 to Integration.IntellectusDataFabric.KnowledgeService.KnowledgeGraphApp_1-->
+      <g id="link_Integration.IntellectusDataFabric.APIGatewayService.APIService_1_Integration.IntellectusDataFabric.KnowledgeService.KnowledgeGraphApp_1">
+       <path d="M307.74,214.5469 C326.7,241.2069 351.2,275.6669 371.57,304.3369 " fill="none" id="Integration.IntellectusDataFabric.APIGatewayService.APIService_1-to-Integration.IntellectusDataFabric.KnowledgeService.KnowledgeGraphApp_1" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="376.39,311.1069,374.2104,302.8456,369.3158,306.3157,376.39,311.1069" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="0" lengthadjust="spacing" textlength="0" x="337" y="247.2969">
         .
        </text>
-      </g><!--link DataFabric.MetadataApp to DataFabric.MetadataDatabase-->
-      <g id="link_DataFabric.MetadataApp_DataFabric.MetadataDatabase">
-       <path d="M431.57,1014.3669 C433.79,1044.2569 437.02,1087.7369 439.48,1120.8669 " fill="none" id="DataFabric.MetadataApp-to-DataFabric.MetadataDatabase" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="440.09,1129.0569,442.4822,1120.8546,436.499,1121.3041,440.09,1129.0569" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="0" lengthadjust="spacing" textlength="0" x="437" y="1061.2969">
-        .
-       </text>
-      </g><!--link DataFabric.APIService to DataFabric.KnowledgeGraphApp-->
-      <g id="link_DataFabric.APIService_DataFabric.KnowledgeGraphApp">
-       <path d="M297.67,635.5469 C275.79,662.3169 247.49,696.9569 224.02,725.6969 " fill="none" id="DataFabric.APIService-to-DataFabric.KnowledgeGraphApp" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="218.78,732.1069,226.1613,727.8038,221.5118,724.0114,218.78,732.1069" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="0" lengthadjust="spacing" textlength="0" x="271" y="668.2969">
-        .
-       </text>
-      </g><!--link DataFabric.APIService to DataFabric.MetadataApp-->
-      <g id="link_DataFabric.APIService_DataFabric.MetadataApp">
-       <path d="M343.73,635.3969 C362.26,709.7969 400.03,861.4569 418.44,935.3869 " fill="none" id="DataFabric.APIService-to-DataFabric.MetadataApp" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="420.37,943.1469,421.3401,934.6581,415.5193,936.1133,420.37,943.1469" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="0" lengthadjust="spacing" textlength="0" x="394" y="776.7969">
-        .
-       </text>
-      </g><!--link DataFabric.WebApplication to DataFabric.APIService-->
-      <g id="link_DataFabric.WebApplication_DataFabric.APIService">
-       <path d="M242.95,405.5769 C260.58,441.7269 288.33,498.6669 308.37,539.7769 " fill="none" id="DataFabric.WebApplication-to-DataFabric.APIService" style="stroke:#666666;stroke-width:1.0;" />
-       <polygon fill="#666666" points="311.89,546.9969,311.0769,538.4916,305.6849,541.1235,311.89,546.9969" style="stroke:#666666;stroke-width:1.0;" />
-       <text fill="#666666" font-family="sans-serif" font-size="0" lengthadjust="spacing" textlength="0" x="265" y="438.2969">
+      </g><!--link Integration.IntellectusDataFabric.APIGatewayService.APIService_1 to Integration.IntellectusDataFabric.MetadataService.MetadataApp_1-->
+      <g id="link_Integration.IntellectusDataFabric.APIGatewayService.APIService_1_Integration.IntellectusDataFabric.MetadataService.MetadataApp_1">
+       <path d="M265.6,214.3969 C245.91,288.7969 205.78,440.4569 186.22,514.3869 " fill="none" id="Integration.IntellectusDataFabric.APIGatewayService.APIService_1-to-Integration.IntellectusDataFabric.MetadataService.MetadataApp_1" style="stroke:#666666;stroke-width:1.0;" />
+       <polygon fill="#666666" points="184.17,522.1469,189.1268,515.1877,183.3287,513.6444,184.17,522.1469" style="stroke:#666666;stroke-width:1.0;" />
+       <text fill="#666666" font-family="sans-serif" font-size="0" lengthadjust="spacing" textlength="0" x="252" y="355.7969">
         .
        </text>
       </g>
-      <rect fill="none" height="16.2969" style="stroke:none;stroke-width:1.0;" width="435" x="717" y="1490.8125" />
-      <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthadjust="spacing" textlength="59" x="717" y="1503.8076">
+      <rect fill="none" height="16.2969" style="stroke:none;stroke-width:1.0;" width="93" x="858" y="1360.2969" />
+      <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthadjust="spacing" textlength="59" x="858" y="1373.292">
        Legend
       </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="776" y="1503.8076">
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="917" y="1373.292">
        &nbsp;
       </text>
-      <rect fill="#08427B" height="16.2969" style="stroke:none;stroke-width:1.0;" width="435" x="717" y="1507.1094" />
-      <text fill="#073B6F" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="721" y="1520.1045">
+      <rect fill="#438DD5" height="16.2969" style="stroke:none;stroke-width:1.0;" width="93" x="858" y="1376.5938" />
+      <text fill="#3C7FC0" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="862" y="1389.5889">
        ▯
       </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="729" y="1520.1045">
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="870" y="1389.5889">
        &nbsp;
       </text>
-      <image height="12" width="12" x="733" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAApklEQVR4XmPgcKpmQMfRjcsb/CoWNqCLgzCGwH80gC6Pwjl17RG6+v9T1h47gFPD95+/0dX/33v2DootKBriW1Y2oGvQjesPxKkBhDuW7D8AUxzfunIiujwKRzWyO8ksdXIxjG+XPaNBNqgNuw3IzkAHIL+haNh67MZndEXooGXh3kVwDeiS2MCtx6/BtoA1/P7zF10eA5y69hihAYQNkyY24MMwdQBvKDvWFDAX9QAAAABJRU5ErkJggg==" y="1511.4063" />
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="49" x="753" y="1520.1045">
-       person
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="806" y="1520.1045">
-       &nbsp;
-      </text>
-      <rect fill="#438DD5" height="16.2969" style="stroke:none;stroke-width:1.0;" width="435" x="717" y="1523.4063" />
-      <text fill="#3C7FC0" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="721" y="1536.4014">
-       ▯
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="729" y="1536.4014">
-       &nbsp;
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="65" x="737" y="1536.4014">
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="65" x="878" y="1389.5889">
        container
       </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="806" y="1536.4014">
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="947" y="1389.5889">
        &nbsp;
       </text>
-      <rect fill="none" height="16.2969" style="stroke:none;stroke-width:1.0;" width="435" x="717" y="1539.7031" />
-      <text fill="#444444" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="721" y="1552.6982">
+      <rect fill="#FFFFFF" height="16.2969" style="stroke:none;stroke-width:1.0;" width="93" x="858" y="1392.8906" />
+      <text fill="#A2A2A2" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="862" y="1405.8857">
        ▯
       </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="729" y="1552.6982">
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="870" y="1405.8857">
        &nbsp;
       </text>
-      <text fill="#444444" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="119" x="737" y="1552.6982">
-       system boundary
+      <text fill="#000000" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="36" x="878" y="1405.8857">
+       node
       </text>
-      <text fill="#444444" font-family="sans-serif" font-size="10" lengthadjust="spacing" textlength="43" x="860" y="1553.6416">
-       (dashed)
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="903" y="1552.6982">
+      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="918" y="1405.8857">
        &nbsp;
       </text>
-      <rect fill="none" height="16.2969" style="stroke:none;stroke-width:1.0;" width="435" x="717" y="1556" />
-      <text fill="#444444" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="721" y="1568.9951">
-       ▯
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="729" y="1568.9951">
-       &nbsp;
-      </text>
-      <text fill="#444444" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="65" x="737" y="1568.9951">
-       boundary
-      </text>
-      <text fill="#444444" font-family="sans-serif" font-size="10" lengthadjust="spacing" textlength="43" x="806" y="1569.9385">
-       (dashed)
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="849" y="1568.9951">
-       &nbsp;
-      </text>
-      <rect fill="#66622E" height="16.2969" style="stroke:none;stroke-width:1.0;" width="435" x="717" y="1572.2969" />
-      <text fill="#CCCCCC" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="721" y="1585.292">
-       ▯
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="729" y="1585.292">
-       &nbsp;
-      </text>
-      <text fill="#CCCCCC" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="142" x="737" y="1585.292">
-       Client-side boundary
-      </text>
-      <text fill="#CCCCCC" font-family="sans-serif" font-size="10" lengthadjust="spacing" textlength="117" x="883" y="1586.2354">
-       (dashed, last back color)
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1000" y="1585.292">
-       &nbsp;
-      </text>
-      <rect fill="#66622E" height="16.2969" style="stroke:none;stroke-width:1.0;" width="435" x="717" y="1588.5938" />
-      <text fill="#CCCCCC" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="721" y="1601.5889">
-       ▯
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="729" y="1601.5889">
-       &nbsp;
-      </text>
-      <text fill="#CCCCCC" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="147" x="737" y="1601.5889">
-       Server-side boundary
-      </text>
-      <text fill="#CCCCCC" font-family="sans-serif" font-size="10" lengthadjust="spacing" textlength="117" x="888" y="1602.5322">
-       (dashed, last back color)
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1005" y="1601.5889">
-       &nbsp;
-      </text>
-      <rect fill="#66622E" height="16.2969" style="stroke:none;stroke-width:1.0;" width="435" x="717" y="1604.8906" />
-      <text fill="#CCCCCC" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="721" y="1617.8857">
-       ▯
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="729" y="1617.8857">
-       &nbsp;
-      </text>
-      <text fill="#CCCCCC" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="290" x="737" y="1617.8857">
-       Server-side/API Gateway Service boundary
-      </text>
-      <text fill="#CCCCCC" font-family="sans-serif" font-size="10" lengthadjust="spacing" textlength="117" x="1031" y="1618.8291">
-       (dashed, last back color)
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1148" y="1617.8857">
-       &nbsp;
-      </text>
-      <rect fill="#66622E" height="16.2969" style="stroke:none;stroke-width:1.0;" width="435" x="717" y="1621.1875" />
-      <text fill="#CCCCCC" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="721" y="1634.1826">
-       ▯
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="729" y="1634.1826">
-       &nbsp;
-      </text>
-      <text fill="#CCCCCC" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="283" x="737" y="1634.1826">
-       Server-side/Knowledge Service boundary
-      </text>
-      <text fill="#CCCCCC" font-family="sans-serif" font-size="10" lengthadjust="spacing" textlength="117" x="1024" y="1635.126">
-       (dashed, last back color)
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1141" y="1634.1826">
-       &nbsp;
-      </text>
-      <rect fill="#66622E" height="16.2969" style="stroke:none;stroke-width:1.0;" width="435" x="717" y="1637.4844" />
-      <text fill="#CCCCCC" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="8" x="721" y="1650.4795">
-       ▯
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="729" y="1650.4795">
-       &nbsp;
-      </text>
-      <text fill="#CCCCCC" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="270" x="737" y="1650.4795">
-       Server-side/Metadata Service boundary
-      </text>
-      <text fill="#CCCCCC" font-family="sans-serif" font-size="10" lengthadjust="spacing" textlength="117" x="1011" y="1651.4229">
-       (dashed, last back color)
-      </text>
-      <text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthadjust="spacing" textlength="4" x="1128" y="1650.4795">
-       &nbsp;
-      </text>
-      <line style="stroke:none;stroke-width:1.0;" x1="717" x2="1152" y1="1490.8125" y2="1490.8125" />
-      <line style="stroke:none;stroke-width:1.0;" x1="717" x2="1152" y1="1507.1094" y2="1507.1094" />
-      <line style="stroke:none;stroke-width:1.0;" x1="717" x2="1152" y1="1523.4063" y2="1523.4063" />
-      <line style="stroke:none;stroke-width:1.0;" x1="717" x2="1152" y1="1539.7031" y2="1539.7031" />
-      <line style="stroke:none;stroke-width:1.0;" x1="717" x2="1152" y1="1556" y2="1556" />
-      <line style="stroke:none;stroke-width:1.0;" x1="717" x2="1152" y1="1572.2969" y2="1572.2969" />
-      <line style="stroke:none;stroke-width:1.0;" x1="717" x2="1152" y1="1588.5938" y2="1588.5938" />
-      <line style="stroke:none;stroke-width:1.0;" x1="717" x2="1152" y1="1604.8906" y2="1604.8906" />
-      <line style="stroke:none;stroke-width:1.0;" x1="717" x2="1152" y1="1621.1875" y2="1621.1875" />
-      <line style="stroke:none;stroke-width:1.0;" x1="717" x2="1152" y1="1637.4844" y2="1637.4844" />
-      <line style="stroke:none;stroke-width:1.0;" x1="717" x2="1152" y1="1653.7813" y2="1653.7813" />
-      <line style="stroke:none;stroke-width:1.0;" x1="717" x2="717" y1="1490.8125" y2="1653.7813" />
-      <line style="stroke:none;stroke-width:1.0;" x1="1152" x2="1152" y1="1490.8125" y2="1653.7813" />
+      <line style="stroke:none;stroke-width:1.0;" x1="858" x2="951" y1="1360.2969" y2="1360.2969" />
+      <line style="stroke:none;stroke-width:1.0;" x1="858" x2="951" y1="1376.5938" y2="1376.5938" />
+      <line style="stroke:none;stroke-width:1.0;" x1="858" x2="951" y1="1392.8906" y2="1392.8906" />
+      <line style="stroke:none;stroke-width:1.0;" x1="858" x2="951" y1="1409.1875" y2="1409.1875" />
+      <line style="stroke:none;stroke-width:1.0;" x1="858" x2="858" y1="1360.2969" y2="1409.1875" />
+      <line style="stroke:none;stroke-width:1.0;" x1="951" x2="951" y1="1360.2969" y2="1409.1875" />
      </g>
     </svg>
    </div>
    <figcaption>
-    Container [<a href="../svg/Containers.svg">svg</a>|<a href="../png/Containers.png">png</a>|<a href="../puml/Containers.puml">puml</a>]
+    Container [<a href="../svg/HeighLevelDesign.svg">svg</a>|<a href="../png/HeighLevelDesign.png">png</a>|<a href="../puml/HeighLevelDesign.puml">puml</a>]
    </figcaption>
   </figure>
  </div></p></div>

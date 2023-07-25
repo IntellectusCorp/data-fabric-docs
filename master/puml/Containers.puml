@@ -13,6 +13,7 @@ Person(ERP, "ERP", $descr="A type of data source, ERP.", $tags="", $link="")
 Person(DataLake, "Data Lake", $descr="A type of data source, Data Lake.", $tags="", $link="")
 Person(DataWarehouse, "Data Warehouse", $descr="A type of data source, Data Warehouse.", $tags="", $link="")
 Person(CloudDataStorage, "Cloud Data Storage", $descr="A type of data source, Cloud Data Storage.", $tags="", $link="")
+System(DataPipeline, "Data Pipeline", $descr="", $tags="", $link="")
 
 System_Boundary("DataFabric_boundary", "Data Fabric", $tags="") {
   AddBoundaryTag("Client-side", $borderColor="#cccccc", $fontColor="#cccccc")
@@ -29,8 +30,8 @@ System_Boundary("DataFabric_boundary", "Data Fabric", $tags="") {
 
       AddBoundaryTag("Server-side/Knowledge Service", $borderColor="#cccccc", $fontColor="#cccccc")
       Boundary(group_4, "Knowledge Service", $tags="Server-side/Knowledge Service") {
-        ContainerDb(DataFabric.KnowledgeGraphDatabase, "Knowledge Graph Database", $techn="", $descr="DB: Neo4j or AWS Neptune", $tags="", $link="")
         Container(DataFabric.KnowledgeGraphApp, "Knowledge Graph App", $techn="Container: Serverless Java or Typescript Application", $descr="Provides", $tags="", $link="")
+        ContainerDb(DataFabric.KnowledgeGraphDatabase, "Knowledge Graph Database", $techn="", $descr="DB: Neo4j or AWS Neptune", $tags="", $link="")
       }
 
       AddBoundaryTag("Server-side/Metadata Service", $borderColor="#cccccc", $fontColor="#cccccc")
@@ -41,9 +42,10 @@ System_Boundary("DataFabric_boundary", "Data Fabric", $tags="") {
 
   }
 
-  Container(DataFabric.DataSourceGateway, "Data Source Gateway", $techn="Container: Java Application", $descr="Manage data pipeline between distburited data source and Data Fabric in secure method.", $tags="", $link="")
+  Container(DataFabric.DataSourceGateway, "Data Source Gateway", $techn="Container: Java Application", $descr="Manage data pipeline between distburited data source and Data Fabric in secure.", $tags="", $link="")
 }
 
+Rel_D(DataFabric.DataSourceGateway, DataPipeline, "", $techn="", $tags="", $link="")
 Rel_D(DataConsumer, DataFabric.APIService, "", $techn="", $tags="", $link="")
 Rel_D(DataConsumer, DataFabric.WebApplication, "", $techn="", $tags="", $link="")
 Rel_D(DataFabric.KnowledgeGraphApp, DataFabric.KnowledgeGraphDatabase, "build Local Knowledge Graph", $techn="", $tags="", $link="")

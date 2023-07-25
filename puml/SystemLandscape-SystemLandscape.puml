@@ -17,17 +17,25 @@ Boundary(group_1, "Data Owner", $tags="Data Owner") {
   Person(CloudDataStorage, "Cloud Data Storage", $descr="A type of data source, Cloud Data Storage.", $tags="", $link="")
 }
 
+AddBoundaryTag("Hycon Data Pipeline", $borderColor="#cccccc", $fontColor="#cccccc")
+Boundary(group_2, "Hycon Data Pipeline", $tags="Hycon Data Pipeline") {
+  Person(GeneratedDatabyScenariodirectory, "Generated Data by Scenario directory", $descr="Data", $tags="", $link="")
+  System(DataPipeline, "Data Pipeline", $descr="", $tags="", $link="data-pipeline/context/")
+}
+
 AddBoundaryTag("Int2 Data Fabric", $borderColor="#cccccc", $fontColor="#cccccc")
-Boundary(group_2, "Int2 Data Fabric", $tags="Int2 Data Fabric") {
+Boundary(group_3, "Int2 Data Fabric", $tags="Int2 Data Fabric") {
   System(DataFabric, "Data Fabric", $descr="Weaving together structured and contextualized knowledge from diverse sources.", $tags="", $link="data-fabric/context/")
 }
 
 AddBoundaryTag("Stakeholders", $borderColor="#cccccc", $fontColor="#cccccc")
-Boundary(group_3, "Stakeholders", $tags="Stakeholders") {
+Boundary(group_4, "Stakeholders", $tags="Stakeholders") {
   Person(DataConsumer, "Data Consumer", $descr="A consumer who are needed a data in various context.", $tags="", $link="")
 }
 
 
+Rel_D(GeneratedDatabyScenariodirectory, DataPipeline, "Transfer Data", $techn="", $tags="", $link="")
+Rel_D(DataFabric, DataPipeline, "", $techn="", $tags="", $link="")
 Rel_D(DataConsumer, DataFabric, "", $techn="", $tags="", $link="")
 Rel_D(DataFabric, ERP, "", $techn="", $tags="", $link="")
 Rel_D(DataFabric, DataLake, "", $techn="", $tags="", $link="")

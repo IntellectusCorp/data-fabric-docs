@@ -11,13 +11,13 @@ left to right direction
 
 skinparam svgDimensionStyle false
 skinparam preserveAspectRatio meet
+Container_Boundary("DataFabric.KnowledgeGraphApp_boundary", "Knowledge Graph App", $tags="") {
+  Component(DataFabric.KnowledgeGraphApp.KnowledgeWeaver, "Knowledge Weaver", $techn="", $descr="Knowledge Weaver", $tags="", $link="")
+}
+
 Container_Boundary("DataFabric.MetadataApp_boundary", "Metadata App", $tags="") {
   Component(DataFabric.MetadataApp.MetaGin, "Meta Gin", $techn="Component: Spring bean", $descr="Metadata Analyzer", $tags="", $link="")
   Component(DataFabric.MetadataApp.FabricDataCatalog, "Fabric Data Catalog", $techn="", $descr="Component: Spring bean", $tags="", $link="")
-}
-
-Container_Boundary("DataFabric.KnowledgeGraphApp_boundary", "Knowledge Graph App", $tags="") {
-  Component(DataFabric.KnowledgeGraphApp.KnowledgeWeaver, "Knowledge Weaver", $techn="", $descr="Knowledge Weaver", $tags="", $link="")
 }
 
 ContainerDb(DataFabric.KnowledgeGraphDatabase, "Knowledge Graph Database", $techn="", $descr="DB: Neo4j or AWS Neptune", $tags="", $link="")
