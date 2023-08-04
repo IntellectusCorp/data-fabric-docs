@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" class="has-background-light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UC-003 도로 주행 자동차 센서 수집 데이터 실시간 분석을 통한 도로 이상 감지 | Int2 Data Fabric</title>
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
+    <link href="../../style.css" rel="stylesheet">
+    <link href="./../style-branding.css" rel="stylesheet">
+  </head>
+  <body>
+    <script type="text/javascript" src="../../header.js"></script>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand has-site-branding"><a href="../" class="navbar-item"><span class="has-text-weight-semibold has-site-branding">Int2 Data Fabric</span></a></div>
+      <div class="navbar-menu has-site-branding">
+        <div class="navbar-end">
+          <div class="navbar-item"><input class="input is-small is-rounded has-site-branding" id="search" type="search" size="30" maxlength="50" placeholder="Search (requires 3 characters)..." onkeyup="redirect(event, value, '../search/')"></div>
+          <div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link has-site-branding">master</a>
+            <div class="navbar-dropdown is-right"><a href="../../master/" class="navbar-item">master</a>
+              <hr class="navbar-divider">
+              <div class="navbar-item has-text-grey-light"><span>v</span><span>0.0.0</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="site-layout" id="site">
+      <aside class="menu p-3">
+        <p class="menu-label">General</p>
+        <ul class="menu-list has-site-branding">
+          <li><a href="../" class="">Home</a><a href="../decisions/" class="">Decisions</a><a href="../software-systems/" class="">Software Systems</a><a href="../high-level-design/" class="">High Level Design</a><a href="../로컬-지식-그래프-아키텍처/" class="">로컬 지식 그래프 아키텍처</a><a href="../use-case,-scenario-명세서/" class="">Use-case, Scenario 명세서</a><a href="../uc-001-교통사고-상황-분석을-위한-데이터-탐색/" class="">UC-001 교통사고 상황 분석을 위한 데이터 탐색</a><a href="../uc-002-자율주행-ai-모델-강화를-위한-목적별-학습-데이터-탐색/" class="">UC-002 자율주행 AI 모델 강화를 위한 목적별 학습 데이터 탐색</a><a href="./" class="is-active">UC-003 도로 주행 자동차 센서 수집 데이터 실시간 분석을 통한 도로 이상 감지</a></li>
+        </ul>
+        <p class="menu-label">Software systems</p>
+        <ul class="menu-list has-site-branding">
+          <li><a href="../data-fabric/" class="">Data Fabric</a><a href="../data-pipeline/" class="">Data Pipeline</a></li>
+        </ul>
+      </aside>
+      <div class="container is-fluid has-background-white">
+        <div class="content p-3">
+          <div><h1>UC-003 도로 주행 자동차 센서 수집 데이터 실시간 분석을 통한 도로 이상 감지</h1>
+<h2>UC-003</h2>
+<h3>설명</h3>
+<p>자율주행 빅데이터 플랫폼이 지원하는 데이터 소스 타입 중 하나는 스트리밍 방식이다. 도로를 주행하고 있는 자동차의 카메라에서 지속적으로 업데이트 되는 데이터 소스를 빅데이터 플랫폼을 통해 파이프라인으로 연결하여 이상을 탐지할 수 있는 AI 모델과 연동하여 준 실시간성 도로 이상 탐지를 구현한다.</p>
+<h3>비즈니스 목적</h3>
+<ul>
+ <li>스트리밍 유형의 데이터 파이프라인 구축을 통해 도로 관제 서비스 역량을 강화</li>
+ <li>복수의 분산된 데이터 세트의 데이터를 복합적으로 분석하여 도로 상태 분석 정확도를 향상 시키고 유지보수 활동에 대한 효율성 재고</li>
+</ul>
+<h3>사용자 의도</h3>
+<p>도로의 상황을 관제해야 하는 기관은 분산 데이터 세트로 부터 실시간 성격의 데이터를 활용할 수 있다. 도로를 주행하고 있는 자동차의 카메라서 수집되는 데이터를 <strong>자율주행 빅데이터 플랫폼</strong> 에서 지원하는 스트리밍 방식의 파이프라인을 통해 업데이트 받아 복수의 데이터 세트로 부터 유의미한 모니터링 정보를 수집하면 실시간 알림 서비스를 구축 하거나, 도로 유지보수를 위한 활동에 활용할 수 있다.</p>
+<h3>다이어그램</h3>
+<p><img src="https://kroki.io/structurizr/svg/eNqlld1KG0EUgO99isN6JxRECvWmvakVetMKPsFkM9kMbnbCzqwhlUBp10JtxILSUtiI0lIs7UUEKRHyRO7sO_RsdnX_N7EeSJidn3O-8zNnoMftHdElOoW9JUDp8CY1YQ9mH6E0mNEkksBTELwle8Sm230haQe07fgbogkt1nArBt_FQzq3JGEWtUHzj1z_3IObq7fqzAP1yVMHP4J9T0uv-D__wM1kjKO8ulAkMQRoQpId2uZmk9paZssg8xVSv-6FlrMUh2M1ugrcMagPQ-WdqdPPSKDcqXK94PhCnbkPtiyoJXjOrLq-8n-d-KNp4q76Pg2-fAQE8I--qfEFpPbszXFMUJnVvxHmaJM0bKZDykV3EhxMtIzX8VSVj7F2rbAce_XoGcg2w43q636sFdXV4Oo2JZJusS41EbUyGVgLBxNMvz8-hGA4DKdPXIyFGk1AvR8p97Ka2RFUR-gic1iDMXBdviQidphlPARyPl1YP7GhImkuSvOhbWowITfKaiGfbPCPL_3z0X_EL7lD5UA1RHggLqU5sb7PRsznUon1FjMcO8xak3ZN3u9QS76wdpnNrXAIWrSe9z_Z_Aqb3uJd6C7SLy1sCBa2zjRWyX3N2cELr7yL-Pb71_tJuoKToX_6OziaLma2EKIFzmTr7B7U_l9XvRvDIo2kaLUswRU-zbpMBVc0iv53Ge2J9EOVAMPKbUWklkNhlm466MxKZpY4kpukz52Eb5CcE7JvUpHzkpo0qqz0i1ASiQbRdwybO1YTllfXH689aZSEwMSuutyaSWG1hQHaZm8orK0VG3KbdClsUVtwqyaRd6x3faies4Ik5lydSQ3negXnc2brJl2E8_YFKuGMVG3O4r2IqqThVioLr0Jtuc3aZBsVYoW1iGPKqDYG-Fsa_APgMt5q" alt="figure-uc-001"></p>
+<h3>실행 가능한 환경에 대한 참조</h3>
+<ul>
+ <li>테스트케이스 UC-003</li>
+</ul></div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="../../reformat-mermaid.js"></script>
+    <script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';</script>
+  </body>
+</html>
