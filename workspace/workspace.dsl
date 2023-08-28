@@ -2,7 +2,7 @@
  * This is a combined version of the following workspaces:
  *
 */
-workspace "Int2 Data Fabric" "The workspace to illustrate the system architecture of Autonomous Driving Bigdata Platform." {
+workspace "자율주행 빅데이터 플랫폼" "The workspace to illustrate the system architecture of Autonomous Driving Bigdata Platform." {
     !docs docs
     !adrs adrs
 
@@ -17,33 +17,32 @@ workspace "Int2 Data Fabric" "The workspace to illustrate the system architectur
             dataConsumer = person "Data Consumer" "A consumer who are needed a data in various context." "Person"
         }
 
-        group "Data Owner" {
-            enterpriseERP = person "ERP" "A type of data source, ERP." "Data Sources"
-            dataLake = person "Data Lake" "A type of data source, Data Lake." "Data Sources"
-            dataWarehouse = person "Data Warehouse" "A type of data source, Data Warehouse." "Data Sources"
-            cloudDataStorage = person "Cloud Data Storage" "A type of data source, Cloud Data Storage." "Data Sources"
-        }
+        group "Distributed Datasets" {
+            enterpriseERP = person "ERP" "Traditional type of dataset in enterprise grade." "Data Sources"
+            dataLake = person "Data Lake" "Unstructured or semi-structured dataset" "Data Sources"
+            dataWarehouse = person "Data Warehouse" "Structured dataset." "Data Sources"
 
-        group "Hycon Data Pipeline" {
+            group "Hycon Data Pipeline" {
 
-            hyconDataGeneration = person "Generated Data by Scenario directory" "Data"
+            hyconDataGeneration = person "Generated Data by Scenario Directory" "Autonomous Driving Data for Machine Learning"
             
-            hyconDataPipeline = softwaresystem "Data Pipeline" {
+            hyconDataPipeline = softwaresystem "Data Pipeline" "An autonomous driving dataset generated from scenarios provided by the consortium." {
+                tags "Hycon"
                  
                 hp_autonomousDataStore = container "Autonomous Data Store" "Database" {
-                    tags "Database"
+                    tags "Database" "Hycon"
                 }
                 hp_metadataStore = container "Metadata Store" "Database" {
-                    tags "Database"
+                    tags "Database" "Hycon"
                 }
                 hp_metadataExtractor = container "Metadata Extraction" "API Server" {
-                    tags "hycon"
+                    tags "Hycon"
                 }
                 hp_anontmization = container "Anontmization" "API Server" {
-                    tags "hycon"
+                    tags "Hycon"
                 }
                 hp_visualization = container "Visualization" "API Server" {
-                    tags "hycon"
+                    tags "Hycon"
                 }
             }
 
@@ -53,10 +52,13 @@ workspace "Int2 Data Fabric" "The workspace to illustrate the system architectur
             hp_anontmization -> hp_visualization "Processing for Visualization"
             hp_visualization -> hp_metadataStore "Load Data"
         }
+        }
+
+        
 
         group "Int2 Data Fabric" {
 
-            dataFabric = softwaresystem "Data Fabric" "Weaving together structured and contextualized knowledge from diverse sources." "Int2 Data Fabric" {
+            dataFabric = softwaresystem "Data Fabric" "Orchestrates distributed datasets owned by individual entities, enabling information retrieval and managing the data lifecycle." "Int2 Data Fabric" {
                 !docs data-fabric-core/docs
                 !adrs data-fabric-core/adrs
             #    dataTailoringEngine =  container "Data Tailoring Engine" "Provides a mechanism to orchestrate the data with the governances." ""
@@ -127,7 +129,6 @@ workspace "Int2 Data Fabric" "The workspace to illustrate the system architectur
         fabricBroker -> enterpriseERP 
         fabricBroker -> dataLake 
         fabricBroker -> dataWarehouse 
-        fabricBroker -> cloudDataStorage 
 
         metaGin -> fabricBroker
         metaGin -> fabricDataCatalog "analyze"
@@ -171,8 +172,11 @@ workspace "Int2 Data Fabric" "The workspace to illustrate the system architectur
     views {
         properties {
             "c4plantuml.elementProperties" "true"
+            # with c4plantuml.tags set as true, it's enable to apply custom styles 
+            "c4plantuml.tags" "true" 
             "generatr.style.colors.primary" "#485fc7"
             "generatr.style.colors.secondary" "#ffffff"
+            
             // "generatr.style.faviconPath" "site/favicon.ico"
             // "generatr.style.logoPath" "site/logo.png"
         }
@@ -237,18 +241,23 @@ workspace "Int2 Data Fabric" "The workspace to illustrate the system architectur
         }
 
         styles {
+            
+            element "Software System" {
+                background #1168bd
+                color #ffffff
+            }
+
+            element "Hycon" {
+                background #FFD470
+                color #4a4a4a
+            }
+
             element "Web Browser" {
                 shape WebBrowser
             }
+
             element "Database" {
                 shape Cylinder
-            }
-
-            element "Person" {
-                background #08427b
-                color #ffffff
-                fontSize 22
-                shape Person
             }
 
             element "Customer" {
@@ -257,14 +266,8 @@ workspace "Int2 Data Fabric" "The workspace to illustrate the system architectur
             element "Bank Staff" {
                 background #999999
             }
-            element "Software System" {
-                background #1168bd
-                color #ffffff
-            }
-            element "Existing System" {
-                background #999999
-                color #ffffff
-            }
+
+
             element "Container" {
                 background #438dd5
                 color #ffffff
