@@ -9,22 +9,30 @@ top to bottom direction
 !include <C4/C4_Container>
 !include <C4/C4_Component>
 
-Container_Boundary("DataFabric.KnowledgeGraphApp_boundary", "Knowledge Graph App", $tags="") {
-  Component(DataFabric.KnowledgeGraphApp.KnowledgeWeaver, "Knowledge Weaver", $techn="", $descr="Knowledge Weaver", $tags="", $link="")
-  Component(DataFabric.KnowledgeGraphApp.KnowledgeSlipboxApiProvider, "Knowledge Slipbox Api Provider", $techn="", $descr="Knowledge Graph", $tags="", $link="")
+AddElementTag("Element", $bgColor="#dddddd", $borderColor="#9a9a9a", $fontColor="#000000", $sprite="", $shadowing="")
+AddElementTag("Container,Database", $bgColor="#438dd5", $borderColor="#2e6295", $fontColor="#ffffff", $sprite="", $shadowing="")
+AddElementTag("Container", $bgColor="#438dd5", $borderColor="#2e6295", $fontColor="#ffffff", $sprite="", $shadowing="")
+
+AddRelTag("Relationship", $textColor="#707070", $lineColor="#707070", $lineStyle = "")
+
+AddBoundaryTag("Container", $bgColor="#ffffff", $borderColor="#2e6295", $fontColor="#2e6295", $shadowing="")
+
+Container_Boundary("DataFabric.KnowledgeGraphApp_boundary", "Knowledge Graph App", $tags="Container") {
+  Component(DataFabric.KnowledgeGraphApp.KnowledgeWeaver, "Knowledge Weaver", $techn="", $descr="Knowledge Weaver", $tags="Element", $link="")
+  Component(DataFabric.KnowledgeGraphApp.KnowledgeSlipboxApiProvider, "Knowledge Slipbox Api Provider", $techn="", $descr="Knowledge Graph", $tags="Element", $link="")
 }
 
-Container_Boundary("DataFabric.MetadataApp_boundary", "Metadata App", $tags="") {
-  Component(DataFabric.MetadataApp.MetaGin, "Meta Gin", $techn="Component: Spring bean", $descr="Metadata Analyzer", $tags="", $link="")
+Container_Boundary("DataFabric.MetadataApp_boundary", "Metadata App", $tags="Container") {
+  Component(DataFabric.MetadataApp.MetaGin, "Meta Gin", $techn="Component: Spring bean", $descr="Metadata Analyzer", $tags="Element", $link="")
 }
 
-ContainerDb(DataFabric.KnowledgeGraphDatabase, "Knowledge Graph Database", $techn="", $descr="DB: Neo4j or AWS Neptune", $tags="", $link="")
-Container(DataFabric.DataSourceGateway, "Data Source Gateway", $techn="Container: Java Application", $descr="Manage data pipeline between distburited data source and Data Fabric in secure.", $tags="", $link="")
+ContainerDb(DataFabric.KnowledgeGraphDatabase, "Knowledge Graph Database", $techn="", $descr="DB: Neo4j or AWS Neptune", $tags="Container,Database", $link="")
+Container(DataFabric.DataSourceGateway, "Data Source Gateway", $techn="Container: Java Application", $descr="Manage data pipeline between distburited data source and Data Fabric in secure.", $tags="Container", $link="")
 
-Rel_D(DataFabric.MetadataApp.MetaGin, DataFabric.DataSourceGateway, "1. access data source via Broker", $techn="", $tags="", $link="")
-Rel_D(DataFabric.KnowledgeGraphApp.KnowledgeWeaver, DataFabric.MetadataApp.MetaGin, "2. weave Knowledge from Metadata", $techn="", $tags="", $link="")
-Rel_D(DataFabric.KnowledgeGraphApp.KnowledgeWeaver, DataFabric.KnowledgeGraphDatabase, "3. build Local Knowledge Graph", $techn="", $tags="", $link="")
-Rel_D(DataFabric.KnowledgeGraphApp.KnowledgeSlipboxApiProvider, DataFabric.KnowledgeGraphDatabase, "4. fetch", $techn="", $tags="", $link="")
+Rel_D(DataFabric.MetadataApp.MetaGin, DataFabric.DataSourceGateway, "1. access data source via Broker", $techn="", $tags="Relationship", $link="")
+Rel_D(DataFabric.KnowledgeGraphApp.KnowledgeWeaver, DataFabric.MetadataApp.MetaGin, "2. weave Knowledge from Metadata", $techn="", $tags="Relationship", $link="")
+Rel_D(DataFabric.KnowledgeGraphApp.KnowledgeWeaver, DataFabric.KnowledgeGraphDatabase, "3. build Local Knowledge Graph", $techn="", $tags="Relationship", $link="")
+Rel_D(DataFabric.KnowledgeGraphApp.KnowledgeSlipboxApiProvider, DataFabric.KnowledgeGraphDatabase, "4. fetch", $techn="", $tags="Relationship", $link="")
 
 SHOW_LEGEND(true)
 @enduml
