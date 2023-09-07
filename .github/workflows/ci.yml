@@ -50,7 +50,7 @@ jobs:
         run: >
           docker run --user root -t --rm -v ${{ github.workspace }}:/var/model
           ghcr.io/avisi-cloud/structurizr-site-generatr generate-site
-          --workspace-file workspace/workspace.dsl
+          --workspace-file workspace/workspace.dsl --assets-dir workspace/docs/assets
         shell: bash
           
       - name: Publish site

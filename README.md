@@ -19,5 +19,5 @@ github pages hosting URL: [intellectuscorp.github.io/data-fabric-docs](https://i
 
 ```bash
 docker run -it --rm -v /path/to/local-repository/workspace:/var/model -p 8080:8080 \
-ghcr.io/avisi-cloud/structurizr-site-generatr serve -w workspace.dsl
+ghcr.io/avisi-cloud/structurizr-site-generatr serve -w workspace.dsl --assets-dir docs/assets
 ```
