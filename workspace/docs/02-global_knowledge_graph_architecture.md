@@ -27,18 +27,28 @@ Knowledge Graph 는 정보(information)의 상위 개념으로서의 지식(know
 
 ### RDF(Resource Description Framework) Triple Stores
 
-RDF 는 "시맨틱 웹"과 관련이 있다. 구조화된 메타데이터를 통해 잘 정의된 데이터로, 이러한 데이터들을 통해서 웹의 개별적인 참여자들이 의미론적 처리가 가능한 소프트웨어나 서비스를 재생성하는 널리 보급된 웹의 차세대 생태계를 가속화 하는 아이디어이다. RDF는 그래프 데이터 구조를 이용해서 구조화된 메타데이터의 형식을 어떤 형태로 표현할지에 대한 명세를 포함한다.
+RDF 는 "시맨틱 웹"과 관련이 있다. 구조화된 메타데이터를 통해 잘 정의된 데이터로, 이러한 데이터들을 통해서 웹의 개별적인 참여자들이 의미론적 처리가 가능한 소프트웨어를 재생성하는 (널리 보급된) 웹의 차세대 생태계를 가속화 하는 아이디어 중 일부이다. RDF는 그래프 데이터 구조를 기본으로 하면서 체계적으로 구조화된 메타데이터를 어떻게 표현할지에 대한 명세를 포함한다.
 
-핵심적인 개념 중 하나는, RDF에서 subject-predicate-object 형태의 triple 을 기본 구조를 갖는데 각 요소의 ID 가 웹에서 리소스의 식별자인 URI 라는 것이다. RDF 에서 각 요소들은 내부적으로 어떤 데이터를 포함하지 않고 고유의 URI 만을 가진다. URI 가 부여된 리소스들은 자체적으로 구조화된 메타데이터를 포함하는 데이터를 제공한다.
+RDF 에서 핵심적인 개념 중 하나는, RDF에서 subject-predicate-object 형태의 triple 을 기본 구조를 갖는데 각 요소의 ID 가 웹에서 리소스의 식별자인 URI 라는 것이다. RDF 에서 각 요소들은 내부적으로 어떤 데이터를 포함하지 않으며 고유의 URI 만 갖는다. URI 가 부여된 리소스들은 자체적으로 구조화된 메타데이터를 포함한 데이터를 제공한다.
 
-RDF 모델에서 각 노드와 엣지가 자체적인 데이터 구조를 갖지 않고, URI 만을 가진다는 특징은 이후 LPG 와 비교하면 이해하는데 도움이 된다. 또한 이러한 특징이 구축된 그래프 구조의 데이터들을 사용하는 방식이나 성능에 영향을 미칠 수 있다는 것도 알 수 있다.
+RDF 모델에서 각 노드와 엣지가 자체적인 데이터 구조를 갖지 않는다는 것은, LPG(Labeled Property Graphs) 와 비교하면 이해하는데 도움이 된다. 또한 이러한 특징이 구축된 그래프 구조의 데이터들을 사용하는 방식이나 성능에 영향을 미칠 수 있다는 것도 알 수 있다.
 
-![RDF Example](RDF_example.svg)
+![RDF Model Example](RDF_example.svg)
 
-[편집](http://magjac.com/graphviz-visual-editor/?dot=graph%20SCHEMA%20%7B%0A%09fontname%3D%22Helvetica%2CArial%2Csans-serif%22%0A%09node%20%5Bfontname%3D%22Helvetica%2CArial%2Csans-serif%22%20style%3Dnone%20shape%3Dellipse%5D%0A%09edge%20%5Bfontname%3D%22Helvetica%2CArial%2Csans-serif%22%5D%0A%09layout%3Dneato%0A%09%0A%09node%20%5Blabel%3D%22http%3A%2F%2Fdomain%2Fres-node1%22%5D%20ex1%3B%0A%20%20%20%20node%20%5Blabel%3D%22http%3A%2F%2Fdomain%2Fres-node2%22%5D%20ex2%3B%0A%20%20%20%20node%20%5Blabel%3D%22http%3A%2F%2Fdomain%2Fres-node3%22%5D%20ex3%3B%0A%20%20%20%20%0A%20%20%20%20node%20%5Blabel%3D%22ABCD%40en%22%20shape%3Drectangle%5D%20label1%3B%0A%20%20%20%20node%20%5Blabel%3D%22%EC%98%88%40kr%22%20shape%3Drectangle%5D%20label2%3B%0A%0A%0A%09%20%20%20%20%0A%09node%20%5Bshape%3Dellipse%20fillcolor%3Dnone%20label%3Dundefined%20%5D%3B%0A%09edge%20%5Bcolor%3Dblack%20penwidth%3D2.0%20len%3D2%5D%3B%0A%0A%09ex1%20--%20ex2%20%5Blabel%3D%22http%3A%2F%2Fdomain%2Fres-relation1%22%20%5D%3B%0A%09ex1%20--%20label1%20%5Blabel%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%22%20len%3D4%5D%0A%09ex1%20--%20label2%20%5Blabel%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%22%20len%3D5%5D%0A%09%0A%09ex2%20--%20ex3%20%5Blabel%3D%22http%3A%2F%2Fdomain%2Fres-relation2%22%5D%0A%0A%0A%20%20%20%20overlap%3Dfalse%0A%20%20%20%20fontsize%3D20%3B%0A%09label%20%3D%20%22%5CnRDF%20Example%22%3B%0A%7D)
+[Graphviz 수정](http://magjac.com/graphviz-visual-editor/?dot=graph%20SCHEMA%20%7B%0A%09fontname%3D%22Helvetica%2CArial%2Csans-serif%22%0A%09node%20%5Bfontname%3D%22Helvetica%2CArial%2Csans-serif%22%20style%3Dnone%20shape%3Dellipse%5D%0A%09edge%20%5Bfontname%3D%22Helvetica%2CArial%2Csans-serif%22%5D%0A%09layout%3Dneato%0A%09%0A%09node%20%5Blabel%3D%22http%3A%2F%2Fdomain%2Fres-node1%22%5D%20ex1%3B%0A%20%20%20%20node%20%5Blabel%3D%22http%3A%2F%2Fdomain%2Fres-node2%22%5D%20ex2%3B%0A%20%20%20%20node%20%5Blabel%3D%22http%3A%2F%2Fdomain%2Fres-node3%22%5D%20ex3%3B%0A%20%20%20%20%0A%20%20%20%20node%20%5Blabel%3D%22ABCD%40en%22%20shape%3Drectangle%5D%20label1%3B%0A%20%20%20%20node%20%5Blabel%3D%22%EC%98%88%40kr%22%20shape%3Drectangle%5D%20label2%3B%0A%0A%0A%09%20%20%20%20%0A%09node%20%5Bshape%3Dellipse%20fillcolor%3Dnone%20label%3Dundefined%20%5D%3B%0A%09edge%20%5Bcolor%3Dblack%20penwidth%3D2.0%20len%3D2%5D%3B%0A%0A%09ex1%20--%20ex2%20%5Blabel%3D%22http%3A%2F%2Fdomain%2Fres-relation1%22%20%5D%3B%0A%09ex1%20--%20label1%20%5Blabel%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%22%20len%3D4%5D%0A%09ex1%20--%20label2%20%5Blabel%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%22%20len%3D5%5D%0A%09%0A%09ex2%20--%20ex3%20%5Blabel%3D%22http%3A%2F%2Fdomain%2Fres-relation2%22%5D%0A%0A%0A%20%20%20%20overlap%3Dfalse%0A%20%20%20%20fontsize%3D20%3B%0A%09label%20%3D%20%22%5CnRDF%20Example%22%3B%0A%7D)
+
 
 
 ### LPG: Labeled Property Graphs
+
+RDF가 리소스와 다른 리소스 사이의 연결에 중점을 두고 있다면, LPG 는 데이터의 보관과 질의에 초점을 맞춘다. LPG Model에서 각각의 노드와 엣지(Relationship)는 자체 시스템 내부에서 고유한 식별자를 가지며, 자체적인 데이터 구조를 포함할 수 있다. 자체 데이터 구조는 Key-Value 쌍 형태의 데이터로 노드 혹은 엣지의 특성을 표현하는 프로퍼티(Properties)이다. LPG 모델의 이러한 특성은 URI 를 통해 특정 리소스를 참조하여 데이터들을 확인할 수 있는 RDF 모델과 비교하면 데이터를 자체 구조 내에서 관리할 수 있고, 이를 이용해서 다양한 쿼리 유형은 지원할 수 있도록 한다. 또한, (LPG 모델을 지원하는 데이터베이스에 따라 차이가 있을 수 있지만) 필요한 정보들을 프로퍼티 형태로 관리 할 것인지 별도의 노드와 엣지를 이용해서 표현할 것인지에 따라서 데이터베이스 내부적으로 관리하는 인덱스의 용량과 쿼리 응답을 위한 프로세싱을 효율화 할 수도 있다.
+
+![LPG Model Example](LPG_example.svg)
+
+[Graphviz 수정](http://magjac.com/graphviz-visual-editor/?dot=graph%20LPG%20%7B%0A%09fontname%3D%22Helvetica%2CArial%2Csans-serif%22%0A%09node%20%5Bfontname%3D%22Helvetica%2CArial%2Csans-serif%22%20shape%3Dellipse%5D%0A%09edge%20%5Bfontname%3D%22Helvetica%2CArial%2Csans-serif%22%5D%0A%09layout%3Dneato%0A%09%0A%09node%20%5Blabel%3D%22Entity%22%20xlabel%3D%22name%3ANode1%5Cl%20%7B%5Cl%20label%3A%20%5BABCD%40en%2C%20%EC%98%88%40kr%5D%20%5Cl%7D%20%5Cl%22%20%5D%20node1%3B%0A%09node%20%5Blabel%3D%22Entity%22%20xlabel%3D%22name%3ANode2%22%20%5D%20node2%3B%0A%09node%20%5Blabel%3D%22Entity%22%20xlabel%3D%22name%3ANode2%22%20%5D%20node3%3B%0A%0A%09edge%20%5Bcolor%3Dblack%20penwidth%3D2.0%20len%3D2%5D%3B%0A%09node1%20--%20node2%20%5Blabel%3D%22relation1%22%20%5D%0A%09node2%20--%20node3%20%5Blabel%3D%22relation2%22%20len%3D3%20%5D%0A%0A%20%20%20%20overlap%3Dfalse%0A%20%20%20%20fontsize%3D20%3B%0A%09label%20%3D%20%22%5CnLPG%20Example%22%3B%0A%7D)
+
+
+### LPG 와 RDF 의 차이와 특징
 
 
 ## 글로벌 지식 그래프
