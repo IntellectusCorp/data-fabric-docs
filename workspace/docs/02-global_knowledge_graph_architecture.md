@@ -38,6 +38,7 @@ RDF 모델에서 각 노드와 엣지가 자체적인 데이터 구조를 갖지
 [Graphviz 수정](http://magjac.com/graphviz-visual-editor/?dot=graph%20SCHEMA%20%7B%0A%09fontname%3D%22Helvetica%2CArial%2Csans-serif%22%0A%09node%20%5Bfontname%3D%22Helvetica%2CArial%2Csans-serif%22%20style%3Dnone%20shape%3Dellipse%5D%0A%09edge%20%5Bfontname%3D%22Helvetica%2CArial%2Csans-serif%22%5D%0A%09layout%3Dneato%0A%09%0A%09node%20%5Blabel%3D%22http%3A%2F%2Fdomain%2Fres-node1%22%5D%20ex1%3B%0A%20%20%20%20node%20%5Blabel%3D%22http%3A%2F%2Fdomain%2Fres-node2%22%5D%20ex2%3B%0A%20%20%20%20node%20%5Blabel%3D%22http%3A%2F%2Fdomain%2Fres-node3%22%5D%20ex3%3B%0A%20%20%20%20%0A%20%20%20%20node%20%5Blabel%3D%22ABCD%40en%22%20shape%3Drectangle%5D%20label1%3B%0A%20%20%20%20node%20%5Blabel%3D%22%EC%98%88%40kr%22%20shape%3Drectangle%5D%20label2%3B%0A%0A%0A%09%20%20%20%20%0A%09node%20%5Bshape%3Dellipse%20fillcolor%3Dnone%20label%3Dundefined%20%5D%3B%0A%09edge%20%5Bcolor%3Dblack%20penwidth%3D2.0%20len%3D2%5D%3B%0A%0A%09ex1%20--%20ex2%20%5Blabel%3D%22http%3A%2F%2Fdomain%2Fres-relation1%22%20%5D%3B%0A%09ex1%20--%20label1%20%5Blabel%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%22%20len%3D4%5D%0A%09ex1%20--%20label2%20%5Blabel%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23label%22%20len%3D5%5D%0A%09%0A%09ex2%20--%20ex3%20%5Blabel%3D%22http%3A%2F%2Fdomain%2Fres-relation2%22%5D%0A%0A%0A%20%20%20%20overlap%3Dfalse%0A%20%20%20%20fontsize%3D20%3B%0A%09label%20%3D%20%22%5CnRDF%20Example%22%3B%0A%7D)
 
 
+
 ### LPG: Labeled Property Graphs
 
 RDF가 리소스와 다른 리소스 사이의 연결에 중점을 두고 있다면, LPG 는 데이터의 보관과 질의에 초점을 맞춘다. LPG Model에서 각각의 노드와 엣지(Relationship)는 자체 시스템 내부에서 고유한 식별자를 가지며, 자체적인 데이터 구조를 포함할 수 있다. 자체 데이터 구조는 Key-Value 쌍 형태의 데이터로 노드 혹은 엣지의 특성을 표현하는 프로퍼티(Properties)이다. LPG 모델의 이러한 특성은 URI 를 통해 특정 리소스를 참조하여 데이터들을 확인할 수 있는 RDF 모델과 비교하면 데이터를 자체 구조 내에서 관리할 수 있고, 이를 이용해서 다양한 쿼리 유형은 지원할 수 있도록 한다. 또한, (LPG 모델을 지원하는 데이터베이스에 따라 차이가 있을 수 있지만) 필요한 정보들을 프로퍼티 형태로 관리 할 것인지 별도의 노드와 엣지를 이용해서 표현할 것인지에 따라서 데이터베이스 내부적으로 관리하는 인덱스의 용량과 쿼리 응답을 위한 프로세싱을 효율화 할 수도 있다.
@@ -48,7 +49,6 @@ RDF가 리소스와 다른 리소스 사이의 연결에 중점을 두고 있다
 
 
 ### LPG 와 RDF 의 차이와 특징
-
 
 
 ## 글로벌 지식 그래프
