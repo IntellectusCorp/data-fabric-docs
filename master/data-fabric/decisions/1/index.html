@@ -4,9 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Data Fabric | 자율주행 빅데이터 플랫폼</title>
-    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet">
     <link href="../../../../style.css" rel="stylesheet">
     <link href="./../../../style-branding.css" rel="stylesheet">
+    <script type="text/javascript" src="../../../../svg-modal.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
   </head>
   <body>
     <script type="text/javascript" src="../../../../header.js"></script>
@@ -14,7 +16,7 @@
       <div class="navbar-brand has-site-branding"><a href="../../../" class="navbar-item"><span class="has-text-weight-semibold has-site-branding">자율주행 빅데이터 플랫폼</span></a></div>
       <div class="navbar-menu has-site-branding">
         <div class="navbar-end">
-          <div class="navbar-item"><input class="input is-small is-rounded has-site-branding" id="search" type="search" size="30" maxlength="50" placeholder="Search (requires 3 characters)..." onkeyup="redirect(event, value, '../../../search/')"></div>
+          <div class="navbar-item"><input class="input is-small is-rounded has-site-branding" id="search" type="search" size="30" maxlength="50" placeholder="Search..." onkeyup="redirect(event, value, '../../../search/')"></div>
           <div class="navbar-item has-dropdown is-hoverable"><a class="navbar-link has-site-branding">master</a>
             <div class="navbar-dropdown is-right"><a href="../../../../master/" class="navbar-item">master</a>
               <hr class="navbar-divider">
@@ -39,10 +41,11 @@
         <h1 class="title mt-3">Data Fabric</h1>
         <h2 class="subtitle">Orchestrates distributed datasets owned by individual entities, enabling information retrieval and managing the data lifecycle.</h2>
         <div class="tabs mt-3">
-          <ul>
+          <ul class="is-flex-wrap-wrap is-flex-shrink-1 is-flex-grow-0">
             <li><a href="../../" class="">Info</a></li>
             <li><a href="../../context/" class="">Context views</a></li>
             <li><a href="../../container/" class="">Container views</a></li>
+            <li><a href="../../dynamic/" class="">Dynamic views</a></li>
             <li><a href="../../dependencies/" class="">Dependencies</a></li>
             <li class="is-active"><a href="../" class="is-active">Decisions</a></li>
           </ul>
@@ -62,6 +65,6 @@
       </div>
     </div>
     <script type="text/javascript" src="../../../../reformat-mermaid.js"></script>
-    <script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';</script>
+    <script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.esm.min.mjs';</script>
   </body>
 </html>
