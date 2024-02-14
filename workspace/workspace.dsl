@@ -2,7 +2,7 @@
  * This is a combined version of the following workspaces:
  *
 */
-workspace "자율주행 빅데이터 플랫폼" "The workspace to illustrate the system architecture of Autonomous Driving Bigdata Platform." {
+workspace "자율주행 빅데이터 플랫폼" "System architecture of Autonomous Driving Bigdata Platform powered by Int2 Data Fabric Platform." {
     !docs docs
     !adrs adrs
 
@@ -21,47 +21,51 @@ workspace "자율주행 빅데이터 플랫폼" "The workspace to illustrate the
             enterpriseERP = person "ERP" "Traditional type of dataset in enterprise grade." "Data Sources"
             dataLake = person "Data Lake" "Unstructured or semi-structured dataset" "Data Sources"
             dataWarehouse = person "Data Warehouse" "Structured dataset." "Data Sources"
+            vehicles = person "Vehicles" "Publish and subscribe data in near real time" "Data Sources"
+            trafficControl = person "Traffic Control Information" "Publish traffic information" "Data Sources"
 
-            group "Hycon Data Pipeline" {
+            group "3rd Party Data Platform" {
 
-            hyconDataGeneration = person "Generated Data by Scenario Directory" "Autonomous Driving Data for Machine Learning"
-            
-            hyconDataPipeline = softwaresystem "Data Pipeline" "An autonomous driving dataset generated from scenarios provided by the consortium." {
-                tags "Hycon"
+                hyconDataPipeline = softwaresystem "Hycon Data Platform" "An autonomous driving dataset generated from scenarios provided by the consortium." {
+                    tags "Hycon"
+                    properties {
+                        "Owner" "Hyconsoft"
+                     }
                  
-                hp_autonomousDataStore = container "Autonomous Data Store" "Database" {
-                    tags "Database" "Hycon"
-                }
-                hp_metadataStore = container "Metadata Store" "Database" {
-                    tags "Database" "Hycon"
-                }
-                hp_metadataExtractor = container "Metadata Extraction" "API Server" {
-                    tags "Hycon"
-                }
-                hp_anontmization = container "Anontmization" "API Server" {
-                    tags "Hycon"
-                }
-                hp_visualization = container "Visualization" "API Server" {
-                    tags "Hycon"
-                }
-            }
+                    hp_autonomousDataStore = container "Autonomous Data Store" "Database" {
+                        tags "Database" "Hycon"
+                    }
+                    hp_metadataStore = container "Metadata Store" "Database" {
+                        tags "Database" "Hycon"
+                    }
+                    hp_metadataExtractor = container "Metadata Extraction" "API Server" {
+                        tags "Hycon"
+                    }
+                    hp_anontmization = container "Anontmization" "API Server" {
+                        tags "Hycon"
+                    }
+                    hp_visualization = container "Visualization" "API Server" {
+                        tags "Hycon"
+                    }
+                }  
 
-            hyconDataGeneration -> hp_autonomousDataStore "Transfer Data"
-            hp_metadataExtractor -> hp_autonomousDataStore "Extract metadata(by file)"
-            hp_metadataExtractor -> hp_anontmization "Anonymization"
-            hp_anontmization -> hp_visualization "Processing for Visualization"
-            hp_visualization -> hp_metadataStore "Load Data"
-        }
+                hp_metadataExtractor -> hp_autonomousDataStore "Extract metadata(by file)"
+                hp_metadataExtractor -> hp_anontmization "Anonymization"
+                hp_anontmization -> hp_visualization "Processing for Visualization"
+                hp_visualization -> hp_metadataStore "Load Data"
+            }
         }
 
         
 
         group "Int2 Data Fabric" {
 
-            dataFabric = softwaresystem "Data Fabric" "Orchestrates distributed datasets owned by individual entities, enabling information retrieval and managing the data lifecycle." "Int2 Data Fabric" {
+            dataFabric = softwaresystem "Int2 Data Fabric Platform" "Autonomous Bigdata Platform has been powerd by Intellectu's Data Fabric Platform which contains the data virtualizations to manage data and the semantic search to discover and the data pipelines to make automated workflows." "Int2 Data Fabric" {
                 !docs data-fabric-core/docs
                 !adrs data-fabric-core/adrs
-            #    dataTailoringEngine =  container "Data Tailoring Engine" "Provides a mechanism to orchestrate the data with the governances." ""
+                properties {
+                    "Owner" "Intellectus"
+                }   
 
                 group "Client-side" {
                     jotter = container "Web Application" "Serverless nextjs" {
@@ -69,7 +73,7 @@ workspace "자율주행 빅데이터 플랫폼" "The workspace to illustrate the
                     }
                 }
 
-                group "Server-side" {
+                group "Backend Services" {
 
                     group "API Gateway Service" {
                         fabricApiProvider = container "API Service" "API Gateway Managed Service"
@@ -106,13 +110,27 @@ workspace "자율주행 빅데이터 플랫폼" "The workspace to illustrate the
                         }
                     }
                     
+                    group "Data Pipeline Service" {
+                        streamPipelineBackend = container "Stream Pipeline Backend" "Subscribe data to store" "Container: Zenoh Backend S3"
+                        streamPipelineRouter = container "Stream Pipeline Router" "Router" "Container: Zenoh Router"
+                        streamPipelineStorage = container "Stream Pipeline Storage" "Raw data storage" "AWS S3" {
+                            tags "Database"
+                        }
+
+                        streamPipelineBackend -> streamPipelineRouter "subscribe data to store" 
+                        streamPipelineBackend -> streamPipelineStorage
+                        trafficControl -> streamPipelineRouter "publish traffic information"
+                    }
                 }
 
                 fabricBroker = container "Data Source Gateway" "Manage data pipeline between distburited data source and Data Fabric in secure." "Container: Java Application"
             }
         }
 
+
+
         group "Relation between Hycon Data Pipeline and Int2 Data Fabric" {
+            
             fabricBroker -> hp_autonomousDataStore
             fabricBroker -> hp_metadataStore
         }
@@ -129,6 +147,8 @@ workspace "자율주행 빅데이터 플랫폼" "The workspace to illustrate the
         fabricBroker -> enterpriseERP 
         fabricBroker -> dataLake 
         fabricBroker -> dataWarehouse 
+
+        vehicles -> streamPipelineRouter "subscribe in-time traffic information"
 
         metaGin -> fabricBroker
         metaGin -> fabricDataCatalog "analyze"
@@ -166,6 +186,26 @@ workspace "자율주행 빅데이터 플랫폼" "The workspace to illustrate the
                     containerInstance fabricApiProvider
                 }
             }
+        }
+
+        deDataPipeline = deploymentEnvironment "DataPipeline" {
+
+            deploymentNode "Real World" {
+                infrastructureNode  vehicles
+                infrastructureNode  trafficControl
+            }
+
+            deploymentNode "Router" {
+                containerInstance streamPipelineRouter
+                instances 3
+            }
+
+            deploymentNode "Data Pipeline Backend" {
+                containerInstance streamPipelineBackend
+                containerInstance streamPipelineStorage
+            }
+
+
         }
     }
 
@@ -240,6 +280,11 @@ workspace "자율주행 빅데이터 플랫폼" "The workspace to illustrate the
             autoLayout
         }
 
+        deployment * deDataPipeline "DeployDataPipeline" {
+            include *
+            autoLayout
+        }
+
         styles {
             
             element "Software System" {
@@ -255,7 +300,6 @@ workspace "자율주행 빅데이터 플랫폼" "The workspace to illustrate the
             element "Web Browser" {
                 shape WebBrowser
             }
-
             element "Database" {
                 shape Cylinder
             }
@@ -266,8 +310,6 @@ workspace "자율주행 빅데이터 플랫폼" "The workspace to illustrate the
             element "Bank Staff" {
                 background #999999
             }
-
-
             element "Container" {
                 background #438dd5
                 color #ffffff
