@@ -1,6 +1,6 @@
 @startuml
 set separator none
-title Data Fabric - Containers
+title Int2 Data Fabric Platform - Containers
 
 top to bottom direction
 
@@ -22,51 +22,66 @@ Person(DataConsumer, "Data Consumer", $descr="A consumer who are needed a data i
 Person(ERP, "ERP", $descr="Traditional type of dataset in enterprise grade.", $tags="Element", $link="")
 Person(DataLake, "Data Lake", $descr="Unstructured or semi-structured dataset", $tags="Element", $link="")
 Person(DataWarehouse, "Data Warehouse", $descr="Structured dataset.", $tags="Element", $link="")
-System(DataPipeline, "Data Pipeline", $descr="An autonomous driving dataset generated from scenarios provided by the consortium.", $tags="Software System,Hycon", $link="")
+Person(Vehicles, "Vehicles", $descr="Publish and subscribe data in near real time", $tags="Element", $link="")
+Person(TrafficControlInformation, "Traffic Control Information", $descr="Publish traffic information", $tags="Element", $link="")
+WithoutPropertyHeader()
+AddProperty("Owner","Hyconsoft")
+System(HyconDataPlatform, "Hycon Data Platform", $descr="An autonomous driving dataset generated from scenarios provided by the consortium.", $tags="Software System,Hycon", $link="")
 
-System_Boundary("DataFabric_boundary", "Data Fabric", $tags="Software System") {
+System_Boundary("Int2DataFabricPlatform_boundary", "Int2 Data Fabric Platform", $tags="Software System") {
+  AddBoundaryTag("Backend Services", $borderColor="#cccccc", $fontColor="#cccccc", $borderStyle="Dashed", $borderThickness="1")
+  Boundary(group_1, "Backend Services", $tags="Backend Services") {
+      AddBoundaryTag("Backend Services/API Gateway Service", $borderColor="#cccccc", $fontColor="#cccccc", $borderStyle="Dashed", $borderThickness="1")
+      Boundary(group_2, "API Gateway Service", $tags="Backend Services/API Gateway Service") {
+        Container(Int2DataFabricPlatform.APIService, "API Service", $techn="", $descr="API Gateway Managed Service", $tags="Container", $link="")
+      }
+
+      AddBoundaryTag("Backend Services/Data Pipeline Service", $borderColor="#cccccc", $fontColor="#cccccc", $borderStyle="Dashed", $borderThickness="1")
+      Boundary(group_3, "Data Pipeline Service", $tags="Backend Services/Data Pipeline Service") {
+        Container(Int2DataFabricPlatform.StreamPipelineBackend, "Stream Pipeline Backend", $techn="Container: Zenoh Backend S3", $descr="Subscribe data to store", $tags="Container", $link="")
+        Container(Int2DataFabricPlatform.StreamPipelineRouter, "Stream Pipeline Router", $techn="Container: Zenoh Router", $descr="Router", $tags="Container", $link="")
+        ContainerDb(Int2DataFabricPlatform.StreamPipelineStorage, "Stream Pipeline Storage", $techn="AWS S3", $descr="Raw data storage", $tags="Container,Database", $link="")
+      }
+
+      AddBoundaryTag("Backend Services/Knowledge Service", $borderColor="#cccccc", $fontColor="#cccccc", $borderStyle="Dashed", $borderThickness="1")
+      Boundary(group_4, "Knowledge Service", $tags="Backend Services/Knowledge Service") {
+        Container(Int2DataFabricPlatform.KnowledgeGraphApp, "Knowledge Graph App", $techn="Container: Serverless Java or Typescript Application", $descr="Provides", $tags="Container", $link="")
+        ContainerDb(Int2DataFabricPlatform.KnowledgeGraphDatabase, "Knowledge Graph Database", $techn="", $descr="DB: Neo4j or AWS Neptune", $tags="Container,Database", $link="")
+      }
+
+      AddBoundaryTag("Backend Services/Metadata Service", $borderColor="#cccccc", $fontColor="#cccccc", $borderStyle="Dashed", $borderThickness="1")
+      Boundary(group_5, "Metadata Service", $tags="Backend Services/Metadata Service") {
+        Container(Int2DataFabricPlatform.MetadataApp, "Metadata App", $techn="", $descr="Active Metadata", $tags="Container", $link="")
+        ContainerDb(Int2DataFabricPlatform.MetadataDatabase, "Metadata Database", $techn="", $descr="DB: AWS Aurora Postgrsql", $tags="Container,Database", $link="")
+      }
+
+  }
+
   AddBoundaryTag("Client-side", $borderColor="#cccccc", $fontColor="#cccccc", $borderStyle="Dashed", $borderThickness="1")
-  Boundary(group_1, "Client-side", $tags="Client-side") {
-    Container(DataFabric.WebApplication, "Web Application", $techn="", $descr="Serverless nextjs", $tags="Container,Web Browser", $link="")
+  Boundary(group_6, "Client-side", $tags="Client-side") {
+    Container(Int2DataFabricPlatform.WebApplication, "Web Application", $techn="", $descr="Serverless nextjs", $tags="Container,Web Browser", $link="")
   }
 
-  AddBoundaryTag("Server-side", $borderColor="#cccccc", $fontColor="#cccccc", $borderStyle="Dashed", $borderThickness="1")
-  Boundary(group_2, "Server-side", $tags="Server-side") {
-      AddBoundaryTag("Server-side/API Gateway Service", $borderColor="#cccccc", $fontColor="#cccccc", $borderStyle="Dashed", $borderThickness="1")
-      Boundary(group_3, "API Gateway Service", $tags="Server-side/API Gateway Service") {
-        Container(DataFabric.APIService, "API Service", $techn="", $descr="API Gateway Managed Service", $tags="Container", $link="")
-      }
-
-      AddBoundaryTag("Server-side/Knowledge Service", $borderColor="#cccccc", $fontColor="#cccccc", $borderStyle="Dashed", $borderThickness="1")
-      Boundary(group_4, "Knowledge Service", $tags="Server-side/Knowledge Service") {
-        Container(DataFabric.KnowledgeGraphApp, "Knowledge Graph App", $techn="Container: Serverless Java or Typescript Application", $descr="Provides", $tags="Container", $link="")
-        ContainerDb(DataFabric.KnowledgeGraphDatabase, "Knowledge Graph Database", $techn="", $descr="DB: Neo4j or AWS Neptune", $tags="Container,Database", $link="")
-      }
-
-      AddBoundaryTag("Server-side/Metadata Service", $borderColor="#cccccc", $fontColor="#cccccc", $borderStyle="Dashed", $borderThickness="1")
-      Boundary(group_5, "Metadata Service", $tags="Server-side/Metadata Service") {
-        Container(DataFabric.MetadataApp, "Metadata App", $techn="", $descr="Active Metadata", $tags="Container", $link="")
-        ContainerDb(DataFabric.MetadataDatabase, "Metadata Database", $techn="", $descr="DB: AWS Aurora Postgrsql", $tags="Container,Database", $link="")
-      }
-
-  }
-
-  Container(DataFabric.DataSourceGateway, "Data Source Gateway", $techn="Container: Java Application", $descr="Manage data pipeline between distburited data source and Data Fabric in secure.", $tags="Container", $link="")
+  Container(Int2DataFabricPlatform.DataSourceGateway, "Data Source Gateway", $techn="Container: Java Application", $descr="Manage data pipeline between distburited data source and Data Fabric in secure.", $tags="Container", $link="")
 }
 
-Rel(DataFabric.DataSourceGateway, DataPipeline, "", $techn="", $tags="Relationship", $link="")
-Rel(DataConsumer, DataFabric.APIService, "", $techn="", $tags="Relationship", $link="")
-Rel(DataConsumer, DataFabric.WebApplication, "", $techn="", $tags="Relationship", $link="")
-Rel(DataFabric.KnowledgeGraphApp, DataFabric.KnowledgeGraphDatabase, "build Local Knowledge Graph", $techn="", $tags="Relationship", $link="")
-Rel(DataFabric.KnowledgeGraphApp, DataFabric.MetadataApp, "", $techn="", $tags="Relationship", $link="")
-Rel(DataFabric.DataSourceGateway, ERP, "", $techn="", $tags="Relationship", $link="")
-Rel(DataFabric.DataSourceGateway, DataLake, "", $techn="", $tags="Relationship", $link="")
-Rel(DataFabric.DataSourceGateway, DataWarehouse, "", $techn="", $tags="Relationship", $link="")
-Rel(DataFabric.MetadataApp, DataFabric.DataSourceGateway, "", $techn="", $tags="Relationship", $link="")
-Rel(DataFabric.MetadataApp, DataFabric.MetadataDatabase, "", $techn="", $tags="Relationship", $link="")
-Rel(DataFabric.APIService, DataFabric.KnowledgeGraphApp, "", $techn="", $tags="Relationship", $link="")
-Rel(DataFabric.APIService, DataFabric.MetadataApp, "", $techn="", $tags="Relationship", $link="")
-Rel(DataFabric.WebApplication, DataFabric.APIService, "", $techn="", $tags="Relationship", $link="")
+Rel(Int2DataFabricPlatform.StreamPipelineBackend, Int2DataFabricPlatform.StreamPipelineRouter, "subscribe data to store", $techn="", $tags="Relationship", $link="")
+Rel(Int2DataFabricPlatform.StreamPipelineBackend, Int2DataFabricPlatform.StreamPipelineStorage, "", $techn="", $tags="Relationship", $link="")
+Rel(TrafficControlInformation, Int2DataFabricPlatform.StreamPipelineRouter, "publish traffic information", $techn="", $tags="Relationship", $link="")
+Rel(Int2DataFabricPlatform.DataSourceGateway, HyconDataPlatform, "", $techn="", $tags="Relationship", $link="")
+Rel(DataConsumer, Int2DataFabricPlatform.APIService, "", $techn="", $tags="Relationship", $link="")
+Rel(DataConsumer, Int2DataFabricPlatform.WebApplication, "", $techn="", $tags="Relationship", $link="")
+Rel(Int2DataFabricPlatform.KnowledgeGraphApp, Int2DataFabricPlatform.KnowledgeGraphDatabase, "build Local Knowledge Graph", $techn="", $tags="Relationship", $link="")
+Rel(Int2DataFabricPlatform.KnowledgeGraphApp, Int2DataFabricPlatform.MetadataApp, "", $techn="", $tags="Relationship", $link="")
+Rel(Int2DataFabricPlatform.DataSourceGateway, ERP, "", $techn="", $tags="Relationship", $link="")
+Rel(Int2DataFabricPlatform.DataSourceGateway, DataLake, "", $techn="", $tags="Relationship", $link="")
+Rel(Int2DataFabricPlatform.DataSourceGateway, DataWarehouse, "", $techn="", $tags="Relationship", $link="")
+Rel(Vehicles, Int2DataFabricPlatform.StreamPipelineRouter, "subscribe in-time traffic information", $techn="", $tags="Relationship", $link="")
+Rel(Int2DataFabricPlatform.MetadataApp, Int2DataFabricPlatform.DataSourceGateway, "", $techn="", $tags="Relationship", $link="")
+Rel(Int2DataFabricPlatform.MetadataApp, Int2DataFabricPlatform.MetadataDatabase, "", $techn="", $tags="Relationship", $link="")
+Rel(Int2DataFabricPlatform.APIService, Int2DataFabricPlatform.KnowledgeGraphApp, "", $techn="", $tags="Relationship", $link="")
+Rel(Int2DataFabricPlatform.APIService, Int2DataFabricPlatform.MetadataApp, "", $techn="", $tags="Relationship", $link="")
+Rel(Int2DataFabricPlatform.WebApplication, Int2DataFabricPlatform.APIService, "", $techn="", $tags="Relationship", $link="")
 
 SHOW_LEGEND(true)
 @enduml

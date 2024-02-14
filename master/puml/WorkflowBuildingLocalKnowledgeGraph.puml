@@ -16,20 +16,20 @@ AddRelTag("Relationship", $textColor="#707070", $lineColor="#707070", $lineStyle
 
 AddBoundaryTag("Container", $bgColor="#ffffff", $borderColor="#2e6295", $fontColor="#2e6295", $shadowing="", $borderStyle="Solid", $borderThickness="1")
 
-Container_Boundary("DataFabric.KnowledgeGraphApp_boundary", "Knowledge Graph App", $tags="Container") {
-  Component(DataFabric.KnowledgeGraphApp.KnowledgeWeaver, "Knowledge Weaver", $techn="", $descr="Knowledge Weaver", $tags="Element", $link="")
+Container_Boundary("Int2DataFabricPlatform.KnowledgeGraphApp_boundary", "Knowledge Graph App", $tags="Container") {
+  Component(Int2DataFabricPlatform.KnowledgeGraphApp.KnowledgeWeaver, "Knowledge Weaver", $techn="", $descr="Knowledge Weaver", $tags="Element", $link="")
 }
 
-Container_Boundary("DataFabric.MetadataApp_boundary", "Metadata App", $tags="Container") {
-  Component(DataFabric.MetadataApp.MetaGin, "Meta Gin", $techn="Component: Spring bean", $descr="Metadata Analyzer", $tags="Element", $link="")
-  Component(DataFabric.MetadataApp.FabricDataCatalog, "Fabric Data Catalog", $techn="", $descr="Component: Spring bean", $tags="Element", $link="")
+Container_Boundary("Int2DataFabricPlatform.MetadataApp_boundary", "Metadata App", $tags="Container") {
+  Component(Int2DataFabricPlatform.MetadataApp.MetaGin, "Meta Gin", $techn="Component: Spring bean", $descr="Metadata Analyzer", $tags="Element", $link="")
+  Component(Int2DataFabricPlatform.MetadataApp.FabricDataCatalog, "Fabric Data Catalog", $techn="", $descr="Component: Spring bean", $tags="Element", $link="")
 }
 
-ContainerDb(DataFabric.KnowledgeGraphDatabase, "Knowledge Graph Database", $techn="", $descr="DB: Neo4j or AWS Neptune", $tags="Container,Database", $link="")
+ContainerDb(Int2DataFabricPlatform.KnowledgeGraphDatabase, "Knowledge Graph Database", $techn="", $descr="DB: Neo4j or AWS Neptune", $tags="Container,Database", $link="")
 
-Rel(DataFabric.MetadataApp.FabricDataCatalog, DataFabric.MetadataApp.MetaGin, "1. analyze", $techn="", $tags="Relationship", $link="")
-Rel(DataFabric.MetadataApp.MetaGin, DataFabric.KnowledgeGraphApp.KnowledgeWeaver, "2. weave Knowledge from Metadata", $techn="", $tags="Relationship", $link="")
-Rel(DataFabric.KnowledgeGraphApp.KnowledgeWeaver, DataFabric.KnowledgeGraphDatabase, "3. build Local Knowledge Graph", $techn="", $tags="Relationship", $link="")
+Rel(Int2DataFabricPlatform.MetadataApp.FabricDataCatalog, Int2DataFabricPlatform.MetadataApp.MetaGin, "1. analyze", $techn="", $tags="Relationship", $link="")
+Rel(Int2DataFabricPlatform.MetadataApp.MetaGin, Int2DataFabricPlatform.KnowledgeGraphApp.KnowledgeWeaver, "2. weave Knowledge from Metadata", $techn="", $tags="Relationship", $link="")
+Rel(Int2DataFabricPlatform.KnowledgeGraphApp.KnowledgeWeaver, Int2DataFabricPlatform.KnowledgeGraphDatabase, "3. build Local Knowledge Graph", $techn="", $tags="Relationship", $link="")
 
 SHOW_LEGEND(true)
 @enduml
